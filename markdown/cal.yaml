@@ -1,0 +1,171 @@
+Special Dates:
+  Courses begin: 2018-08-28
+  Courses end: 2018-12-07
+  Add deadline: 2018-09-11
+  Drop deadline: 2018-10-16
+  Withdraw deadline: 2018-10-23
+  Thanksgiving recess:
+    start: 2018-11-21
+    end: 2018-11-25
+  Reading days:
+    start: 2018-10-06
+    end: 2018-10-09
+  Exam 1: 2018-10-02
+  Exam 2: 2018-11-06
+  Exam 3: 2018-12-12
+
+classes:
+    -   welcome
+    -   Boolean algebra
+    -   binary arithmetic
+    -   binary arithmetic
+
+    -   gates, wires
+    -   mux, demux, adder
+    -   clocks
+    -   other hardware
+
+    -   adjacency
+    -   bytes; endianness
+    -   pointers
+
+    -   von Neumann model; state
+    -   fetch-decode-execute
+    -   moves, memory, ALU ops
+    -   addressing modes
+    -   conditional jump; back doors
+    
+    -   ISA and assembly; patents
+    -   tracing variables
+    -   the stack
+
+    -   compilation
+    -   compile-time info
+
+    -   C introduction
+    -   simple and compound types
+    -   control constructs
+    -   function calls and the stack
+    -   global, stack, heap
+    -   malloc and free
+
+    -   optimization
+    
+    -   buffer overrun; reporting exploits
+    -   bad pointers; open source?
+
+    -   C std library conventions
+    -   string.h
+    -   stdio.h and varargs
+    -   stdio.h and varargs
+    -   fcntl.h and so on
+
+    -   defensive programming
+    -   defensive programming
+    -   languages safer than C
+    
+    -   (flex day)
+    -   (flex day)
+    -   (flex day)
+
+
+reading:
+    
+    Review: ["[topics list](review.html)"]
+
+assignments:
+    ".groups":
+        PA:
+            .tester-prefix: test_
+            portion: "1.5*21"
+            .rationale: "21 PAs at 1.5% of grade each"
+            late-policy: [0.9, 0.8]
+            support: ["gradetools.py","timeout.py","timeout2.py","cacheurls.py"]
+            total: 10
+        Lab:
+            portion: 11
+            .rationale: "12 graded labs (drop 1) at 1% of grade each"
+            drop: 1
+            exclude: ["18Sp CS 1111-001 (ENGR)"]
+            rubric: {"kind":"percentage"}
+        Exam:
+            portion: "15+15+20"
+            .rationale: "midterms 15% of grade each; final 20%"
+            rubric: {"kind":"percentage"}
+
+    Lab01:
+        due: 2018-09-04
+        title: bash, ssh, scp
+        notes: an overview with simple exercises
+    Lab02:
+        due: 2018-09-11
+        title: information theory
+        notes: an overview with simple exercises
+    Lab03:
+        due: 2018-09-18
+        title: hex editor
+        notes: an overview with simple exercises
+    Lab04:
+        due: 2018-09-25
+        title: simulator
+
+    Lab05:
+        due: 2018-10-16
+        title: debugger
+        notes: a guided walk-through of a GUI binary debugger (nemiver/eclipse CDT/kdbg)
+    Lab06:
+        due: 2018-10-23
+        title: 'bomb lab'
+        notes: given a compiled binary, use a debugger to adjust its behavior
+    Lab07:
+        due: 2018-10-30
+        title: 'char * coding'
+        notes: a set of puzzles using strlen/strcmp/strsep/strtok/...
+
+    Lab08:
+        due: 2018-11-13
+        title: 'file-based chat system'
+    Lab09:
+        due: 2018-11-20
+        title: 'unix sockets'
+    Lab10:
+        due: 2018-11-27
+        title: 'C++ part 1'
+    Lab11:
+        due: 2018-12-04
+        title: 'C++ part 2'
+
+
+
+    PA01:
+        files: bit fiddling
+        due: 2018-09-13 10:00:00
+        notes: things like "count the number of set bits in an int" using limited numbers of bitwise operations
+    PA02:
+        files: worksheet
+        due: 2018-09-20 10:00:00
+        notes: 
+    PA03:
+        files: simple simulator
+        due: 2018-09-27 10:00:00
+        notes: in Java or Python, implement a toy machine language fetch/decode/execute simulator
+
+    PA04:
+        files: 'sieve.S'
+        due: 2018-10-18 10:00:00
+    PA05:
+        files: 'binary bomb'
+        due: 2018-10-25 10:00:00
+    PA06:
+        files: sieve.c
+        due: 2018-11-01 10:00:00
+
+    PA07:
+        files: linked_list.c
+        due: 2018-11-15 10:00:00
+    PA08:
+        files: postfix_calculator.c
+        due: 2018-11-29 10:00:00
+    PA09:
+        files: 'socket chat'
+        due: 2018-12-06 10:00:00
