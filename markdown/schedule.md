@@ -9,6 +9,8 @@ but because this is the first time we've taught them in this order
 we might be slightly off on how long each will take.
 Do not be surprised if/when the schedule changes.
 
+<hr/>
+
 #include schedule.html
 
 <!-- To subscribe to the above calendar, add <http://www.cs.virginia.edu/luther/COA1/F2018/cal.ics> to your calender application of choice. -->
