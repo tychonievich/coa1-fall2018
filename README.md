@@ -1,1 +1,1 @@
-# coa1-fall2018
+This is a repository of course content and website creation material for Computer Organization and Architecture 1, Fall 2018 version.
