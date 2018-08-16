@@ -325,13 +325,13 @@ There are at least three games that teach more about the command line:
 Visit <http://overthewire.org/wargames/> and read.
 Many of the pages list web resources to help you learn more.
 
-If you are anxious to get started, try
+If you don't like reading (☹), try
 
 ````bash
 $ ssh bandit0@bandit.labs.overthewire.org -p 2220
 ````
 
-and consult <http://overthewire.org/wargames/bandit/bandit0.html>
+and consult <http://overthewire.org/wargames/bandit/bandit0.html> to get started.
 
 ## Terminus
 
