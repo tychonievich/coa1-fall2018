@@ -95,7 +95,7 @@ assignments:
 
     Lab01:
         due: 2018-09-04
-        title: bash, ssh, scp
+        title: shell
         notes: an overview with simple exercises
     Lab02:
         due: 2018-09-11
