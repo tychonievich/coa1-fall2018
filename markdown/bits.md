@@ -1,5 +1,7 @@
 ---
 title: Bits and Beyond
+author: Luther Tychonievich
+license: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 ...
 
 Claude Shannon founded the field of information theory.

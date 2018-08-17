@@ -1,5 +1,7 @@
 ---
 title: Components of digital computers
+author: Luther Tychonievich
+license: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 ...
 
 Processor hardware is built out of three main conceptual pieces:

@@ -1,5 +1,7 @@
 ---
 title: Boolean Algebra and Gates
+author: Luther Tychonievich
+license: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 ...
 
 Because all information can be reduced to a sequence of bits,
