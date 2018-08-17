@@ -22,7 +22,7 @@ def process(fname):
             if newp and i is not None:
                 process(i.group(1))
 
-            if newp and o is not None:
+            elif newp and o is not None:
                 print('\n<div class="'+(o.group(1)+' long' if o.group(2) else o.group(1))+r'">\safeopenclass{'+o.group(1)+'}')
                 if o.group(3): sys.stdout.write(o.group(3))
                 if o.group(2): tags.append(o.group(1))
