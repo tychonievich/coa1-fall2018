@@ -44,6 +44,7 @@ $endfor$
           <li><p class="navbar-text"><a href="index.html">home</a></p></li>
           <li><p class="navbar-text"><a href="policies.html">policies</a></p></li>
           <li><p class="navbar-text"><a href="schedule.html">schedule</a></p></li>
+          <li><p class="navbar-text"><a href="https://archimedes.cs.virginia.edu/coa1-f2018/">submissions</a></p></li>
         </ul>
       </div>
     </div>
@@ -73,11 +74,18 @@ $endfor$
     </div>
   </div>
   <footer>
-    $for(author)$
-    <li><p class="navbar-text">$author$</p></li>
-    $endfor$
+    $if(author)$
+      Content copyright ©
+      $for(author)$
+        $author$
+      $endfor$
+    $else$
+      Copyright © $year$ Luther Tychonievich.
+    $endif$
+    $if(license)$
+      <p>Released under the $license$ license.</p>
+    $endif$
 
-     Copyright © $year$ Luther Tychonievich.
      <br/>
      Last updated $datetime$
   </footer>

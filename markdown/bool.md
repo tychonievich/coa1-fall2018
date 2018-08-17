@@ -1,7 +1,7 @@
 ---
 title: Boolean Algebra and Gates
 author: Luther Tychonievich
-license: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>
 ...
 
 Because all information can be reduced to a sequence of bits,
