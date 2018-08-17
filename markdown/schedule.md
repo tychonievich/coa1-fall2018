@@ -11,7 +11,7 @@ Do not be surprised if/when the schedule changes.
 
 <hr/>
 
-#include schedule.html
+{#include schedule.html}
 
 <!-- To subscribe to the above calendar, add <http://www.cs.virginia.edu/luther/COA1/F2018/cal.ics> to your calender application of choice. -->
 

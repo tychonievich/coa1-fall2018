@@ -10,9 +10,9 @@ More information about the pilot of these courses as a whole may be found at
 <http://pilot.cs.virginia.edu/>.
 
 For the sake of conversing with those familiar with our other course offerings,
-this course covers the low-level half of CS 2150 "Program and Data Representation";
+this course covers the assembly-and-C half of CS 2150 "Program and Data Representation";
 the basics of ECE 2330 "Digital Logic Design";
-and approximately half of CS 3330 "Computer Architecture";
+and the first part of CS 3330 "Computer Architecture";
 in addition to having several new topics we felt were under-represented in our
 previous set of course offerings.
 
