@@ -38,9 +38,6 @@ $endfor$
       <div class="container">
         <span class="doc-title">COA1 &ndash; $title$</span>
         <ul class="nav pull-right doc-info">
-          $for(author)$
-          <li><p class="navbar-text">$author$</p></li>
-          $endfor$
           $if(date)$
           <li><p class="navbar-text">$date$</p></li>
           $endif$
@@ -76,6 +73,10 @@ $endfor$
     </div>
   </div>
   <footer>
+    $for(author)$
+    <li><p class="navbar-text">$author$</p></li>
+    $endfor$
+
      Copyright © $year$ Luther Tychonievich.
      <br/>
      Last updated $datetime$
