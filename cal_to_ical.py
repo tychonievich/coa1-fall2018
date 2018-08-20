@@ -164,6 +164,5 @@ if __name__ == '__main__':
     with open('markdown/cal.yaml') as stream:
         data = load(stream, Loader=Loader)
     cal = calendar(data)
-    #with open('markdown/cal.ics', 'wb') as f:
-        #f.write(cal.bytes())
-    print(cal.bytes().decode('utf-8'))
+    with open('markdown/cal.ics', 'wb') as f:
+        f.write(cal.bytes())
