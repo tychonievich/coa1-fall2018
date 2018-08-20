@@ -111,15 +111,26 @@ def calendar(data):
                         ...
         if isclass: classnum += 1
         d += oneday
+    
+    ended=d
 
     for e in exams:
-        if e >= d:
+        if e >= ended:
             ans.event(
                 exams[e],
                 datetime.datetime(e.year, e.month, e.day, data['meta']['final']['start'].hour, data['meta']['final']['start'].minute, 0, tzinfo=tz),
                 datetime.timedelta(0, data['meta']['final']['duration']*60),
                 location=data['meta']['final']['room']
             )
+        elif not data['meta'].get('lecture exam',True):
+            for sname, sdat in data['sections'].items():
+                if sdat.get('type') == 'lab':
+                    offby = max((abs(_+3),_) for _ in [e.weekday() - d for d in sdat['days']])[1]
+                    d = e
+                    d = datetime.datetime(d.year, d.month, d.day, sdat['start'] // 60, sdat['start'] % 60, 0, tzinfo=tz)
+                    d -= datetime.timedelta(offby,0,0)
+                    ans.event(exams[e] + '('+sname+')', d, sdat['duration'], location=sdat['room'], details=exams[e]+' for ' + sname)
+                    
     
     for a,v in data['assignments'].items():
         if a.lower().startswith('lab') or v.get('group','').lower() == 'lab':
