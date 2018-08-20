@@ -105,10 +105,12 @@ def calendar(data):
                         topic = data['classes'][classnum] if classnum < len(data['classes']) else ''
                         if data['meta'].get('lecture exam',True):
                             topic = exams.get(d, topic)
-                            isclass = False
+                            isclass = d not in exams
+                        if type(topic) is list:
+                            topic = ' and '.join(topic)
                         ans.event(sname, start, sdat['duration'], location=sdat['room'], details=topic)
                     else:
-                        ...
+                        ... # non-lecture currently handled elsewhere
         if isclass: classnum += 1
         d += oneday
     
@@ -133,6 +135,7 @@ def calendar(data):
                     
     
     for a,v in data['assignments'].items():
+        if a.startswith('.'): continue
         if a.lower().startswith('lab') or v.get('group','').lower() == 'lab':
             for sname, sdat in data['sections'].items():
                 if sdat['type'] == 'lab':
@@ -141,13 +144,14 @@ def calendar(data):
                     d = datetime.datetime(d.year, d.month, d.day, sdat['start'] // 60, sdat['start'] % 60, 0, tzinfo=tz)
                     d -= datetime.timedelta(offby,0,0)
                     ans.event(sname, d, sdat['duration'], location=sdat['room'], details=a+": "+v['title'])
-                    # fix me: handle lab exams too
             continue
         if 'due' not in v: continue
         d = v['due']
         if not isinstance(d, datetime.datetime):
             d = datetime.datetime(d.year, d.month, d.day, 23 if v.get('group') == 'project' else 9, 55, 0, tzinfo=tz)
-            ans.event(a+' due', d, m5)
+        else:
+            d -= datetime.timedelta(0,60*5,0)
+        ans.event(a+' due', d, m5)
             
     
     return ans
@@ -160,5 +164,6 @@ if __name__ == '__main__':
     with open('markdown/cal.yaml') as stream:
         data = load(stream, Loader=Loader)
     cal = calendar(data)
-    with open('markdown/cal.ics', 'wb') as f:
-        f.write(cal.bytes())
+    #with open('markdown/cal.ics', 'wb') as f:
+        #f.write(cal.bytes())
+    print(cal.bytes().decode('utf-8'))
