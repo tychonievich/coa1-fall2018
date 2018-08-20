@@ -38,15 +38,13 @@ $endfor$
       <div class="container">
         <span class="doc-title">COA1 &ndash; $title$</span>
         <ul class="nav pull-right doc-info">
-          $for(author)$
-          <li><p class="navbar-text">$author$</p></li>
-          $endfor$
           $if(date)$
           <li><p class="navbar-text">$date$</p></li>
           $endif$
           <li><p class="navbar-text"><a href="index.html">home</a></p></li>
           <li><p class="navbar-text"><a href="policies.html">policies</a></p></li>
           <li><p class="navbar-text"><a href="schedule.html">schedule</a></p></li>
+          <li><p class="navbar-text"><a href="https://archimedes.cs.virginia.edu/coa1-f2018/">submissions</a></p></li>
         </ul>
       </div>
     </div>
@@ -76,7 +74,18 @@ $endfor$
     </div>
   </div>
   <footer>
-     Copyright © $year$ Luther Tychonievich.
+    $if(author)$
+      Content copyright ©
+      $for(author)$
+        $author$
+      $endfor$
+    $else$
+      Copyright © $year$ Luther Tychonievich.
+    $endif$
+    $if(license)$
+      <p>Released under the $license$ license.</p>
+    $endif$
+
      <br/>
      Last updated $datetime$
   </footer>

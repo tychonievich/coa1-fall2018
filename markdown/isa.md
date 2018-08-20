@@ -1,5 +1,7 @@
 ---
 title: Designing a processor
+author: Luther Tychonievich
+license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>
 ...
 
 Most machines, from the simplest hammers to the most sophisticated appliances,

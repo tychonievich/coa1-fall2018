@@ -75,7 +75,7 @@ Add a comment to the top of your code that includes at least the following:
 
 # Submit
 
-Submit your file at the end of lab on [the course submission site](https://archimedes.cs.virginia.edu/coa1).
+Submit your file at the end of lab on [the course submission site](https://archimedes.cs.virginia.edu/coa1-f2018/).
 
 One of our goals is to determine how long this lab actually takes.
 Please work for the entire lab time and then submit when the time ends,

@@ -144,6 +144,7 @@ assignments:
         due: 2018-09-11
         title: information theory
         notes: an overview with simple exercises
+        files: ['*.java','*.py']
     Lab03:
         due: 2018-09-18
         title: hex editor
@@ -181,15 +182,16 @@ assignments:
 
 
     PA01:
-        files: bit fiddling
+        title: bit fiddling
         due: 2018-09-13 10:00:00
         notes: things like "count the number of set bits in an int" using limited numbers of bitwise operations
     PA02:
-        files: worksheet
+        title: worksheet
         due: 2018-09-20 10:00:00
         notes: 
     PA03:
-        files: simple simulator
+        title: simulator
+        files: ['sim.py', 'Sim.java']
         due: 2018-09-27 10:00:00
         notes: in Java or Python, implement a toy machine language fetch/decode/execute simulator
 
