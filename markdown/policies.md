@@ -81,7 +81,7 @@ If you email, include "COA1" in the subject line to prevent your email from skip
 
 Although we have several textbooks we are considering for use,
 none of them were settled on in time for this pilot.
-Readings from articles or web pages will periodically be posted on the schedule.
+Readings written by us or linked to from articles or web pages will periodically be posted on the schedule.
 Some of these may have "reading quizzes" associated with them:
 quizzes to be taken based on the reading prior to the lecture in which they are discussed.
 
@@ -184,25 +184,23 @@ If you have information I lack, please share that with me; I may thereafter chan
 If we are not able to come to an agreement, or if the case is particularly egregious and beyond my comfort level handling in-course, we will instead refer the case to the University Honor System and abide by their findings.
 
 
-## Disability
+## Personal accommodations
 
-If you qualify for accommodations from the SDAC, please let me know, preferably in my office where we can discuss how your accommodations will interplay with the quiz- and assignment-based nature of this course.
+### Disability
 
-## Timeliness
+If you qualify for accommodations from [the SDAC](http://studenthealth.virginia.edu/sdac), please let me know, preferably in my office where we can discuss how your accommodations will interplay with the quiz- and assignment-based nature of this course.
 
-If you need more time on an assignment, please let me know (and let me know why).
-Note, however, that life is easier earlier:
-if you do everything early, you have the stress-free confidence that a little slip will carry not penalty.
-If you do everything late, you instead live with a constant sense of being behind and at risk of missing something.
+### Religious observances
 
-Quizzes, on the other hand, will have hard deadlines.
-If you miss them, you miss them.
+As a religious person myself, I fully support the university's [policy](https://eocr.virginia.edu/accommodations-religious-observance) on accommodating religious observances.
+If such observances or other religious beliefs impact or are likely to impact your work this semester,
+please let me know as soon as you are aware of this impact.
 
-## Circumstance
+### Life
 
 Bad things happen.
 People forget things and make mistakes.
 Bad days coincide with due dates.
 Etc.
 
-If you believe that circumstances warrant an change in deadline, a second chance, or some other accommodation in order to more accurately synchronize grade with knowledge, come talk to me and we'll do what we can to make it happen.
+If you believe that circumstances warrant an change in deadline, a second chance, or some other accommodation in order to more accurately synchronize grade with knowledge, come talk to me and we'll resolve the situation as best we can.
