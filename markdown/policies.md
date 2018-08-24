@@ -81,7 +81,7 @@ If you email, include "COA1" in the subject line to prevent your email from skip
 
 Although we have several textbooks we are considering for use,
 none of them were settled on in time for this pilot.
-Readings written by us or linked to from articles or web pages will periodically be posted on the schedule.
+Readings written by us or selected from articles or web pages will periodically be posted on the schedule.
 Some of these may have "reading quizzes" associated with them:
 quizzes to be taken based on the reading prior to the lecture in which they are discussed.
 
