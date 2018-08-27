@@ -47,11 +47,13 @@ You don't type the `$` when you see this.
 
 Some characters have special meaning, and need to be escaped if you want to use them
 by using a backslash `\` or enclosing the command in single quotes.
-Note: double quotes sometimes work too, but don't escape everything...
 
 ````bash
 $ echo \$100 '$100' '$'100
 ````
+
+Double quotes sometimes work too, but don't escape `$`, `\``, `!`, or `\\`.
+They also have some nuanced special meanings we won't encounter.
 
 ### Two special option syntaxes
 
