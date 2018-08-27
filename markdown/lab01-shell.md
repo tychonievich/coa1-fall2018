@@ -13,6 +13,10 @@ sometimes called the shell, sh, bash, or the terminal.
 
 (add instructions that work)
 
+# Learn to...
+
+
+
 # Basic commands
 
 The main interactions you have in a terminal consist of directories, files, and commands.
@@ -352,7 +356,7 @@ Visit <http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html>, read, and ty
 Type the following to get started
 
 ````bash
-$ git clone https://github.com/veltman/clmystery.git
+$ git clone https://github.com/ryansobol/clmystery.git
 $ cd clmystery
 $ cat instructions
 ````
