@@ -46,14 +46,13 @@ $ echo this is more traditional
 You don't type the `$` when you see this.
 
 Some characters have special meaning, and need to be escaped if you want to use them
-by using a backslash `\` or enclosing the command in single quotes.
+by using a backslash `\` or enclosing the command in *single* quotes.^[Double quotes sometimes work too, but don't escape `$`, `\``, `!`, or `\\`. They also have some nuanced special meanings we won't encounter in this course.]
 
 ````bash
 $ echo \$100 '$100' '$'100
 ````
 
-Double quotes sometimes work too, but don't escape `$`, `\``, `!`, or `\\`.
-They also have some nuanced special meanings we won't encounter.
+
 
 ### Two special option syntaxes
 
@@ -170,17 +169,26 @@ $ mkdir tmp
 $ cd tmp
 $ ls
 $ pwd
+/home/mst3k/tmp
 $ echo This is going into a file > newfile.txt
 $ ls
+newfile.txt
 $ cat newfile.txt
+This is going into a file
 $ echo another line >> newfile.txt
 $ ls
+newfile.txt
 $ cat newfile.txt
+This is going into a file
+another line
 $ echo and another > newfile.txt
 $ cat newfile.txt
+and another
 $ cd ..
 $ rm tmp
+rm: cannot remove ‘tmp’: Is a directory
 $ rmdir tmp
+rmdir: failed to remove ‘tmp’: Directory not empty
 $ rm -r tmp
 ````
 
@@ -249,7 +257,7 @@ There are four special directory names
 
 `~`
 :   the current user's home directory.
-    Does not work in thew middle of a directory path, only the beginning.
+    Does not work in the middle of a directory path, only the beginning.
 
 
 ### Paths
@@ -271,7 +279,7 @@ $ cd foo
 $ cd xyxxy
 ````
 
-or `cd foo/xyxxy` since the `..` undoes the preceding `baz`.
+or `cd foo/xyxxy`; the `..` undoes the preceding `baz`.
 
 ### Permissions
 
