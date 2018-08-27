@@ -63,9 +63,9 @@ However, we do know you will be asked to
 > <div>---They Might Be Giants</div>
 
 
-|  | Instructor | TAs |
+|        | Instructor | TAs |
 |--------|------------|-----|
-| Name | Luther Tychonievich | Fengyang "Yan" Zhang  |
+| Name | Luther Tychonievich | Mu Alvin, Rashid Lasker, Jimmy Patterson, Oliver Shi |
 | Location | Rice 208 | TBA |
 | Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | TBA |
 | Phone | 243-3789 | (none) |
