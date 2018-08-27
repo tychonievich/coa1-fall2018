@@ -60,7 +60,7 @@ For example, you might try
 - [tarzan.txt](files/tarzan.txt) -- the original Tarzan book by Edgar Rice Burroughs.
 - [pi.txt](files/pi.txt) -- the first million digits of pi.
 - [_pydecimal.py](files/_pydecimal.py) -- a large file from the Python standard library.
-- [diff_match_match.java](files/diff_patch_match.java) -- a large file from the open source Java project [diff-match-match](https://github.com/google/diff-match-patch).
+- [diff_patch_match.java](files/diff_patch_match.java) -- a large file from the open source Java project [diff-match-patch](https://github.com/google/diff-match-patch).
 
 Add a comment to the top of your code that includes at least the following:
 
