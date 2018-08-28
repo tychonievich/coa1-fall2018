@@ -72,7 +72,7 @@ sometimes called the shell, sh, bash, or the terminal.
 
         ![Fit to window, second selection (small icon at bottom)](files/nomachine-10.png)
 
-14. You are now in a Linux (CentOS) remove desktop!
+14. You are now in a Linux (CentOS) remote desktop!
 
 
 # Open a terminal
