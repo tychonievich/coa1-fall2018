@@ -302,7 +302,7 @@ if __name__ == '__main__':
 
     links = {}    
     try:
-        with open('markdown/links.yaml') as stream:
+        with open('links.yaml') as stream:
             links = load(stream, Loader=Loader)
         if links is None: links = {}
     except: pass
