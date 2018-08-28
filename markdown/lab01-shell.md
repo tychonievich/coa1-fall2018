@@ -7,6 +7,27 @@ sometimes called the shell, sh, bash, or the terminal.
 
 # Install NX Client
 
+1. Visit <https://www.nomachine.com/download>
+
+2. Download and run the installer for your operating system
+
+3. Run the resulting exectuable (which may be called "No Machine", "NX", or "nxplayer" depending on platform)
+
+4. You may see a "welcome" screen; if so click past it
+
+    ![The welcome screen](files/nomachine-1.png)
+
+5. There are several variants of the next screen, but all of them have a "New" button; click this
+
+    ![One example of the connection choice view](files/nomachine-2.png)
+
+6. There are five steps to setting up a new connection
+    
+    a. Protocol: leave as default "NX"
+        
+        ![Protocol selection screen](files/nomachine-3.png)
+
+
 (awaiting instructions from systems staff)
 
 # Open a terminal
