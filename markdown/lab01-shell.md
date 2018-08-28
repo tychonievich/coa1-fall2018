@@ -58,10 +58,19 @@ sometimes called the shell, sh, bash, or the terminal.
 
 9. Log in with your computing ID and the password you were emailed by the CS systems administrator (*not* your netbadge password; this one is separate)
 
-10. It will probably require you to change your password. Do so
-    
-    
+10. It will probably require you to change your password. Do so. And remember your new one.
 
+12. Create a new virtual desktop (unless you already have one created from earlier)
+    
+        ![Virtual desktop](files/nomachine-7.png)
+
+13. Unless you know you want something else, pick the "fit to window" and the "menu panel covering all screens" options
+
+        ![Fit to window (small icon at bottom)](files/nomachine-8.png)
+
+        ![All screens](files/nomachine-9.png)
+
+        ![Fit to window, second selection (small icon at bottom)](files/nomachine-10.png)
 
 (awaiting instructions from systems staff)
 
