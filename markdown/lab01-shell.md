@@ -26,6 +26,41 @@ sometimes called the shell, sh, bash, or the terminal.
     a. Protocol: leave as default "NX"
         
         ![Protocol selection screen](files/nomachine-3.png)
+    
+    b. Host: use `nxfront.cs.virginia.edu`, with default port (4000) and UDP communication
+    
+        ![Host selection screen](files/nomachine-4.png)
+    
+    c. Authentication: use "password"
+    
+        ![Authentication selection screen](files/nomachine-5.png)
+    
+    d. Proxy: do not use a proxy
+    
+        ![Proxy selection screen](files/nomachine-6.png)
+    
+    e. Save as: name your connection; you'll want to re-use this instead of selecting "New" in the future
+
+7. Connect to your newly-created session
+
+8. If asked, Accept host authenticity. If you care to check, it's
+
+    Host
+    :   `nx.cs.virginia.edu`
+    
+    IP Address
+    :   There are several (`nxfront` re-routes you to the least-used back-end computer), all beginning `128.143.67`
+    
+    Certificate fingerprint
+    :   SHA 256 `2D b9 74 B2 5C 7A 92 6F DD FD 98 2E 0D 35 A1 E5 99 8A A8 5B 81 A7 41 16 8F 46 0F 03 9E 3F 7F B1`.
+    
+        Note: this might change as certificates are updated; I'd not suggest checking it unless you are particularly paranoid.
+
+9. Log in with your computing ID and the password you were emailed by the CS systems administrator (*not* your netbadge password; this one is separate)
+
+10. It will probably require you to change your password. Do so
+    
+    
 
 
 (awaiting instructions from systems staff)
