@@ -233,14 +233,14 @@ def calendar(data, linkfile):
                     r = data['reading'].get(d1, [])[:]
                     classidx += 1
                     today['coa1'] = d1 + ('<span class="reading">' + ', '.join(r)+'</span>' if r else '')
-                    for dic,nam in [(links,'lec')]:
-                        if d in dic:
-                            links = []
-                            for k,v in dic[d].items():
-                                if k != 'files':
-                                    links.append('['+k+']('+v+')')
-                            links.extend('['+os.path.basename(_)+']('+_+')' for _ in dic[d].get('files',[]))
-                            today['coa1'] += ' <span class="links '+nam+'">'+', '.join(links)+'</span>'
+                    if d in linkfile:
+                        links = []
+                        for k,v in linkfile[d].items():
+                            if k != 'files':
+                                links.append('['+k+']('+v+')')
+                        links.extend('['+os.path.basename(_)+']('+_+')' for _ in linkfile[d].get('files',[]))
+                        today['coa1'] += ' <span class="links">'+', '.join(links)+'</span>'
+
                 if (not noclass) and wd == 'HW': 
                     today['coa1'] = 'lab'
             if noclass:
