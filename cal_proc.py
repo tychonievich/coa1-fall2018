@@ -196,7 +196,7 @@ def coursegrade_json(data):
 
 weekdays = ('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
 
-def calendar(data,links={}):
+def calendar(data, linkfile):
     oneday = timedelta(1)
     things = {}
     breaks = [
