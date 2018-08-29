@@ -69,7 +69,7 @@ However, we do know you will be asked to
 | Location | Rice 208 | TBA |
 | Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | TBA |
 | Phone | 243-3789 | (none) |
-| Email | <a href="mailto:tychonievich@virginia.edu?subject=COA1">tychonievich@virginia.edu</a> | use [Piazza](https://piazza.com/class/jg2a09h0hlr7d2) |
+| Email | <a href="mailto:tychonievich@virginia.edu?subject=COA1">tychonievich@virginia.edu</a> | use [Piazza](https://piazza.com/class/jg2a16chw1c7l) |
 
 For most communication, [Piazza](https://piazza.com/class/jg2a16chw1c7l) is preferred to email.
 If you email, include "COA1" in the subject line to prevent your email from skipping my inbox and never getting read.
