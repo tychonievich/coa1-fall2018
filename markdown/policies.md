@@ -28,7 +28,7 @@ At the end of it, you will be able to
 > <div>---Charles Dickens</div>
 
 Lecture is optional but strongly encouraged.
-Monday, Wednesday, and Friday, 2:00–3:15, in Olsson 009.
+Monday, Wednesday, and Friday, 2:00–2:50, in Olsson 009.
 
 There are two lab sections, both meeting in MEC 213:
 one on Mondays 6:30--7:45 pm
