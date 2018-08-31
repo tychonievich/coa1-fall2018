@@ -227,7 +227,7 @@ chmod g-rwx .   # remove group-access to read, write, and execute this directory
 chmod o-rwx .   # remove other-access to read, write, and execute this directory
 ````
 
-
+----
 
 
 # More on commands (reference for the curious)
