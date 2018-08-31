@@ -71,15 +71,15 @@ Otherwise proceed:
 
 12. Create a new virtual desktop (unless you already have one created from earlier)
     
-        ![Virtual desktop](files/nomachine-7.png)
+    ![Virtual desktop](files/nomachine-7.png)
 
 13. Unless you know you want something else, pick the "fit to window" and the "menu panel covering all screens" options
 
-        ![Fit to window (small icon at bottom)](files/nomachine-8.png)
+    ![Fit to window (small icon at bottom)](files/nomachine-8.png)
 
-        ![All screens](files/nomachine-9.png)
+    ![All screens](files/nomachine-9.png)
 
-        ![Fit to window, second selection (small icon at bottom)](files/nomachine-10.png)
+    ![Fit to window, second selection (small icon at bottom)](files/nomachine-10.png)
 
 14. You are now in a Linux (CentOS) remote desktop!
     For this lab, open a terminal:
