@@ -88,7 +88,7 @@ Otherwise proceed:
 
     There are other applications available, such as the Firefox web browser;
     if you want to use command line tools beyond what this class will require
-    you might also be interested in the department [modules documentation](files/UVA linux_environment_modules.pdf).
+    you might also be interested in the department [modules documentation](//www.cs.virginia.edu/wiki/doku.php?id=linux_environment_modules).
 
 
 # Learn to...
@@ -148,7 +148,7 @@ The first word you type is called a "command"; after that come a series of "argu
 Many commands accept special arguments beginning with a hyphen called "options".
 For example, most include an option named either `-h` or `--help` that gives a shorter summary of usage than does `man`.
 
-## Step 3: type less
+## Step 3: DRY (**D**on't **R**epeat **Y**ourself)
 
 Most (though not all) command lines will provide various forms of autocompletion to help streamline interaction.
 The two most useful are
@@ -179,6 +179,8 @@ If you don't like reading (☹), try
 ````bash
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ````
+
+We suggest getting to level 4 of Bandit, though you might find many other levels and games interesting.
 
 ## Step 5: Understand `chmod` and set up your directory safely
 
