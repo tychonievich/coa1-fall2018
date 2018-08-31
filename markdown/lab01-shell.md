@@ -5,6 +5,12 @@ title: Shell Lab
 The purpose of this lab is to get you familiar with the most important aspects of the command line environment,
 sometimes called the shell, sh, bash, or the terminal.
 
+# Pre-note
+
+It is our plan to have most labs use NoMachine/NX to have you interact with a Linux environment from your personal computer. However, the systems staff is a bit behind schedule in creating all NX accounts. It is possible this lab will not use NX, even though it will prepare you to do so in the future.
+
+
+
 # Install NX Client
 
 1. Visit <https://www.nomachine.com/download>
@@ -56,6 +62,9 @@ sometimes called the shell, sh, bash, or the terminal.
     
         Note: this might change as certificates are updated; I'd not suggest checking it unless you are particularly paranoid.
 
+If you have not been sent an NX password, you'll have to stop this section here, go on to the next section ([Learn to...]) and pick up with NX again next week.
+Otherwise proceed:
+
 9. Log in with your computing ID and the password you were emailed by the CS systems administrator (*not* your netbadge password; this one is separate)
 
 10. It will probably require you to change your password. Do so. And remember your new one.
@@ -75,12 +84,36 @@ sometimes called the shell, sh, bash, or the terminal.
 14. You are now in a Linux (CentOS) remote desktop!
 
 
-# Open a terminal
-
-(add instructions that work)
-
 # Learn to...
 
+Our goal in this lab is for you to understand how to navigate on the command line. In particular, you should be able to
+
+1. Understand the syntax of commands, including arguments and options
+2. Look up what a command does using `man`{.sh}, `--help`, and `-h`
+3. Repeat previous commands without re-typing them
+4. Know (without needing to look them up each time) the commands needed to
+    - see where you are
+    - mode to a new directory
+    - create a new directory
+    - see the contents of a file
+    - change permissions of a file or directory
+    - remove files and directories
+    - access other servers
+
+## Step 1: play Terminux
+
+Visit <http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html>, a somewhat cheesy introduction to the basics of the command line. Explore it until you 
+
+- feel comfortable with the use of `ls`, `pwd`, `cd` (including `cd ..`), and `less`
+- have learned about `mv` and `man`
+
+There is a lot more you can do (creating a magic locker, explore a hidden tunnel, learn about `grep` and `rm`, etc.) but those are the most important basics.
+If `NX` is not working, keep exploring for the full lab time; you'll learn a lot and hopefully also have fun along the way.
+Otherwise, continue with Step 2.
+
+## Step 2:
+
+The most common command line environment in Linux is called `bash`.
 
 
 # Basic commands
