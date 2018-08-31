@@ -84,7 +84,7 @@ Otherwise proceed:
 14. You are now in a Linux (CentOS) remote desktop!
     For this lab, open a terminal:
 
-        ![Where to find "Terminal" application](files/nomachine-11.png)
+    ![Where to find "Terminal" application](files/nomachine-11.png)
 
     There are other applications available, such as the Firefox web browser;
     if you want to use command line tools beyond what this class will require
