@@ -141,7 +141,7 @@ The first word you type is called a "command"; after that come a series of "argu
 Many commands accept special arguments beginning with a hyphen called "options".
 For example, most include an option named either `-h` or `--help` that gives a shorter summary of usage than does `man`.
 
-## Type less
+## Step 3: type less
 
 Most (though not all) command lines will provide various forms of autocompletion to help streamline interaction.
 The two most useful are
@@ -156,7 +156,81 @@ Tab
     
     Pressing tab twice when the cursor is preceded by an incomplete word that can be completed in several ways lists all of the completions the command line knows about.
 
-# Basic commands
+These even work in Terminux.
+
+
+## Step 4: try `ssh`
+
+There is a very useful command `ssh` that allows you to log into a different computer's command line remotely.
+To learn this, and a few other commands, we have another game:
+
+Visit <http://overthewire.org/wargames/> and read.
+Many of the pages list web resources to help you learn more.
+
+If you don't like reading (☹), try
+
+````bash
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+````
+
+## Step 5: Understand `chmod` and set up your directory safely
+
+Each directory has three permissions, called "read", "write", and "execute".
+
+read
+:   Turns on the lights, so you can see what's inside.
+    Without read permission, `ls` won't work in the directory.
+
+execute
+:   Unlocks the doors, so you can move through it.
+    Without execute permission, `cd` won't work into the directory
+    and nothing will work with a path that includes the directory in the middle.
+
+write
+:   Lets you change what's in the directory.
+    Without write permission, you can neither create nor remove
+    files and directories inside a directory.
+
+You can change permissions using the `chmod` command.
+It has multiple ways to be used, but a few simple examples are
+
+````bash
+chmod a+r foo   # all users can read foo
+chmod a-w foo   # no user can write foo
+chmod u+w foo   # the owning user can write foo
+````
+
+Directories can contain other directories, and also can contain files.
+Files, like directories, have names and permissions but cannot be entered with `cd`.
+The permissions also have different meaning than with directories:
+
+read
+:   Lets you see the contents of the file.
+
+execute
+:   Lets you (try to) treat the file like a program.
+
+write
+:   Lets you change the contents of the file.
+
+Every user belongs to one ore more groups, and every file or directory has an owning user and an owning group.
+Permissions are specified as read/write/execute for the user, group, and others.
+
+You can find out your user name with `whoami` and your group memberships with `groups`.
+
+You should set up your home directory so only you can access it, not other people in your group nor strangers not in your group:
+
+
+````bash
+cd              # go home
+chmod g-rwx .   # remove group-access to read, write, and execute this directory
+chmod o-rwx .   # remove other-access to read, write, and execute this directory
+````
+
+
+
+
+# More on commands (reference for the curious)
 
 The main interactions you have in a terminal consist of directories, files, and commands.
 
