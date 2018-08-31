@@ -111,10 +111,50 @@ There is a lot more you can do (creating a magic locker, explore a hidden tunnel
 If `NX` is not working, keep exploring for the full lab time; you'll learn a lot and hopefully also have fun along the way.
 Otherwise, continue with Step 2.
 
-## Step 2:
+## Step 2: learn terminology
 
-The most common command line environment in Linux is called `bash`.
+The most common "command line environment" in Linux is called `bash`, a variant of the more primitive `sh`ell. Terminus was somewhat like bash; following is a comparison
 
+--------------------------------------------------------------------------------
+Terminux                    Bash
+--------------------------- ----------------------------------------------------
+Location                    Directory
+
+Item                        File
+
+`pwd` shows one location    `pwd` shows a full "path": each step needed to get 
+                            here, separated by `/`
+
+`ls` shows locations and    `ls` shows all directories and files in one list
+items separately
+
+`mv` only moves items into  `mv` can also move directories into one another
+locations                   and rename files (as e.g. `mv oldname newname`)
+
+`less` and `man` show text  `less` and `man` temporarily take over the screen,
+below current text          letting you scroll around with arrow keys until you
+                            exit the view with the `q` key
+--------------------------------------------------------------------------------
+
+The first word you type is called a "command"; after that come a series of "arguments" or "command-line arguments". Together, the command and its arguments make up a "command" or "command line".
+
+Many commands accept special arguments beginning with a hyphen called "options".
+For example, most include an option named either `-h` or `--help` that gives a shorter summary of usage than does `man`.
+
+## Type less
+
+Most (though not all) command lines will provide various forms of autocompletion to help streamline interaction.
+The two most useful are
+
+Up and Down
+:   The up and down arrow keys navigate through a history of previously-typed commands.
+    On some systems, page-up and page-down also navigate in large chunks.
+
+Tab
+:   Pressing the tab key when the cursor is preceded by an incomplete word that can only be completed in one way
+    will fill in the rest of the word.
+    
+    Pressing tab twice when the cursor is preceded by an incomplete word that can be completed in several ways lists all of the completions the command line knows about.
 
 # Basic commands
 
