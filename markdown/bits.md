@@ -614,7 +614,7 @@ has decided that R, Ｒ, ℛ, ℜ, and ℝ, are all different characters but tha
 *R*, and **R** are all the same character.
 
 Character encodings are complicated in part because there are so many of them and they have so many internal rules and special cases.
-However, each encodings is just a big table bunch of associations
+However, each encodings is just a big table of associations
 like "The Angstrom sign (Å) is character number eight-thousand four-hundred ninety-one,
 or 10000100101011 in binary."
 Designing a character encoding is a lot of work;
@@ -646,7 +646,7 @@ In general, computer memory handles numbers in bytes, base-256.
 A multi-byte number has a "high-order" byte and a "low-order" byte, generally with several bytes in between.
 Again, "first" and "last" are not intrinsic when describing these numbers.
 However, memory does represent each byte as having a location,
-like an index into an array.
+like an index into a list or array.
 As such, the processor has to decide, when breaking a larger number into bytes,
 whether it is going to put the high-order or low-order byte in the first spot in memory.
 Other parts of computers, such as disks and network drivers, also need to be told bytes in a first-to-last order.
