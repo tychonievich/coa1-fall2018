@@ -96,7 +96,7 @@ If we write out the full place values
 
 we can see that the number's total value is  2^5^ + 2^4^ + 2^2^ + 2^0^ or fifty-three.
 
-Base-2 numbers of this wort are widely used to convert sequences of single-bit data into a larger many-bit datum.
+Base-2 numbers of this sort are widely used to convert sequences of single-bit data into a larger many-bit datum.
 Indeed, we call a binary digit a "bit," the same word information theory uses to describe the fundamental unit of information,
 and often refer to any single-bit signal as being a `1` or `0` even if it is more accurately a high or low voltage, the presence or absence of light in a fiber, a smooth or pitted region on an optical disc, or any of the wide range of other physical signals.
 
