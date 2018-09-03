@@ -9,7 +9,7 @@ sometimes called the shell, sh, bash, or the terminal.
 
 It is our plan to have most labs use NoMachine/NX to have you interact with a Linux environment from your personal computer. However, the systems staff is a bit behind schedule in creating all NX accounts. It is possible this lab will not use NX, even though it will prepare you to do so in the future.
 
-
+We have not used this particular lab before. Thus, we might have targeted the length incorrectly. Follow the TAs' suggestions on pacing, if to skip bits, etc.
 
 # Install NX Client
 
@@ -62,10 +62,7 @@ It is our plan to have most labs use NoMachine/NX to have you interact with a Li
     
         Note: this might change as certificates are updated; I'd not suggest checking it unless you are particularly paranoid.
 
-If you have not been sent an NX password, you'll have to stop this section here, go on to the next section ([Learn to...]) and pick up with NX again next week.
-Otherwise proceed:
-
-9. Log in with your computing ID and the password you were emailed by the CS systems administrator (*not* your netbadge password; this one is separate)
+9. Log in with your computing ID and the password you were emailed by the CS systems administrator (*not* your netbadge password; this one is separate and should have been emailed to you on Friday)
 
 10. It will probably require you to change your password. Do so. And remember your new one.
 
@@ -143,6 +140,8 @@ below current text          letting you scroll around with arrow keys until you
                             exit the view with the `q` key
 --------------------------------------------------------------------------------
 
+Try these out in your NX terminal.
+
 The first word you type is called a "command"; after that come a series of "arguments" or "command-line arguments". Together, the command and its arguments make up a "command" or "command line".
 
 Many commands accept special arguments beginning with a hyphen called "options".
@@ -180,7 +179,7 @@ If you don't like reading (☹), try
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ````
 
-We suggest getting to level 4 of Bandit, though you might find many other levels and games interesting.
+We suggest getting to level 4 of Bandit, though you might find other levels and games interesting.
 
 ## Step 5: Understand `chmod` and set up your directory safely
 
