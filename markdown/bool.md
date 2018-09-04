@@ -303,8 +303,8 @@ Expression | binary | description | alternative constructions
 -----------|-------:|-------------|---------------------------
 `0` | ...`00000000000000000` | all zeros |
 `~0` | ...`11111111111111111` | all ones | `-1`
-`(~0)<<5` | ...`11111111111100000` | ones with 5 zeros in the bottom place | `(1<<5)-1`
-`(~0)<<14` | ...`11100000000000000` | ones with 14 zeros in the bottom place | `(1<<14)-1`
+`(~0)<<5` | ...`11111111111100000` | ones with 5 zeros in the bottom place | `~((1<<5)-1)`
+`(~0)<<14` | ...`11100000000000000` | ones with 14 zeros in the bottom place | `~((1<<14)-1)`
 `((~0)<<5) ^ ((~0)<<14)` | ...`00011111111100000` | 9 ones, 5 places from bottom | `((1<<9)-1)<<5`, `(~((~0)<<9))<<5`
 
 ## Bit terminology
