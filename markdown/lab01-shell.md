@@ -33,7 +33,7 @@ We have not used this particular lab before. Thus, we might have targeted the le
         
         ![Protocol selection screen](files/nomachine-3.png)
     
-    b. Host: use `nxfront.cs.virginia.edu`, with default port (4000) and UDP communication
+    b. Host: use `nx.cs.virginia.edu`, with default port (4000) and UDP communication
     
         ![Host selection screen](files/nomachine-4.png)
     
