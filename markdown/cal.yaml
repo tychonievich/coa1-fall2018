@@ -119,27 +119,25 @@ reading:
 assignments:
     ".groups":
         PA:
-            .tester-prefix: test_
-            portion: "1.5*21"
-            .rationale: "21 PAs at 1.5% of grade each"
+            portion: "40"
             late-policy: [0.9, 0.8]
-            support: ["gradetools.py","timeout.py","timeout2.py","cacheurls.py"]
             total: 10
         Lab:
-            portion: 11
-            .rationale: "12 graded labs (drop 1) at 1% of grade each"
+            portion: 10
             drop: 1
-            exclude: ["18Sp CS 1111-001 (ENGR)"]
             rubric: {"kind":"percentage"}
         Exam:
-            portion: "15+15+20"
-            .rationale: "midterms 15% of grade each; final 20%"
+            portion: "40"
+            rubric: {"kind":"percentage"}
+        Quiz:
+            portion: "10"
             rubric: {"kind":"percentage"}
 
     Lab01:
         due: 2018-09-04
         title: shell
         notes: an overview with simple exercises
+        weight: 0
     Lab02:
         due: 2018-09-11
         title: information theory
@@ -214,3 +212,4 @@ assignments:
     PA09:
         files: 'socket chat'
         due: 2018-12-06 10:00:00
+

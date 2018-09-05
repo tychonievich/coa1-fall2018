@@ -68,8 +68,6 @@ def calendar(data):
     calname = '{}.{}{}'.format(data['meta']['name'], ('S' if month < 5 else 'Su' if  month < 8 else 'F'), year)
     ans = RealCal(calname.lower())
     
-    print(data['sections'])
-    
     tz = pytz.timezone(data['meta'].get('timezone', 'America/New_York'))
 
     for sec in data['sections']:
@@ -150,6 +148,7 @@ def calendar(data):
         if not isinstance(d, datetime.datetime):
             d = datetime.datetime(d.year, d.month, d.day, 23 if v.get('group') == 'project' else 9, 55, 0, tzinfo=tz)
         else:
+            d = d.replace(tzinfo=tz)
             d -= datetime.timedelta(0,60*5,0)
         ans.event(a+' due', d, m5)
             

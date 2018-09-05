@@ -5,15 +5,240 @@ title: Shell Lab
 The purpose of this lab is to get you familiar with the most important aspects of the command line environment,
 sometimes called the shell, sh, bash, or the terminal.
 
+# Pre-note
+
+It is our plan to have most labs use NoMachine/NX to have you interact with a Linux environment from your personal computer. However, the systems staff is a bit behind schedule in creating all NX accounts. It is possible this lab will not use NX, even though it will prepare you to do so in the future.
+
+We have not used this particular lab before. Thus, we might have targeted the length incorrectly. Follow the TAs' suggestions on pacing, if to skip bits, etc.
+
 # Install NX Client
 
-(awaiting instructions from systems staff)
+1. Visit <https://www.nomachine.com/download>
 
-# Open a terminal
+2. Download and run the installer for your operating system
 
-(add instructions that work)
+3. Run the resulting exectuable (which may be called "No Machine", "NX", or "nxplayer" depending on platform)
 
-# Basic commands
+4. You may see a "welcome" screen; if so click past it
+
+    ![The welcome screen](files/nomachine-1.png)
+
+5. There are several variants of the next screen, but all of them have a "New" button; click this
+
+    ![One example of the connection choice view](files/nomachine-2.png)
+
+6. There are five steps to setting up a new connection
+    
+    a. Protocol: leave as default "NX"
+        
+        ![Protocol selection screen](files/nomachine-3.png)
+    
+    b. Host: use `nxfront.cs.virginia.edu`, with default port (4000) and UDP communication
+    
+        ![Host selection screen](files/nomachine-4.png)
+    
+    c. Authentication: use "password"
+    
+        ![Authentication selection screen](files/nomachine-5.png)
+    
+    d. Proxy: do not use a proxy
+    
+        ![Proxy selection screen](files/nomachine-6.png)
+    
+    e. Save as: name your connection; you'll want to re-use this instead of selecting "New" in the future
+
+7. Connect to your newly-created session
+
+8. If asked, Accept host authenticity. If you care to check, it's
+
+    Host
+    :   `nx.cs.virginia.edu`
+    
+    IP Address
+    :   There are several (`nxfront` re-routes you to the least-used back-end computer), all beginning `128.143.67`
+    
+    Certificate fingerprint
+    :   SHA 256 `2D b9 74 B2 5C 7A 92 6F DD FD 98 2E 0D 35 A1 E5 99 8A A8 5B 81 A7 41 16 8F 46 0F 03 9E 3F 7F B1`.
+    
+        Note: this might change as certificates are updated; I'd not suggest checking it unless you are particularly paranoid.
+
+9. Log in with your computing ID and the password you were emailed by the CS systems administrator (*not* your netbadge password; this one is separate and should have been emailed to you on Friday)
+
+10. It will probably require you to change your password. Do so. And remember your new one.
+
+12. Create a new virtual desktop (unless you already have one created from earlier)
+    
+    ![Virtual desktop](files/nomachine-7.png)
+
+13. Unless you know you want something else, pick the "fit to window" and the "menu panel covering all screens" options
+
+    ![Fit to window (small icon at bottom)](files/nomachine-8.png)
+
+    ![All screens](files/nomachine-9.png)
+
+    ![Fit to window, second selection (small icon at bottom)](files/nomachine-10.png)
+
+14. You are now in a Linux (CentOS) remote desktop!
+    For this lab, open a terminal:
+
+    ![Where to find "Terminal" application](files/nomachine-11.png)
+
+    There are other applications available, such as the Firefox web browser;
+    if you want to use command line tools beyond what this class will require
+    you might also be interested in the department [modules documentation](//www.cs.virginia.edu/wiki/doku.php?id=linux_environment_modules).
+
+
+# Learn to...
+
+Our goal in this lab is for you to understand how to navigate on the command line. In particular, you should be able to
+
+1. Understand the syntax of commands, including arguments and options
+2. Look up what a command does using `man`{.sh}, `--help`, and `-h`
+3. Repeat previous commands without re-typing them
+4. Know (without needing to look them up each time) the commands needed to
+    - see where you are
+    - mode to a new directory
+    - create a new directory
+    - see the contents of a file
+    - change permissions of a file or directory
+    - remove files and directories
+    - access other servers
+
+## Step 1: play Terminux
+
+Visit <http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html>, a somewhat cheesy introduction to the basics of the command line. Explore it until you 
+
+- feel comfortable with the use of `ls`, `pwd`, `cd` (including `cd ..`), and `less`
+- have learned about `mv` and `man`
+
+There is a lot more you can do (creating a magic locker, explore a hidden tunnel, learn about `grep` and `rm`, etc.) but those are the most important basics.
+If `NX` is not working, keep exploring for the full lab time; you'll learn a lot and hopefully also have fun along the way.
+Otherwise, continue with Step 2.
+
+## Step 2: learn terminology
+
+The most common "command line environment" in Linux is called `bash`, a variant of the more primitive `sh`ell. Terminus was somewhat like bash; following is a comparison
+
+--------------------------------------------------------------------------------
+Terminux                    Bash
+--------------------------- ----------------------------------------------------
+Location                    Directory
+
+Item                        File
+
+`pwd` shows one location    `pwd` shows a full "path": each step needed to get 
+                            here, separated by `/`
+
+`ls` shows locations and    `ls` shows all directories and files in one list
+items separately
+
+`mv` only moves items into  `mv` can also move directories into one another
+locations                   and rename files (as e.g. `mv oldname newname`)
+
+`less` and `man` show text  `less` and `man` temporarily take over the screen,
+below current text          letting you scroll around with arrow keys until you
+                            exit the view with the `q` key
+--------------------------------------------------------------------------------
+
+Try these out in your NX terminal.
+
+The first word you type is called a "command"; after that come a series of "arguments" or "command-line arguments". Together, the command and its arguments make up a "command" or "command line".
+
+Many commands accept special arguments beginning with a hyphen called "options".
+For example, most include an option named either `-h` or `--help` that gives a shorter summary of usage than does `man`.
+
+## Step 3: DRY (**D**on't **R**epeat **Y**ourself)
+
+Most (though not all) command lines will provide various forms of autocompletion to help streamline interaction.
+The two most useful are
+
+Up and Down
+:   The up and down arrow keys navigate through a history of previously-typed commands.
+    On some systems, page-up and page-down also navigate in large chunks.
+
+Tab
+:   Pressing the tab key when the cursor is preceded by an incomplete word that can only be completed in one way
+    will fill in the rest of the word.
+    
+    Pressing tab twice when the cursor is preceded by an incomplete word that can be completed in several ways lists all of the completions the command line knows about.
+
+These even work in Terminux.
+
+
+## Step 4: try `ssh`
+
+There is a very useful command `ssh` that allows you to log into a different computer's command line remotely.
+To learn this, and a few other commands, we have another game:
+
+Visit <http://overthewire.org/wargames/> and read.
+Many of the pages list web resources to help you learn more.
+
+If you don't like reading (☹), try
+
+````bash
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+````
+
+We suggest getting to level 4 of Bandit, though you might find other levels and games interesting.
+
+## Step 5: Understand `chmod` and set up your directory safely
+
+Each directory has three permissions, called "read", "write", and "execute".
+
+read
+:   Turns on the lights, so you can see what's inside.
+    Without read permission, `ls` won't work in the directory.
+
+execute
+:   Unlocks the doors, so you can move through it.
+    Without execute permission, `cd` won't work into the directory
+    and nothing will work with a path that includes the directory in the middle.
+
+write
+:   Lets you change what's in the directory.
+    Without write permission, you can neither create nor remove
+    files and directories inside a directory.
+
+You can change permissions using the `chmod` command.
+It has multiple ways to be used, but a few simple examples are
+
+````bash
+chmod a+r foo   # all users can read foo
+chmod a-w foo   # no user can write foo
+chmod u+w foo   # the owning user can write foo
+````
+
+Directories can contain other directories, and also can contain files.
+Files, like directories, have names and permissions but cannot be entered with `cd`.
+The permissions also have different meaning than with directories:
+
+read
+:   Lets you see the contents of the file.
+
+execute
+:   Lets you (try to) treat the file like a program.
+
+write
+:   Lets you change the contents of the file.
+
+Every user belongs to one ore more groups, and every file or directory has an owning user and an owning group.
+Permissions are specified as read/write/execute for the user, group, and others.
+
+You can find out your user name with `whoami` and your group memberships with `groups`.
+
+You should set up your home directory so only you can access it, not other people in your group nor strangers not in your group:
+
+
+````bash
+cd              # go home
+chmod g-rwx .   # remove group-access to read, write, and execute this directory
+chmod o-rwx .   # remove other-access to read, write, and execute this directory
+````
+
+----
+
+
+# More on commands (reference for the curious)
 
 The main interactions you have in a terminal consist of directories, files, and commands.
 
@@ -46,12 +271,13 @@ $ echo this is more traditional
 You don't type the `$` when you see this.
 
 Some characters have special meaning, and need to be escaped if you want to use them
-by using a backslash `\` or enclosing the command in single quotes.
-Note: double quotes sometimes work too, but don't escape everything...
+by using a backslash `\` or enclosing the command in *single* quotes.^[Double quotes sometimes work too, but don't escape `$`, `\``, `!`, or `\\`. They also have some nuanced special meanings we won't encounter in this course.]
 
 ````bash
 $ echo \$100 '$100' '$'100
 ````
+
+
 
 ### Two special option syntaxes
 
@@ -168,17 +394,26 @@ $ mkdir tmp
 $ cd tmp
 $ ls
 $ pwd
+/home/mst3k/tmp
 $ echo This is going into a file > newfile.txt
 $ ls
+newfile.txt
 $ cat newfile.txt
+This is going into a file
 $ echo another line >> newfile.txt
 $ ls
+newfile.txt
 $ cat newfile.txt
+This is going into a file
+another line
 $ echo and another > newfile.txt
 $ cat newfile.txt
+and another
 $ cd ..
 $ rm tmp
+rm: cannot remove ‘tmp’: Is a directory
 $ rmdir tmp
+rmdir: failed to remove ‘tmp’: Directory not empty
 $ rm -r tmp
 ````
 
@@ -247,7 +482,7 @@ There are four special directory names
 
 `~`
 :   the current user's home directory.
-    Does not work in thew middle of a directory path, only the beginning.
+    Does not work in the middle of a directory path, only the beginning.
 
 
 ### Paths
@@ -269,7 +504,7 @@ $ cd foo
 $ cd xyxxy
 ````
 
-or `cd foo/xyxxy` since the `..` undoes the preceding `baz`.
+or `cd foo/xyxxy`; the `..` undoes the preceding `baz`.
 
 ### Permissions
 
@@ -342,7 +577,7 @@ Visit <http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html>, read, and ty
 Type the following to get started
 
 ````bash
-$ git clone https://github.com/veltman/clmystery.git
+$ git clone https://github.com/ryansobol/clmystery.git
 $ cd clmystery
 $ cat instructions
 ````

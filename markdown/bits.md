@@ -96,7 +96,7 @@ If we write out the full place values
 
 we can see that the number's total value is  2^5^ + 2^4^ + 2^2^ + 2^0^ or fifty-three.
 
-Base-2 numbers of this wort are widely used to convert sequences of single-bit data into a larger many-bit datum.
+Base-2 numbers of this sort are widely used to convert sequences of single-bit data into a larger many-bit datum.
 Indeed, we call a binary digit a "bit," the same word information theory uses to describe the fundamental unit of information,
 and often refer to any single-bit signal as being a `1` or `0` even if it is more accurately a high or low voltage, the presence or absence of light in a fiber, a smooth or pitted region on an optical disc, or any of the wide range of other physical signals.
 
@@ -614,7 +614,7 @@ has decided that R, Ｒ, ℛ, ℜ, and ℝ, are all different characters but tha
 *R*, and **R** are all the same character.
 
 Character encodings are complicated in part because there are so many of them and they have so many internal rules and special cases.
-However, each encodings is just a big table bunch of associations
+However, each encodings is just a big table of associations
 like "The Angstrom sign (Å) is character number eight-thousand four-hundred ninety-one,
 or 10000100101011 in binary."
 Designing a character encoding is a lot of work;
@@ -646,7 +646,7 @@ In general, computer memory handles numbers in bytes, base-256.
 A multi-byte number has a "high-order" byte and a "low-order" byte, generally with several bytes in between.
 Again, "first" and "last" are not intrinsic when describing these numbers.
 However, memory does represent each byte as having a location,
-like an index into an array.
+like an index into a list or array.
 As such, the processor has to decide, when breaking a larger number into bytes,
 whether it is going to put the high-order or low-order byte in the first spot in memory.
 Other parts of computers, such as disks and network drivers, also need to be told bytes in a first-to-last order.

@@ -28,7 +28,7 @@ In well-running buddy programming each buddy is speaking about equally,
 describing what they are writing next or how they are testing what they have written.
 Buddy programming usually results in similarly-designed but non-identical programs.
 
-If you use a buddy, you should sit next to them and use the same language they use.
+If you use a buddy, you should sit next to your buddy and use the same programming language they use.
 
 # Create the program
 
@@ -57,10 +57,10 @@ Your program should do the following:
 Once your program seems to be working, try it on a few different texts.
 For example, you might try
 
-- [tarzan.txt](files/tarzan.txt) -- the original Tarzan book by Edgar Rice Burroughs.
-- [pi.txt](files/pi.txt) -- the first million digits of pi.
-- [_pydecimal.py](files/_pydecimal.py) -- a large file from the Python standard library.
-- [diff_match_match.java](files/diff_patch_match.java) -- a large file from the open source Java project [diff-match-match](https://github.com/google/diff-match-patch).
+- [tarzan.txt](files/tarzan.txt) (500KB) -- the original Tarzan book by Edgar Rice Burroughs.
+- [pi.txt](files/pi.txt) (1MB) -- the first million digits of pi.
+- [_pydecimal.py](files/_pydecimal.py) (229KB)-- a large file from the Python standard library.
+- [diff_patch_match.java](files/diff_patch_match.java) (89KB) -- a large file from the open source Java project [diff-match-patch](https://github.com/google/diff-match-patch).
 
 Add a comment to the top of your code that includes at least the following:
 
