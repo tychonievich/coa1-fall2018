@@ -142,7 +142,6 @@ assignments:
         due: 2018-09-11
         title: information theory
         notes: an overview with simple exercises
-        files: ['*.java','*.py']
     Lab03:
         due: 2018-09-18
         title: hex editor
