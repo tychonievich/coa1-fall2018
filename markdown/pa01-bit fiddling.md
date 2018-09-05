@@ -7,6 +7,7 @@ title: Bit fiddling homework
 # Overview
 
 This homework will give you a chance to practice using binary and bit-wise operators.
+You'll likely find [Booleans §4](bool.html) a useful reference.
 
 # Task
 
@@ -25,7 +26,7 @@ Do not add conditionals, loops, subroutines, etc.
 
 # Collaboration
 
-You may work with other students, but only in the following two ways:
+You may work with other students on this assignment, but only in the following two ways:
 
 1. You worked together from the beginning, solving the problem as a team, with each person contributing.
     
