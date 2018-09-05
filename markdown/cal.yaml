@@ -137,7 +137,6 @@ assignments:
         due: 2018-09-04
         title: shell
         notes: an overview with simple exercises
-        weight: 0
     Lab02:
         due: 2018-09-11
         title: information theory
