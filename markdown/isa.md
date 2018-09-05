@@ -240,25 +240,31 @@ we'd first translate that into steps our example ISA has access to
 2. r1 = 50
 3. r0 = r0 × r0
 4. r2 = r0
+    
+    since we don't have this operation, we'll do it as
+    
+    a. r2 = 0
+    b. r2 = r2 + r0
 5. r2 = 1 if r2 < r1 else 0
 6. if (r2 ≠ 0) jump to step 3 
 
 and then encode those instructions into binary (using `_` for unspecified bits
 
-    000_00__ 00000011
-    000_01__ 00110010
-    110_0000 ________
-    011_1000 ________
-    111_1001 ________
-    001___10 ????????
+    000 00__ 00000011
+    000 01__ 00110010
+    110 0000
+    000 1000 00000000
+    100 1000
+    111 1001
+    001 10__ ????????
 
 Finally we have to decide where in memory we are putting this so we know what value to put into the `????????` jump address. Let's put it at address 0, so the index of the multiply instruction is 4
 
     001___10 00000100
 
-Now we assume all `_` are 0 and turn that into hex so we can put it into a simulator and get the following contents of memory:
+Now we assume all `_` are 0, prepend a 1 bit to each instruction, and turn that into hex so we can put it into a simulator and get the following contents of memory:
 
-    0x00,0x03, 0x04,0x32, 0xC0,0x00, 0x68,0x00, 0xE9,0x00, 0x22,0x04
+    0x80,0x03, 0x84,0x32, 0xE0, 0x88,0x00, 0xC8, 0xF9, 0x98,0x04
 {/}
 
 {.exercise ...}
