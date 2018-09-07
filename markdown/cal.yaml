@@ -49,7 +49,7 @@ classes:
     -   binary arithmetic
     -   binary arithmetic
 
-    -   gates, wires
+    -   gates, wires, bitwise
     -   mux, demux, adder
     -   clocks
     -   other hardware
@@ -103,7 +103,7 @@ reading:
     Review: ["[topics list](review.html)"]
     Boolean algebra: ["[Booleans §1--2](bool.html)"]
     binary arithmetic: ["[Bits §2.1--2.4](bits.html)"]
-    gates, wires: ["[Booleans §1--2](bool.html)"]
+    gates, wires, bitwise: ["[Booleans §1--2](bool.html)", "[Bits §4](bits.html)"]
     mux, demux, adder: ["[Booleans §3](bool.html)"]
     clocks: ["[Parts §2--3](parts.html)"]
     other hardware: ["[Parts §1--4](parts.html)"]
