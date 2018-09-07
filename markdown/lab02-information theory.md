@@ -73,12 +73,12 @@ Add a comment to the top of your code that includes at least the following:
     - if you re-run the test on the same file repeatedly, how consistent are the answers?
     - if you compress the file (e.g., into a .zip file or the like), how much smaller does it get? How (and why) is this related to its bits of entropy?
 
-# Submit
+# Check-off
 
-Submit your file at the end of lab on [the course submission site](https://archimedes.cs.virginia.edu/coa1-f2018/).
+To check-off this lab, show a TA your working code.
+They may ask you some questions about how your code works and what you think of the results.
+For most students, this should happen in lab;
+if you have completed the lab exercise before lab occurs, you are welcome to do it in their office hours.
 
 One of our goals is to determine how long this lab actually takes.
-Please work for the entire lab time and then submit when the time ends,
-whether that is a half-finished program or a program with the outcome of dozens of experiments at the top.
-If you submit early or late, please clearly indicate how long you actually spent in a comment.
-
+Please tell the TAs if it took you significantly more or less than an hour.
