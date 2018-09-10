@@ -580,12 +580,12 @@ Fraction | Binary | Binary Scientific | Bits
 7 / 8 | 0.111 | 1.11 × 2^−1^ | 0 0110 110
 −∞ |  |  | 1 1111 000
 1 | <input type="text" style="width:8ex"/>^[1] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.000 × 2<sup>0</sup>] | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>^[0 0111 000]
-<input type="text" style="width:8ex"/> | −11110000 | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 0 0001 000
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 0 0000 111
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 1 × 2<sup>−9</sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 0 1110 111
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 1 0000 000
+<input type="text" style="width:8ex"/>^[−240] | −11110000 | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[−1.111 × 2<sup>7</sup>] | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>^[1 1110 111]
+<input type="text" style="width:8ex"/>^[1 / 64] | <input type="text" style="width:8ex"/>^[0.000001] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.000 × 2<sup>−6</sup>] | 0 0001 000
+<input type="text" style="width:8ex"/>^[7 / 512] | <input type="text" style="width:8ex"/>^[0.000000111] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.11 × 2<sup>−7</sup>] | 0 0000 111
+<input type="text" style="width:8ex"/>^[1 / 512] | <input type="text" style="width:8ex"/>^[0.000000001] | 1 × 2<sup>−9</sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>^[0 0000 001]
+<input type="text" style="width:8ex"/>^[240] | <input type="text" style="width:8ex"/>^[11110000] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.111 × 2<sup>7</sup>] | 0 1110 111
+<input type="text" style="width:8ex"/>^[0] | <input type="text" style="width:8ex"/>^[0] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[0.000 × 2<sup>−6</sup>] | 1 0000 000
 
 {/}
 
