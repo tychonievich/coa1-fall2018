@@ -225,6 +225,11 @@ def calendar(data, linkfile):
         noclass = any(a <= d <= b for a,b in breaks)
         if d in things or ((not noclass) and wd in ('Mon','Wed','Fri')):
             today = {'day':wd, 'date':d}
+            if d in [_.date() for _ in data['Quizzes']['dates']]:
+                today['quiz'] = '<a href="{}">Quiz due {}</a>'.format(
+                    data['Quizzes']['link'],
+                    [_.strftime('%R') for _ in data['Quizzes']['dates'] if _.date() == d][0],
+                )
             if any('xam' in _ for _ in things.get(d,[])):
                 today['coa1'] = 'exam'
             else:
@@ -274,6 +279,8 @@ def divify(weeks):
             if d.get('break',False): ans += ' break'
             if d.get('coa1',None) == 'exam': ans += ' exam'
             ans += '"><span class="date">' + d['date'].strftime('%d %b').lstrip('0') + '</span>'
+            if 'quiz' in d:
+                ans += '<div class="due">' + d['quiz']+'</div>'
             if 'other' in d:
                 ans += '<div class="other">' + '</div><div class="other">'.join(d['other'])+'</div>'
             if 'coa1' in d: ans += '<div class="coa1">'+mdinline(d['coa1'])+'</div>'
