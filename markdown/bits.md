@@ -510,19 +510,18 @@ One's Compliment
 {.exercise ...}
 Fill in the rest of the following table.
 Assume you are using 6-bit numbers.
+Answers are in footnotes.
 
 Decimal | Two's-C | Biassed
 |--:|--:|--:|
 5 | 000101 | 100100
 −5 | 111011 | 011010
-11 | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/>
-−1 | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/>
-<input type="text" style="width:8ex"/> | 110011 | <input type="text" style="width:8ex"/>
-<input type="text" style="width:8ex"/> | 011111 | <input type="text" style="width:8ex"/>
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 101111
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 010000
-
-Answers are in this footnote^[001011 101010<br/>111111 011110<br/>−13 010010<br/>31 111110<br/>16 010000<br/>-15 110001]
+11 | <input type="text" style="width:8ex"/>^[001011] | <input type="text" style="width:8ex"/>^[101010]
+−1 | <input type="text" style="width:8ex"/>^[111111] | <input type="text" style="width:8ex"/>^[011110]
+<input type="text" style="width:8ex"/>^[−13] | 110011 | <input type="text" style="width:8ex"/>^[010010]
+<input type="text" style="width:8ex"/>^[31] | 011111 | <input type="text" style="width:8ex"/>^[111110]
+<input type="text" style="width:8ex"/>^[16] | <input type="text" style="width:8ex"/>^[010000] | 101111
+<input type="text" style="width:8ex"/>^[−15] | <input type="text" style="width:8ex"/>^[110001] | 010000
 {/}
 
 ## On non-integral numbers
