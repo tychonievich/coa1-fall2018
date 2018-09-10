@@ -742,11 +742,13 @@ Byte | Check | Has parity error
 |:--:|:--:|:--:|
 00000000 | 0 | <input type="checkbox" disabled>
 01001101 | 1 | <input type="checkbox" checked disabled>
-11111000 | 0 | <input type="checkbox">^[error]
-10101010 | 0 | <input type="checkbox">^[correct]
-00011100 | 1 | <input type="checkbox">^[correct]
-01000010 | 1 | <input type="checkbox">^[error]
-11111111 | 1 | <input type="checkbox">^[error]
+11111000 | 0 | <input type="checkbox">
+10101010 | 0 | <input type="checkbox">
+00011100 | 1 | <input type="checkbox">
+01000010 | 1 | <input type="checkbox">
+11111111 | 1 | <input type="checkbox">
+
+Answers are in this footnote^[error, correct, correct, error, error]
 {/}  
 
 Multiple parity
