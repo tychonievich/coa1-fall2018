@@ -521,6 +521,8 @@ Decimal | Two's-C | Biassed
 <input type="text" style="width:8ex"/> | 011111 | <input type="text" style="width:8ex"/>
 <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 101111
 <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 010000
+
+Answers are in this footnote^[001011 101010<br/>111111 011110<br/>−13 010010<br/>31 111110<br/>16 010000<br/>-15 110001]
 {/}
 
 ## On non-integral numbers
