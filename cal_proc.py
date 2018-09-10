@@ -279,10 +279,10 @@ def divify(weeks):
             if d.get('break',False): ans += ' break'
             if d.get('coa1',None) == 'exam': ans += ' exam'
             ans += '"><span class="date">' + d['date'].strftime('%d %b').lstrip('0') + '</span>'
-            if 'quiz' in d:
-                ans += '<div class="due">' + d['quiz']+'</div>'
             if 'other' in d:
                 ans += '<div class="other">' + '</div><div class="other">'.join(d['other'])+'</div>'
+            if 'quiz' in d:
+                ans += '<div class="due">' + d['quiz']+'</div>'
             if 'coa1' in d: ans += '<div class="coa1">'+mdinline(d['coa1'])+'</div>'
             if 'due' in d:
                 ans += '<div class="due">'
