@@ -574,6 +574,7 @@ Not a Number
 
 {.exercise ...}
 Complete the following table.  Assume 8-bit floating-point numbers with 3 fraction bits.
+Answers are given in footnotes.
 
 Fraction | Binary | Binary Scientific | Bits
 |:-:|:-:|:-:|:-:|
