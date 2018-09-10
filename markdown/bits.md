@@ -210,6 +210,8 @@ Exponent | Written As
 <input type="text" style="width:8ex"/> | 256M
 <input type="text" style="width:8ex"/> | 16G
 <input type="text" style="width:8ex"/> | 32
+
+Answers are in this footnote^[8, 256G, 2K, 18, 34, 5]
 {/}
 
 
