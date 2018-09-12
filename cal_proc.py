@@ -137,7 +137,8 @@ def assignments_json(data):
             'title':'Quiz {}'.format(qid),
             'due':d,
             'rubric':{'kind':'percentage'},
-            'group':'Quiz'
+            'group':'Quiz',
+            'link':data['Quizzes']['link'],
         }
     if d in [_.date() for _ in data['Quizzes']['dates']]:
         today['quiz'] = '<a href="{}">Quiz due {}</a>'.format(
