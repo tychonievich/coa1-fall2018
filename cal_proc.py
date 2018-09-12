@@ -146,10 +146,10 @@ def assignments_json(data):
             [_.strftime('%R') for _ in data['Quizzes']['dates'] if _.date() == d][0],
         )
 
-    # labs are open for just 1 day
+    # labs are open for just 2 days
     for k,v in ans.items():
         if v.get('group','') == 'Lab' and 'due' in v and 'open' not in v:
-            v['open'] = date(*v['due'].timetuple()[:3])
+            v['open'] = date(*v['due'].timetuple()[:3]) - timedelta(1)
     # fix date and datetime (to be a str) for JSON export
     for k,v in ans.items():
         for k2 in v:
