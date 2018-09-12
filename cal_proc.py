@@ -353,7 +353,7 @@ if __name__ == '__main__':
     #schedule.calendar { border: 0.5ex solid #dddddd; border-radius:1ex; background-color: #dddddd; }
     .calendar div.day { background-color: white; }
     .calendar div.week, .calendar div.day { vertical-align:top; min-height:1em; }
-    .calendar div.day { display:inline-block; width:calc(20% - 2ex); border-radius:1ex; padding:0.5ex; border: solid #dddddd 0.5ex; }
+    .calendar div.day { display:inline-block; width:calc(25% - 2ex); border-radius:1ex; padding:0.5ex; border: solid #dddddd 0.5ex; }
     .calendar div.day.past { opacity:0.7071; }
     .calendar div.day.current { border-color: #ffbb77; background: #fff7f0; }
     .calendar .Tue:first-child { margin-left: 25%; }
