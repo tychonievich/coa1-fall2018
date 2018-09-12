@@ -180,38 +180,38 @@ assignments:
 
     PA01:
         title: bit fiddling
-        due: 2018-09-13 10:00:00
+        due: 2018-09-14 14:00:00
         notes: things like "count the number of set bits in an int" using limited numbers of bitwise operations
         rubric: {"kind":"percentage"}
     PA02:
         title: worksheet
-        due: 2018-09-20 10:00:00
+        due: 2018-09-21 14:00:00
         notes: 
     PA03:
         title: simulator
         files: ['sim.py', 'Sim.java']
-        due: 2018-09-27 10:00:00
+        due: 2018-09-28 14:00:00
         notes: in Java or Python, implement a toy machine language fetch/decode/execute simulator
 
     PA04:
         files: 'sieve.S'
-        due: 2018-10-18 10:00:00
+        due: 2018-10-19 14:00:00
     PA05:
         files: 'binary bomb'
-        due: 2018-10-25 10:00:00
+        due: 2018-10-26 14:00:00
     PA06:
         files: sieve.c
-        due: 2018-11-01 10:00:00
+        due: 2018-11-02 14:00:00
 
     PA07:
         files: linked_list.c
-        due: 2018-11-15 10:00:00
+        due: 2018-11-16 14:00:00
     PA08:
         files: postfix_calculator.c
-        due: 2018-11-29 10:00:00
+        due: 2018-11-30 14:00:00
     PA09:
         files: 'socket chat'
-        due: 2018-12-06 10:00:00
+        due: 2018-12-07 14:00:00
 
 Quizzes:
     link: https://archimedes.cs.virginia.edu/coa1-f2018/quizzes/
