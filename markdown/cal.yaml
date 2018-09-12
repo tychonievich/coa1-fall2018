@@ -181,6 +181,7 @@ assignments:
         title: bit fiddling
         due: 2018-09-13 10:00:00
         notes: things like "count the number of set bits in an int" using limited numbers of bitwise operations
+        rubric: {"kind":"percentage"}
     PA02:
         title: worksheet
         due: 2018-09-20 10:00:00
