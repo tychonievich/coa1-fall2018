@@ -131,6 +131,7 @@ assignments:
             rubric: {"kind":"percentage"}
         Quiz:
             portion: "10"
+            drop: 1
             rubric: {"kind":"percentage"}
 
     Lab01:
