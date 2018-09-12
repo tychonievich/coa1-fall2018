@@ -359,10 +359,10 @@ if __name__ == '__main__':
     .calendar .Tue:first-child { margin-left: 25%; }
     .calendar .Wed:first-child { margin-left: 50%; }
     .calendar .Fri:first-child { margin-left: 75%; }
-    .calendar .Wed + .Fri, .calendar .Tue + .Thu, .calendar .Mon + .Wed { margin-left: 25%; }
-    .calendar .day.hide + .day { margin-left: 20%; }
-    .calendar .day.Mon.hide + .day.Wed { margin-left: 40%; }
-    .calendar .day.hide + .day.hide + .day { margin-left: 40%; }
+    .calendar .Tue + .Fri, .calendar .Mon + .Wed { margin-left: 25%; }
+    .calendar .day.hide + .day { margin-left: 25%; }
+    .calendar .day.Mon.hide + .day.Wed { margin-left: 50%; }
+    .calendar .day.hide + .day.hide + .day { margin-left: 50%; }
     /* .calendar div.due { background-color:#ffeedd; } */
     .calendar span.date { float:right; padding: 0ex 0ex 0.5ex 1ex; opacity:0.5; font-size: 70.7%; margin-top: -1.41ex; }
     .calendar .other { margin: -0.5ex -0.5ex 0.25ex -0.5ex; border-radius: 0.5ex 0.5ex 0ex 0ex; }
