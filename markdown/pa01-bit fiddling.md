@@ -2,7 +2,6 @@
 title: Bit fiddling homework
 ...
 
-> This is a working draft of the homework description, and is likely to change.
 
 # Overview
 
