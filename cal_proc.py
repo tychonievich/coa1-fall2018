@@ -127,6 +127,24 @@ def assignments_json(data):
             ans[k][ex] = val
         if 'title' not in ans[k] and ans[k].get('group',None) == 'PA' and type(ans[k].get('files',None)) is str:
             ans[k]['title'] = ans[k]['files']
+
+    # and quizzes
+    qid=0
+    for d in data.get('Quizzes', {}).get('dates',[]):
+        qid += 1
+        k = 'Q{:02d}'.format(qid)
+        ans[k] = {
+            'title':'Quiz {}'.format(qid),
+            'due':d,
+            'rubric':{'kind':'percentage'},
+            'group':'Quiz'
+        }
+    if d in [_.date() for _ in data['Quizzes']['dates']]:
+        today['quiz'] = '<a href="{}">Quiz due {}</a>'.format(
+            data['Quizzes']['link'],
+            [_.strftime('%R') for _ in data['Quizzes']['dates'] if _.date() == d][0],
+        )
+
     # labs are open for just 1 day
     for k,v in ans.items():
         if v.get('group','') == 'Lab' and 'due' in v and 'open' not in v:
