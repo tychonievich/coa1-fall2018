@@ -136,6 +136,21 @@ D           &ge; 63%               1.0
 D&minus;    &ge; 60%               0.7
 F           otherwise              0.0
 
+## Submitting late
+
+Quiz solutions are released the moment the quiz closes, and thus quizzes cannot be taken late.
+Your lowest quiz score is dropped.
+
+Assignments may be submitted up to 48 hours late.
+They are given 90% credit between 0 and 24 hours late;
+at 80% credit between 24 and 48 hours late.
+If extensions beyond that time are needed, please see the professor to discuss why and if other accommodations are also needed.
+
+Labs may be checked off late for 90% credit by visiting a TA during office hours later during the week of the lab and going through the usual checkoff process.
+If extensions beyond that time are needed, please see the professor to discuss why and if other accommodations are also needed.
+
+Exams may not be taken late without special-case permission.
+
 # Miscellanea
 
 ## Professionalism
