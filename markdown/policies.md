@@ -170,7 +170,7 @@ if you do something you regret, the sooner you tell me the sooner (and more leni
 
 ### No plagiarism (nor anything like it)
 
-You **must** site any and every source you consult, other than those explicitly provided by the course itself.
+You **must** cite any and every source you consult, other than those explicitly provided by the course itself.
 Talked to a friend, saw an interesting video, consulted a website, had a tutor?
 Tell us!
 Put it in a comment in your code.
