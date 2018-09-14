@@ -127,10 +127,29 @@ def assignments_json(data):
             ans[k][ex] = val
         if 'title' not in ans[k] and ans[k].get('group',None) == 'PA' and type(ans[k].get('files',None)) is str:
             ans[k]['title'] = ans[k]['files']
-    # labs are open for just 1 day
+
+    # and quizzes
+    qid=0
+    for d in data.get('Quizzes', {}).get('dates',[]):
+        qid += 1
+        k = 'Q{:02d}'.format(qid)
+        ans[k] = {
+            'title':'Quiz {}'.format(qid),
+            'due':d,
+            'rubric':{'kind':'percentage'},
+            'group':'Quiz',
+            'link':data['Quizzes']['link'],
+        }
+    if d in [_.date() for _ in data['Quizzes']['dates']]:
+        today['quiz'] = '<a href="{}">Quiz due {}</a>'.format(
+            data['Quizzes']['link'],
+            [_.strftime('%R') for _ in data['Quizzes']['dates'] if _.date() == d][0],
+        )
+
+    # labs are open for just 2 days
     for k,v in ans.items():
         if v.get('group','') == 'Lab' and 'due' in v and 'open' not in v:
-            v['open'] = date(*v['due'].timetuple()[:3])
+            v['open'] = date(*v['due'].timetuple()[:3]) - timedelta(1)
     # fix date and datetime (to be a str) for JSON export
     for k,v in ans.items():
         for k2 in v:
@@ -225,6 +244,11 @@ def calendar(data, linkfile):
         noclass = any(a <= d <= b for a,b in breaks)
         if d in things or ((not noclass) and wd in ('Mon','Wed','Fri')):
             today = {'day':wd, 'date':d}
+            if d in [_.date() for _ in data['Quizzes']['dates']]:
+                today['quiz'] = '<a href="{}">Quiz due {}</a>'.format(
+                    data['Quizzes']['link'],
+                    [_.strftime('%R') for _ in data['Quizzes']['dates'] if _.date() == d][0],
+                )
             if any('xam' in _ for _ in things.get(d,[])):
                 today['coa1'] = 'exam'
             else:
@@ -276,6 +300,8 @@ def divify(weeks):
             ans += '"><span class="date">' + d['date'].strftime('%d %b').lstrip('0') + '</span>'
             if 'other' in d:
                 ans += '<div class="other">' + '</div><div class="other">'.join(d['other'])+'</div>'
+            if 'quiz' in d:
+                ans += '<div class="due">' + d['quiz']+'</div>'
             if 'coa1' in d: ans += '<div class="coa1">'+mdinline(d['coa1'])+'</div>'
             if 'due' in d:
                 ans += '<div class="due">'
@@ -327,17 +353,16 @@ if __name__ == '__main__':
     #schedule.calendar { border: 0.5ex solid #dddddd; border-radius:1ex; background-color: #dddddd; }
     .calendar div.day { background-color: white; }
     .calendar div.week, .calendar div.day { vertical-align:top; min-height:1em; }
-    .calendar div.day { display:inline-block; width:calc(20% - 2ex); border-radius:1ex; padding:0.5ex; border: solid #dddddd 0.5ex; }
+    .calendar div.day { display:inline-block; width:calc(25% - 2ex); border-radius:1ex; padding:0.5ex; border: solid #dddddd 0.5ex; }
     .calendar div.day.past { opacity:0.7071; }
     .calendar div.day.current { border-color: #ffbb77; background: #fff7f0; }
-    .calendar .Tue:first-child { margin-left: 20%; }
-    .calendar .Wed:first-child { margin-left: 40%; }
-    .calendar .Thu:first-child { margin-left: 60%; }
-    .calendar .Fri:first-child { margin-left: 80%; }
-    .calendar .Wed + .Fri, .calendar .Tue + .Thu, .calendar .Mon + .Wed { margin-left: 20%; }
-    .calendar .day.hide + .day { margin-left: 20%; }
-    .calendar .day.Mon.hide + .day.Wed { margin-left: 40%; }
-    .calendar .day.hide + .day.hide + .day { margin-left: 40%; }
+    .calendar .Tue:first-child { margin-left: 25%; }
+    .calendar .Wed:first-child { margin-left: 50%; }
+    .calendar .Fri:first-child { margin-left: 75%; }
+    .calendar .Tue + .Fri, .calendar .Mon + .Wed { margin-left: 25%; }
+    .calendar .day.hide + .day { margin-left: 25%; }
+    .calendar .day.Mon.hide + .day.Wed { margin-left: 50%; }
+    .calendar .day.hide + .day.hide + .day { margin-left: 50%; }
     /* .calendar div.due { background-color:#ffeedd; } */
     .calendar span.date { float:right; padding: 0ex 0ex 0.5ex 1ex; opacity:0.5; font-size: 70.7%; margin-top: -1.41ex; }
     .calendar .other { margin: -0.5ex -0.5ex 0.25ex -0.5ex; border-radius: 0.5ex 0.5ex 0ex 0ex; }

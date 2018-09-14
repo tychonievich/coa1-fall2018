@@ -49,7 +49,7 @@ classes:
     -   binary arithmetic
     -   binary arithmetic
 
-    -   gates, wires
+    -   gates, wires, bitwise
     -   mux, demux, adder
     -   clocks
     -   other hardware
@@ -103,7 +103,7 @@ reading:
     Review: ["[topics list](review.html)"]
     Boolean algebra: ["[Booleans §1--2](bool.html)"]
     binary arithmetic: ["[Bits §2.1--2.4](bits.html)"]
-    gates, wires: ["[Booleans §1--2](bool.html)"]
+    gates, wires, bitwise: ["[Booleans §1--2, 4](bool.html)"]
     mux, demux, adder: ["[Booleans §3](bool.html)"]
     clocks: ["[Parts §2--3](parts.html)"]
     other hardware: ["[Parts §1--4](parts.html)"]
@@ -131,18 +131,17 @@ assignments:
             rubric: {"kind":"percentage"}
         Quiz:
             portion: "10"
+            drop: 1
             rubric: {"kind":"percentage"}
 
     Lab01:
         due: 2018-09-04
         title: shell
         notes: an overview with simple exercises
-        weight: 0
     Lab02:
         due: 2018-09-11
         title: information theory
         notes: an overview with simple exercises
-        files: ['*.java','*.py']
     Lab03:
         due: 2018-09-18
         title: hex editor
@@ -181,35 +180,52 @@ assignments:
 
     PA01:
         title: bit fiddling
-        due: 2018-09-13 10:00:00
+        due: 2018-09-14 14:00:00
         notes: things like "count the number of set bits in an int" using limited numbers of bitwise operations
+        rubric: {"kind":"percentage"}
     PA02:
         title: worksheet
-        due: 2018-09-20 10:00:00
+        due: 2018-09-21 14:00:00
         notes: 
     PA03:
         title: simulator
         files: ['sim.py', 'Sim.java']
-        due: 2018-09-27 10:00:00
+        due: 2018-09-28 14:00:00
         notes: in Java or Python, implement a toy machine language fetch/decode/execute simulator
 
     PA04:
         files: 'sieve.S'
-        due: 2018-10-18 10:00:00
+        due: 2018-10-19 14:00:00
     PA05:
         files: 'binary bomb'
-        due: 2018-10-25 10:00:00
+        due: 2018-10-26 14:00:00
     PA06:
         files: sieve.c
-        due: 2018-11-01 10:00:00
+        due: 2018-11-02 14:00:00
 
     PA07:
         files: linked_list.c
-        due: 2018-11-15 10:00:00
+        due: 2018-11-16 14:00:00
     PA08:
         files: postfix_calculator.c
-        due: 2018-11-29 10:00:00
+        due: 2018-11-30 14:00:00
     PA09:
         files: 'socket chat'
-        due: 2018-12-06 10:00:00
+        due: 2018-12-07 14:00:00
 
+Quizzes:
+    link: https://archimedes.cs.virginia.edu/coa1-f2018/quizzes/
+    dates:
+        - 2018-09-10 12:00:00
+        - 2018-09-17 12:00:00
+        - 2018-09-24 12:00:00
+        
+        - 2018-10-10 12:00:00
+        - 2018-10-15 12:00:00
+        - 2018-10-22 12:00:00
+        - 2018-10-29 12:00:00
+        
+        - 2018-11-12 12:00:00
+        - 2018-11-19 12:00:00
+        - 2018-11-26 12:00:00
+        - 2018-12-03 12:00:00

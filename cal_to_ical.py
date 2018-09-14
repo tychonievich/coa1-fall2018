@@ -152,7 +152,10 @@ def calendar(data):
             d -= datetime.timedelta(0,60*5,0)
         ans.event(a+' due', d, m5)
             
-    
+    for d in data['Quizzes']['dates']:
+        datetime.datetime(d.year, d.month, d.day, d.hour-1, d.minute, 0, tzinfo=tz)
+        ans.event('Quiz', d,  datetime.timedelta(0, 60*60), details=data['Quizzes']['link'])
+
     return ans
 
 

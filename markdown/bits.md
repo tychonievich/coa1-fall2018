@@ -210,6 +210,8 @@ Exponent | Written As
 <input type="text" style="width:8ex"/> | 256M
 <input type="text" style="width:8ex"/> | 16G
 <input type="text" style="width:8ex"/> | 32
+
+Answers are in this footnote^[8, 256G, 2K, 18, 34, 5]
 {/}
 
 
@@ -508,17 +510,18 @@ One's Compliment
 {.exercise ...}
 Fill in the rest of the following table.
 Assume you are using 6-bit numbers.
+Answers are in footnotes.
 
 Decimal | Two's-C | Biassed
 |--:|--:|--:|
 5 | 000101 | 100100
 −5 | 111011 | 011010
-11 | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/>
-−1 | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/>
-<input type="text" style="width:8ex"/> | 110011 | <input type="text" style="width:8ex"/>
-<input type="text" style="width:8ex"/> | 011111 | <input type="text" style="width:8ex"/>
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 101111
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 010000
+11 | <input type="text" style="width:8ex"/>^[001011] | <input type="text" style="width:8ex"/>^[101010]
+−1 | <input type="text" style="width:8ex"/>^[111111] | <input type="text" style="width:8ex"/>^[011110]
+<input type="text" style="width:8ex"/>^[−13] | 110011 | <input type="text" style="width:8ex"/>^[010010]
+<input type="text" style="width:8ex"/>^[31] | 011111 | <input type="text" style="width:8ex"/>^[111110]
+<input type="text" style="width:8ex"/>^[16] | <input type="text" style="width:8ex"/>^[010000] | 101111
+<input type="text" style="width:8ex"/>^[−15] | <input type="text" style="width:8ex"/>^[110001] | 010000
 {/}
 
 ## On non-integral numbers
@@ -571,18 +574,19 @@ Not a Number
 
 {.exercise ...}
 Complete the following table.  Assume 8-bit floating-point numbers with 3 fraction bits.
+Answers are given in footnotes.
 
 Fraction | Binary | Binary Scientific | Bits
 |:-:|:-:|:-:|:-:|
 7 / 8 | 0.111 | 1.11 × 2^−1^ | 0 0110 110
 −∞ |  |  | 1 1111 000
-1 | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>
-<input type="text" style="width:8ex"/> | −11110000 | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 0 0001 000
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 0 0000 111
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | 1 × 2<sup>−9</sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 0 1110 111
-<input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup> | 1 0000 000
+1 | <input type="text" style="width:8ex"/>^[1] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.000 × 2<sup>0</sup>] | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>^[0 0111 000]
+<input type="text" style="width:8ex"/>^[−240] | −11110000 | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[−1.111 × 2<sup>7</sup>] | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>^[1 1110 111]
+<input type="text" style="width:8ex"/>^[1 / 64] | <input type="text" style="width:8ex"/>^[0.000001] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.000 × 2<sup>−6</sup>] | 0 0001 000
+<input type="text" style="width:8ex"/>^[7 / 512] | <input type="text" style="width:8ex"/>^[0.000000111] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.11 × 2<sup>−7</sup>] | 0 0000 111
+<input type="text" style="width:8ex"/>^[1 / 512] | <input type="text" style="width:8ex"/>^[0.000000001] | 1 × 2<sup>−9</sup> | <input type="text" style="width:2ex"/> <input type="text" style="width:5ex"/> <input type="text" style="width:4ex"/>^[0 0000 001]
+<input type="text" style="width:8ex"/>^[240] | <input type="text" style="width:8ex"/>^[11110000] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[1.111 × 2<sup>7</sup>] | 0 1110 111
+<input type="text" style="width:8ex"/>^[0] | <input type="text" style="width:8ex"/>^[0] | <input type="text" style="width:8ex"/> × 2<sup><input type="text" style="width:4ex"/></sup>^[0.000 × 2<sup>−6</sup>] | 1 0000 000
 
 {/}
 
@@ -743,6 +747,8 @@ Byte | Check | Has parity error
 00011100 | 1 | <input type="checkbox">
 01000010 | 1 | <input type="checkbox">
 11111111 | 1 | <input type="checkbox">
+
+Answers are in this footnote^[error, correct, correct, error, error]
 {/}  
 
 Multiple parity

@@ -67,7 +67,7 @@ However, we do know you will be asked to
 |--------|------------|-----|
 | Name | Luther Tychonievich | Mu Alvin, Rashid Lasker, Jimmy Patterson, Oliver Shi |
 | Location | Rice 208 | Thornton Stacks (A235) |
-| Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | Mon 1--2pm, Wed 3--5pm  |
+| Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | Mon 1--2pm, Tue 1--2pm & 3:30pm--6pm, Wed 1--2pm & 3--5pm  |
 | Phone | 243-3789 | (none) |
 | Email | <a href="mailto:tychonievich@virginia.edu?subject=COA1">tychonievich@virginia.edu</a> | use [Piazza](https://piazza.com/class/jg2a16chw1c7l) |
 
@@ -136,6 +136,21 @@ D           &ge; 63%               1.0
 D&minus;    &ge; 60%               0.7
 F           otherwise              0.0
 
+## Submitting late
+
+Quiz solutions are released the moment the quiz closes, and thus quizzes cannot be taken late.
+Your lowest quiz score is dropped.
+
+Assignments may be submitted up to 48 hours late.
+They are given 90% credit between 0 and 24 hours late;
+at 80% credit between 24 and 48 hours late.
+If extensions beyond that time are needed, please see the professor to discuss why and if other accommodations are also needed.
+
+Labs may be checked off late for 90% credit by visiting a TA during office hours later during the week of the lab and going through the usual checkoff process.
+If extensions beyond that time are needed, please see the professor to discuss why and if other accommodations are also needed.
+
+Exams may not be taken late without special-case permission.
+
 # Miscellanea
 
 ## Professionalism
@@ -155,7 +170,7 @@ if you do something you regret, the sooner you tell me the sooner (and more leni
 
 ### No plagiarism (nor anything like it)
 
-You **must** site any and every source you consult, other than those explicitly provided by the course itself.
+You **must** cite any and every source you consult, other than those explicitly provided by the course itself.
 Talked to a friend, saw an interesting video, consulted a website, had a tutor?
 Tell us!
 Put it in a comment in your code.
