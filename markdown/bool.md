@@ -15,7 +15,7 @@ Each set of terms makes more sense than the others in some situations,
 which is why all three sets continue to be used today.
 We'll use all three interchangeably in this chapter.
 
-The basic operations on bits where discussed extensively by George Boole
+The basic operations on bits were discussed extensively by George Boole
 and the rules governing them are eponymously named "Boolean algebra."
 This algebra is widely used in the branch of philosophy called "formal logic."
 It is also the foundation of digital circuit design,
@@ -36,7 +36,7 @@ Not
     Formal logic    ¬P *or* <span style="text-decoration:overline">P</span>
     Code, bitwise   `~p`
     Code, logical   `!p`
-    Circuits        ![](img/not.svg){height=2em}
+    Circuits[^not]  ![](img/not.svg){height=2em}
     --------------- -----------
 
     The output is the opposite of the input value; this is enumerated in the following table:
@@ -48,6 +48,8 @@ Not
 
     The "not" operator is sometimes said to "negate", "invert", or "flip" its input.
 
+[^not]: Technically, the small circle is the "not" part; the triangle is sort of like a filler for when there is no other gate to which the circle may be adjoined. 
+
 {.aside} The code symbol for "bitwise not" is `~`, the "tilde", which looks a lot like the "similar to" symbol ∼, the "most positive" symbol ∾, and the "alternating current" symbol ∿; fortunately, which one is meant can usually be inferred from context. The code symbol also has inconsistent representation across typefaces, sometimes being almost indistinguishable from a dash `−` or rendered as a small diacritic mark `˜`.
 
 There are two commonly identified operations that take as input two bits.
@@ -56,12 +58,12 @@ And
 :   The "and" operation takes two input bits and produces one output bit.
     It is represented using the following symbols
 
-    --------------- -----------
-    Formal logic    P∧Q
-    Code, bitwise   `p & q`
-    Code, logical   `p && q`
-    Circuits        ![](img/and.svg){height=2em}
-    --------------- -----------
+    ---------------         -----------
+    Formal logic            P∧Q
+    Code, bitwise           `p & q`
+    Code, logical[^short]   `p && q`
+    Circuits                ![](img/and.svg){height=2em}
+    ---------------         -----------
 
     The output is `1` when both inputs are `1`; this is enumerated in the following table:
 
@@ -78,12 +80,12 @@ Or
 :   The "or" operation takes two input bits and produces one output bit.
     It is represented using the following symbols
 
-    --------------- -----------
-    Formal logic    P∨Q
-    Code, bitwise   `p | q`
-    Code, logical   `p || q`
-    Circuits        ![](img/or.svg){height=2em}
-    --------------- -----------
+    ---------------         -----------
+    Formal logic            P∨Q
+    Code, bitwise           `p | q`
+    Code, logical[^short]   `p || q`
+    Circuits                ![](img/or.svg){height=2em}
+    ---------------         -----------
 
     The output is `1` when either input is `1`; this is enumerated in the following table:
 
@@ -96,6 +98,19 @@ Or
 
     The "or" operator is sometimes said to find the "disjunction" of its inputs.
     It is also sometimes called the "inclusive or" (<var>p</var> or <var>q</var> or both) to distinguish it from the "exclusive or"  (<var>p</var> or <var>q</var> but not both).
+
+[^short]: `&&` and `||` are typically implemented in code as "short-circuit" operators.
+    This means that `f() && g()` will only execute `g()` if `f()` was true
+    and only execute `f() || g()` if `f()` was false.
+    
+    Dynamically-typed programming languages, where an expression is allowed to return different type each time it is executed,
+    often add to `&&` and `||` additional behavior:
+    `&&` will return its first operand if it is false, otherwise its second;
+    and `||` will return its first operand if it is true, otherwise its second.
+    Thus, for example, `0 && true` returns `0`,
+    `23 || null` returns `23`,
+    `0.0 || "stuff"` returns `"stuff"`,
+    etc.
 
 One of the principle theorems of Boolean algebra is that all other operations on bits, of any number of inputs, can be expressed in terms of the above three basic operations.
 
@@ -181,8 +196,16 @@ Multiplex
 
 
     A bit-wise mux (which is not the most common type) can be written as `(s&p) | ((~s)&q)`;
-    the usual logical meaning of `s ? p : q` is a bit more complicated because of some nuances of the logical operators in most programming languages.
+    the usual logical meaning of `s ? p : q` is a bit more complicated because of some nuances of the logical operators in most programming languages[^trinary].
 
+[^trinary]: Two considerations of `?:` are worth noting if you wish to use it in coding.
+    
+    There is a syntactic ambiguity in the code `a?b:c?d:e`; it could mean either `(a?b:c)?d:e` or `a?b:(c?d:e)`.
+    Programming languages traditionally bind it in the second way.
+    
+    `b ? f() : g()` is traditionally implemented as a short-circuit operator,
+    meaning that if `b` is false `f()` will be invoked by `g()` will not.
+    
 
 # Fancier logic
 

@@ -241,3 +241,109 @@ with address translation to achieve virtual memory
 and a hierarchy of different caches to make memory seem faster,
 but the core interface from the heart of the processor's point of view is just some address and value wires.
 We'll discuss more about these topics in COA 2.
+
+
+# Code-to-Hardware Compilation
+
+There are several code-to-hardware compilers;
+that is, programs that, given source code as input, output hardware layout that can be used to make physical computer chips.
+The best known of hardware description languages
+(which are designed for this code-to-hardware conversion)
+are Verilog and VHDL.
+The full design of these languages is out of scope for this course,
+but it is instructive to understand how they can work.
+
+## Variables and assignment
+
+A (multi-bit collection of) wire(s) can be named, like a variable.
+However, these have special constraints.
+Because these need to be wired into a physical circuit
+they can only have one source^[This is an over-simplification, but a reasonable rule of thumb.];
+in code, this means each variable can appear on the left side of a `=` only once.
+The wires can fork and be used in several places, but only set in one place.
+
+{.example ...} The following is valid:
+
+    x = 3;
+    y = x ^ (1 + x);
+    z = 1 - y;
+
+but the following is not legal, as it defines `x` twice:
+
+    x = 3;
+    y = x ^ (1 + x);
+    x = 1 - y;
+
+{/}
+
+## Operators
+
+Most of the operators that common programming languages allow on integers can be implemented fairly easily in hardware.
+Just how simple "easily" means varies widely: `x & y` only needs one gate per bit,
+`x + y` about five times that many; `x * y` can easily approach a thousand; and `x / y` many more still.
+At least as important as how many gates are involved is how many gates are involved in the longest path between input and output,
+because that directly impacts how long it takes for all of the gates in the operation to stabilize on a new value
+after their input changes.
+
+Comparison operators, like `x < y`, are much like subtraction in complexity and implementation,
+but are relatively uncommon to perform directly in hardware with two variables.
+More common is to compare variables to constants.
+In almost every case, having a fixed values as one input of an operator
+allows it to be implemented in far fewer gates than if both are variable.
+
+In addition to operators common in other languages,
+hardware description languages make heavy use of the trinary operator.
+Code `b ? x : y` can be made in hardware with a mux, which can be just three gates per bit:
+
+![](img/mux.svg){style="display:table;margin:auto;"}
+
+## Registers and memory
+
+Registers are used to implement any kind of circular dependency or change over time.
+Each register has an input and an output,
+and with very few exceptions all computations compute register inputs from register outputs.
+Like variables, register inputs can only be specified once;
+register inputs can be used multiple times.
+
+{.example ...} Syntax for interacting with registers varies by language;
+for this example, assume `R` is a register with input `R_in` and output `R_out`.
+
+The following implements a simple counter:
+
+    R_in = R_out + 1;
+
+Note that `R_out = ...` is not permitted, as `R_out` is set by the register itself.
+{/}
+
+
+It is common to have a special "register bank", a set of registers 
+that can be accessed like a fixed-sized list or array.
+The full implementation of these is slightly more nuanced than is worth our attention here,
+but a simplified version is described in the following example.
+
+{.example ...} Suppose we want to implement a simplified bank of 4 registers.
+
+The code `R[i] = x` can be implemented as
+
+    R0_in = (i==0) ? x : R0_out;
+    R1_in = (i==1) ? x : R1_out;
+    R2_in = (i==2) ? x : R2_out;
+    R3_in = (i==3) ? x : R3_out;
+
+The code `x = R[i]` can be implemented as
+
+    x = (i==0) ? R0_out : 
+        (i==1) ? R1_out :
+        (i==2) ? R2_out :
+                 R3_out;
+
+A fully functional register bank would have somewhat more complicated logic
+so that, for example, two different indices could be assigned to without violating the [single-source](#variables-and-assignment) rule;
+but the general principle applies.
+{/}
+
+Memory tends to be a lot slower than registers,
+and is implemented with somewhat different logic to handle its very large size,
+but the interface is conceptually similar to a register bank
+and can be considered similar to an array for our purposes.
+
