@@ -106,7 +106,7 @@ reading:
     gates, wires, bitwise: ["[Booleans §1--2, 4](bool.html)"]
     mux, demux, adder: ["[Booleans §3](bool.html)"]
     clocks: ["[Parts §2--3](parts.html)"]
-    other hardware: ["[Parts §1--4](parts.html)"]
+    other hardware: ["[Parts §1--5](parts.html)"]
     bytes; endianness: ["[Bits §1--3](bits.html)"]
     
     von Neumann model; state: ["[ISA §1--3](isa.html)"]
