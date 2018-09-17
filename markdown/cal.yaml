@@ -54,15 +54,16 @@ classes:
     -   clocks
     -   other hardware
 
-    -   adjacency
-    -   bytes; endianness
-    -   pointers
-
     -   von Neumann model; state
     -   fetch-decode-execute
     -   moves, memory, ALU ops
-    -   addressing modes
     -   conditional jump; back doors
+
+    -   pointers
+    -   addressing modes
+    -   adjacency
+    -   bytes; endianness
+
     
     -   ISA and assembly; patents
     -   tracing variables
