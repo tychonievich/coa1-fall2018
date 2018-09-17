@@ -295,7 +295,7 @@ and reduce that to the few operations we have available to us
 1. if (r0 ≠ 0) jump to step 4
 
 Encode the above sequence of instructions into bytes.
-Remember to use the [two's compliment encoding](bits.html#negative-numbers) of −1.
+Remember to use the [two's complement encoding](bits.html#negative-numbers) of −1.
 {/}
 
 {.exercise ...}

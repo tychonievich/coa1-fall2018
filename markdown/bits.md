@@ -228,7 +228,7 @@ each in terms of decimal numbers first, then see how they map to binary.
 All of these solutions depend on access to a finite number of bits/digits/nibbles/bytes to store numbers in.
 Our examples will assume we have four digits.
 
-Two's Compliment
+Two's Complement
 :   This version picks a number (typically half of the maximum number we can write, rounded up)
     and decides that that number and all numbers bigger than it are negative.
     How negative? To understand that, we need to observe a ring-like behavior of numbers.
@@ -239,11 +239,11 @@ Two's Compliment
     Since `0000 - 0001` is obviously negative 1, we set `9999` to be negative 1.
     One less than negative 1 is negative 2 = `9998`, and so on.
 
-    Two's compliment is nice because the three most common mathematical operators (addition, subtraction, and multiplication)
+    Two's complement is nice because the three most common mathematical operators (addition, subtraction, and multiplication)
     work the same for signed and unsigned values.
     Division is messier, but division is always messy.
 
-    In hardware, two's compliment is typically used for signed integers.
+    In hardware, two's complement is typically used for signed integers.
 
     <table><tbody><tr><td>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 150 150" style="width:18.5em">
@@ -314,10 +314,10 @@ Two's Compliment
     <path d="m87.676,141.89a73,73,0,1,1,2.5012,-0.4862l-15.177-71.4z" transform="translate(0,5)" stroke="#000" fill="none"/>
     </svg>
     </td><td>
-    <p>Visualization of two's compliment numbers in binary.</p>
+    <p>Visualization of two's complement numbers in binary.</p>
     <p>Zero is all zero bits. Adding and subtracting 1 makes numbers one larger or smaller, except at the transition between `01...1` and `10...0`.</p>
     <p>There is one more negative number than there are positive numbers.</p>
-    <p>Two's compliment is commonly used for integral values.
+    <p>Two's complement is commonly used for integral values.
     Swapping sign is equivalent to flipping all bits and adding one to the result.</p>
     </td></tr></tbody>
     </table>
@@ -502,8 +502,8 @@ Sign bit
     </td></tr></tbody>
     </table>
 
-One's Compliment
-:   There is also a representation called "Ones' compliment"
+One's Complement
+:   There is also a representation called "Ones' complement"
     that is often taught in courses like this
     but that is not used by common hardware today.
 
