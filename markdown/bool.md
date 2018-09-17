@@ -307,7 +307,7 @@ When shifting, bits that no longer fit within the number are dropped.
 New bits are generally added to keep the number the same number of bits;
 for left shifts those new bits are always 0s, but for right shifts they are sometimes 0s
 and sometimes copies of whatever bit had been in the highest-order spot before the shift.
-Copying the high-order bit is called "sign-extending" because it keeps negative numbers negative in twos-compliment.
+Copying the high-order bit is called "sign-extending" because it keeps negative numbers negative in twos-complement.
 Which kind of right-shift is performed varies by language and by datatype shifted.
 Some languages also have a third shift `>>>` to distinguish between sign-extending (`>>`) and zero-extending (`>>>`) right shifts.
 
