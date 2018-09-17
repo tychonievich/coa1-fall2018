@@ -347,3 +347,31 @@ and is implemented with somewhat different logic to handle its very large size,
 but the interface is conceptually similar to a register bank
 and can be considered similar to an array for our purposes.
 
+## Register-Transfer Level Coding
+
+One way of thinking about the combined programing components listed above
+is to separate out the **logic** and the **registers**.
+The *logic* is unclocked gates connected by wires, in an acyclic single-source way;
+the *registers* are treated like a separate set of clocked storage units.
+
+Each **clock cycle** runs as follows:
+
+1. The clock signal goes from low- to high-voltage (called the "rising edge" of the clock), causing the registers to take their current inputs into their internal storage.
+2. The registers start outputting their new values.
+3. The logic, with new inputs, begins to adjust, new values rippling through the gates until eventually a steady state is reached (the existence of a steady state is guaranteed by the acyclic nature of the logic).
+4. The outputs of the logic are inputs to the registers. Although these may have changed erratically before the logic reached steady state, they are ignored by the registers during the clock's high- and low-voltage periods and its high-to-low transition. The clock frequency was selected to ensure all inputs stabilize before the end of the clock's low-voltage period.
+5. The next rising edge of the clock causes these set of states to repeat.
+
+In pseudo-code, this might be represented as
+
+    repeat forever:
+        new_register_values = logic(stored_register_values)
+        stored_register_values = new_register_values
+
+This loop is implied by the constraints that all registers are on the same clock and all logic is acyclic.
+Neither of these constraints needed to be followed, and some digital circuits chose not to follow them;
+but by following them, we arrive at a "register-transfer level" programming paradigm,
+where the job of the chip designer is primarily to write logical expressions
+for how register outputs are transferred into register inputs.
+This paradigm will allow us to create full general purpose computers,
+which is the subject of our [next chapter](isa.html).

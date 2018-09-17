@@ -78,9 +78,11 @@ You should include:
 - A `work` function that uses the contents of the `ir` to decide what to do at each step; you can have it do nothing at all for now.
 
 - A `cycle` function that does the following:
+    - simulate a rising clock edge by
+        - loading register inputs into registers
+        - loading `newPC()` into `pc`
     - load `memory[pc]` into `ir`
     - `work()`
-    - load `newPC()` into `pc`
 
 - A `run` function that repeatedly:
     - prints the value of `pc`
@@ -300,7 +302,7 @@ Remember to use the [two's compliment encoding](bits.html#negative-numbers) of â
 Modify your simulator from the last exercise to implement the example instruction set encoding listed above.
 In particular,
 
--   Refer to the section on [Masks](bool.html#masks) to remember how to get specific bits out of a number.
+-   Refer to the section on [Masks](bool.html#masks) to remember how to get specific bits out of a number in code.
 -   In `loop()` we'll still have `ir` become `memory[pc]` (the first byte only) for simplicity.
 -   `newPC` will generally return `pc + 2` since instructions are 2 bytes long;
     but if the top three bits of `ir` are `000` and the register indicated by the low-order two bits of `ir` is not `0`, it will return the second byte of the instruction (i.e., `memory[pc+1]`) instead.
@@ -436,7 +438,7 @@ directly into their ISAs.
 While all of these still exist in older ISAs like x86, most are no longer much used.
 One, however, is very pervasive: the stack operations.
 
-The concept of a stack, as implemented by the x86 ISA, is easier to explain code than words:
+The concept of a stack, as implemented by the x86 ISA, is easier to explain in code than words:
 
     stack_memory = big contiguous chunk of memory
     stack_pointer = length_of(stack_memory)
@@ -475,7 +477,7 @@ Consider the following code:
     y = pop()
     z = pop()
 
-What are in `x`, `y`, and `z` at the end of the code?
+What are in `x`, `y`, and `z` at the end of the code?^[Answer: x = 4, y = 5, z = 3]
 {/}
 
 In x86-64, the `stack_pointer` in the above pseudocode is a program register, `rsp`.
