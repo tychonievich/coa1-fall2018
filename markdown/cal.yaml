@@ -54,9 +54,9 @@ classes:
     -   clocks
     -   other hardware
 
-    -   von Neumann model; state
-    -   fetch-decode-execute
     -   moves, memory, ALU ops
+    -   fetch-decode-execute
+    -   von Neumann model; state
     -   conditional jump; back doors
 
     -   pointers
