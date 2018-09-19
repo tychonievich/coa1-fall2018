@@ -20,11 +20,15 @@ public class SimBase {
         return oldPC + 1;
     }
 
-    byte[] M;
-    byte[] R;
-    byte pc;
-    byte ir;
+    // memory and registers
+    public byte[] M;
+    public byte[] R;
+
+    // control registers; do not modify these directly
+    private byte _pc;
+    private byte _ir;
     
+    /** Constructor, initializing memory from a file */
     public SimBase(Path filepath) throws java.io.IOException {
         M = new byte[256];
         R = new byte[4];
@@ -35,6 +39,7 @@ public class SimBase {
             i += 1;
         }
     }
+    /** Constructor, initializing memory from bytes on the command line */
     public SimBase(String[] bytes) {
         M = new byte[256];
         R = new byte[4];
@@ -44,6 +49,7 @@ public class SimBase {
         }
     }
     
+    /** Helper function since Java lacks Byte.toString(value, radix) or binary printf flags */
     public static String toBin(int n, int width) {
         String ans = "";
         for(int i=0; i<width; i+=1) {
@@ -55,11 +61,11 @@ public class SimBase {
     /** Displays all processor state to command line */
     public void showState() {
         System.out.println("----------------------------------------");
-        System.out.println("last instruction = "+toBin(ir, 8));
+        System.out.println("last instruction = "+toBin(_ir, 8));
         for(int i=0; i<4; i+=1) {
             System.out.println("Register "+toBin(i, 2)+" = "+toBin(R[i], 8));
         }
-        System.out.println("next PC = "+toBin(pc, 8));
+        System.out.println("next PC = "+toBin(_pc, 8));
         System.out.println("//////////////////////// Memory \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         for(int i=0; i<256; i+=16) {
             System.out.printf("0x%02x-%02x: ", i, i+15);
@@ -77,8 +83,8 @@ public class SimBase {
     
     /** Implements one clock cycle */
     public void cycle() {
-        ir = M[pc];
-        pc = (byte)execute(ir, pc);
+        _ir = M[_pc];
+        _pc = (byte)execute(_ir, _pc);
     }
 
 

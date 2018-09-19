@@ -21,32 +21,32 @@ def execute(instruction, oldPC):
 R = [0 for i in range(4)]
 M = [0 for i in range(256)]
 
-# initialize control registers
-ir = 0
-pc = 0
+# initialize control registers; do not modify these directly
+_ir = 0
+_pc = 0
 
 
 def cycle():
     """Implement one clock cycle"""
-    global M, R, pc, ir
+    global M, R, _pc, _ir
     
     # execute
-    ir = M[pc]
-    pc = execute(ir, pc)
+    _ir = M[_pc]
+    _pc = execute(_ir, _pc)
     
     # enforce the fixed-length nature of values
     for i in range(len(R)): R[i] &= 0b11111111
     for i in range(len(M)): M[i] &= 0b11111111
-    pc &= 0b11111111
+    _pc &= 0b11111111
     
 
 def showState():
     """Displays all processor state to command line"""
     print('-'*40)
-    print('last instruction = {:08b}'.format(ir))
+    print('last instruction = {:08b}'.format(_ir))
     for i in range(4):
         print('Register {:02b} = {:08b}'.format(i, R[i]))
-    print('next PC = {:08b}'.format(pc))
+    print('next PC = {:08b}'.format(_pc))
     print('//////////////////////// Memory \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\')
     for i in range(0, 256, 16):
         print('0x{:02x}-{:02x}'.format(i, i+15), end=': ')
