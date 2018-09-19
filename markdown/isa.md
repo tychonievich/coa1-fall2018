@@ -26,10 +26,10 @@ Babbage's machine was never completed and no subsequent work built on Babbage an
 
 In 1933 Kurt Gödel and Jacques Herbrand defined a class of general recursive functions;
 in 1936 Alonzo Church expanded on this to define the lambda calculus;
-and later in 1936 Alan Turing defined an abstract notion of a universal computing machine, latter known as the Turing Machine.
+and later in 1936 Alan Turing defined an abstract notion of a universal computing machine, later known as the Turing Machine.
 In his 1939 Ph.D. dissertation Turing (with his Ph.D. advisor Alonzo Church)
 proposed that these three are all equivalent, and that no more computationally-powerful machine can exist.
-Known as the Church-Turing thesis, this postulate cannot be proven but is generally acknowledged as true.
+Known as the Church-Turing thesis, the postulate that no more powerful machine can exist cannot be proven but is generally acknowledged as true.
 Of the three models, Turing's had the advantage that Babbage's had had 100 years earlier
 of being a description of a plausibly constructable machine,
 but was not realistic enough to actually be constructed until decades later, when people started creating them as historical novelties. 
@@ -122,7 +122,7 @@ The most common three categories of actions are
 
 ### Moves
 
-One of the pillars of the imperative programming paradigm is the assignment operator `=`.
+One of the pillars of the imperative programming paradigm^[It is likely that if you have learned to program but have not learned about programming paradigms, you learned the imperative paradigm. There are other approaches to programming that do not depend on assignment, the two most famous being the functional paradigm (where recursion is the key to expressivity) and the declarative paradigm (where power is obtained from clever application of horn clause reduction rules in formal logic). Computer hardware that uses these other paradigms directly is unknown to the author of this text.] is the assignment operator `=`.
 All it does is take a value which exists in one place and put it into another place,
 but as you have already seen that operation allows a great deal of flexibility.
 
