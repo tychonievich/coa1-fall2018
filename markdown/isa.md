@@ -122,7 +122,7 @@ The most common three categories of actions are
 
 ### Moves
 
-One of the pillars of the imperative programming paradigm^[It is likely that if you have learned to program but have not learned about programming paradigms, you learned the imperative paradigm. There are other approaches to programming that do not depend on assignment, the two most famous being the functional paradigm (where recursion is the key to expressivity) and the declarative paradigm (where power is obtained from clever application of horn clause reduction rules in formal logic). Computer hardware that uses these other paradigms directly is unknown to the author of this text.] is the assignment operator `=`.
+One of the pillars of the imperative programming paradigm^[It is likely that if you have learned to program but have not learned about programming paradigms, you learned a variant of the imperative paradigm. There are other approaches to programming that do not depend on assignment, the two most famous being the functional paradigm (where recursion is the key to expressivity) and the declarative paradigm (where power is obtained from clever application of horn clause reduction rules in formal logic). Computer hardware that uses these other paradigms directly is unknown to the author of this text.] is the assignment operator `=`.
 All it does is take a value which exists in one place and put it into another place,
 but as you have already seen that operation allows a great deal of flexibility.
 
