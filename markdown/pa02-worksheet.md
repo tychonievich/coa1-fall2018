@@ -26,3 +26,26 @@ But do cite any close collaboration or major corrections; for example if the ans
 This exception does not apply to sources other than other students in this course. Websites, outside tutors, etc., are still subject to [the usual plagiarism rules](policies.html#honesty).
 
 [As always](policies.html#understand-what-you-submit), we reserve the right to request you explain your solutions to us and may penalize you if it appears that you did not understand what you submitted as your work.
+
+# Submit
+
+Submit your worksheet on paper at the beginning of class on the due date.
+
+# Hints, tips, and suggestions
+
+It appears that I was misinformed about how commonly some set symbols are taught in high school. A refresher/summary/introduction:
+
+∖
+:   Set minus.
+
+    For example, {1, 2, 3, 4} ∖ {2, 4, 6} = {1, 3}
+
+∩
+:   Set intersection.
+
+    For example, {1, 2, 3, 4} ∩ {2, 4, 6} = {2, 4}
+
+∪
+:   Set union.
+
+    For example, {1, 2, 3, 4} ∪ {2, 4, 6} = {1, 2, 3, 4, 6}
