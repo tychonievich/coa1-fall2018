@@ -51,7 +51,7 @@ The behavior of all instructions, including those in lab, is given in the follow
 |          |+-----+-----------------------------------------------------------+|
 |          || 2   |`rA &=` read from memory at `pc + 1`                       ||
 |          |+-----+-----------------------------------------------------------+|
-|          || 3   |`rA &=` read from memory at the address stored at `pc + 1` ||
+|          || 3   |`rA =` read from memory at the address stored at `pc + 1`  ||
 |          |+-----+-----------------------------------------------------------+|
 |          |                                                                   |
 |          |In all 4 cases, increase `pc` by 2, not 1, at the end of this      |
@@ -90,6 +90,52 @@ Submit your simulator as either a `.java` or `.py` file (any name is fine, but s
 
 ## Simulator building and testing
 
+Try making a minimal program to test each instruction.
+Typically this will involve a few (`icode`=6, `b`=0) instructions to put numbers into registers
+and then the instruction you want to test.
+Unless of course no registers are needed...
+
+For example,
+    
+- to test instruction 7,
+    
+    The following should not jump, so three steps should end up with the PC at address 4 not 20:
+    
+    pseudocode                  parts           bytes
+    -----------------------     ------------    -------------
+    R~0~ = 10                   (6, 0, 0) 10    60 0A
+    R~1~ = 20                   (6, 1, 0) 20    64 14
+    if R~0~ <= 0, jump to R~1~  (7, 0, 1)       71
+
+    The following should jump, so three steps should end with the PC at address 20, not 4:
+        
+    pseudocode                  parts           bytes
+    -----------------------     ------------    -------------
+    R~0~ = −10                  (6, 0, 0) −10   60 F6
+    R~1~ = 20                   (6, 1, 0) 20    64 14
+    if R~0~ <= 0, jump to R~1~  (7, 0, 1)       71
+
+- to test instruction 6.3,
+    
+    The following should load 20 into R~1~
+    
+    pseudocode                  parts           bytes
+    -----------------------     ------------    -------------
+    R~2~ = 10                   (6, 2, 0) 10    68 0A
+    R~3~ = 20                   (6, 3, 0) 20    6C 14
+    write R~3~ to address R~2~  (4, 3, 2)       4E
+    read address 10 into R~1~   (6, 1, 3) 10    67 0A
+    
+    You could also do this without using instruction 4
+    by setting enough memory that there was already data in address 10:
+    
+    pseudocode                  parts           bytes
+    -----------------------     ------------    ------------------------
+    read address 10 into R~1~   (6, 1, 3) 10    67 0A
+    put 20 into address 10      0s, then 20     00 00 00 00 00 00 00 14
+    
+    
+Etc.
 
 ## Binary programming
 
@@ -112,3 +158,5 @@ We suggest following these steps, carefully, saving the result of each in a file
 10. translate each instruction into numeric (`icode`, `a`, `b`) triples, possibly followed by a `M[pc+1]` immediate value
 11. turn (`icode`, `a`, `b`) into hex
 12. Write all the hex into `fib.binary`
+
+Debugging binary is hard. That's part of why we don't generally write code in binary.
