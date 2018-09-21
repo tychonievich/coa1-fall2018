@@ -144,6 +144,12 @@ We suggest following these steps, carefully, saving the result of each in a file
 1. Write pseudocode that does the desired task
 2. Convert any `for` loops to `while` loops with explicit counters
 3. Change any `if` or `while` guards to the form `something <= 0`
+    - `a <= b` becomes `a-b <= 0`
+    - `a < b` becomes `a+1 <= b` becomes `a+1-b <= 0`
+    - `a >= b` becomes `0 >= b-a` becomes `b-a <= 0`
+    - `a > b` becomes `0 > b-a` becomes `b+1-a <= 0`
+    - `a == b` becomes `a-b == 0` becomes `!(a-b) == 1` becomes `!!(a-b) <= 0`
+    - `a != b` becomes `a-b != 0` becomes `!(a-b) == 0` becomes `!(a-b) <= 0`
 4. Add more variables to split multi-operation lines into a series of single-operation lines
 5. Add more operations to convert ones not in the instruction set into ones in the instruction set
 6. Change each loop into a pair of instructions, opening with "`spot1` = `pc`" and closing with "if ..., goto `spot1`"
