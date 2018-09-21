@@ -44,7 +44,6 @@ public class SimBase {
         M = new byte[256];
         R = new byte[4];
         for(int i=0; i<256 && i < bytes.length; i+=1) {
-            System.out.println(java.util.Arrays.toString(bytes)+i);
             M[i] = (byte)Short.parseShort(bytes[i], 16); // cast because Java has signed bytes
         }
     }
@@ -58,14 +57,15 @@ public class SimBase {
         }
         return ans;
     }
+    
     /** Displays all processor state to command line */
     public void showState() {
         System.out.println("----------------------------------------");
-        System.out.println("last instruction = "+toBin(_ir, 8));
+        System.out.printf("last instruction = 0b%s (0x%02x)\n", toBin(_ir, 8), _ir);
         for(int i=0; i<4; i+=1) {
-            System.out.println("Register "+toBin(i, 2)+" = "+toBin(R[i], 8));
+            System.out.printf("Register %s = 0b%s (0x%02x)\n", toBin(i, 2), toBin(R[i], 8), R[i]);
         }
-        System.out.println("next PC = "+toBin(_pc, 8));
+        System.out.printf("next PC = 0b%s (0x%02x)\n", toBin(_pc, 8), _pc);
         System.out.println("//////////////////////// Memory \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         for(int i=0; i<256; i+=16) {
             System.out.printf("0x%02x-%02x: ", i, i+15);

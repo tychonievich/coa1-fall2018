@@ -43,10 +43,10 @@ def cycle():
 def showState():
     """Displays all processor state to command line"""
     print('-'*40)
-    print('last instruction = {:08b}'.format(_ir))
+    print('last instruction = 0b{:08b} (0x{:02x})'.format(_ir, _ir))
     for i in range(4):
-        print('Register {:02b} = {:08b}'.format(i, R[i]))
-    print('next PC = {:08b}'.format(_pc))
+        print('Register {:02b} = 0b{:08b} (0x{:02x})'.format(i, R[i], R[i]))
+    print('next PC = 0b{:08b} (0x{:02x})'.format(_pc, _pc))
     print('//////////////////////// Memory \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\')
     for i in range(0, 256, 16):
         print('0x{:02x}-{:02x}'.format(i, i+15), end=': ')
