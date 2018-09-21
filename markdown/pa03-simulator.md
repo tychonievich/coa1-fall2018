@@ -99,18 +99,18 @@ For example,
     
 - to test instruction 7,
     
-    The following should not jump, so three steps should end up with the PC at address 4 not 20:
+    The following should not jump, so three steps should end up with the PC at address 5, not 20:
     
     pseudocode                  parts           bytes
-    -----------------------     ------------    -------------
+    --------------------------  ------------    -------------
     R~0~ = 10                   (6, 0, 0) 10    60 0A
     R~1~ = 20                   (6, 1, 0) 20    64 14
     if R~0~ <= 0, jump to R~1~  (7, 0, 1)       71
 
-    The following should jump, so three steps should end with the PC at address 20, not 4:
+    The following should jump, so three steps should end with the PC at address 20, not 5:
         
     pseudocode                  parts           bytes
-    -----------------------     ------------    -------------
+    --------------------------  ------------    -------------
     R~0~ = −10                  (6, 0, 0) −10   60 F6
     R~1~ = 20                   (6, 1, 0) 20    64 14
     if R~0~ <= 0, jump to R~1~  (7, 0, 1)       71
@@ -120,7 +120,7 @@ For example,
     The following should load 20 into R~1~
     
     pseudocode                  parts           bytes
-    -----------------------     ------------    -------------
+    --------------------------  ------------    -------------
     R~2~ = 10                   (6, 2, 0) 10    68 0A
     R~3~ = 20                   (6, 3, 0) 20    6C 14
     write R~3~ to address R~2~  (4, 3, 2)       4E
@@ -129,10 +129,10 @@ For example,
     You could also do this without using instruction 4
     by setting enough memory that there was already data in address 10:
     
-    pseudocode                  parts           bytes
-    -----------------------     ------------    ------------------------
-    read address 10 into R~1~   (6, 1, 3) 10    67 0A
-    put 20 into address 10      0s, then 20     00 00 00 00 00 00 00 14
+    pseudocode                      parts           bytes
+    ----------------------------    ------------    ------------------------
+    read address 10 into R~1~       (6, 1, 3) 10    67 0A
+    intialize address 10 with 20    0s, then 20     00 00 00 00 00 00 00 14
     
     
 Etc.
