@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Toy ISA Simulator</title>
+<style>
+    html { font-size: 12pt; min-height: 100vh; font-family: monospace; }
+    /*
+    body { background: linear-gradient(18deg, #503010, pink 100%); }
+    body { background: linear-gradient(18deg, #412401, #ffc0b0 100%); }
+    body { background: linear-gradient(18deg, #a89a88, #ffe0d0 100%); }
+    */
+    
+    html { background: linear-gradient(18deg, #804000, #ff8000 100%); }
+    body { background: rgba(255,255,255,0.5); margin: 0; padding: 1ex; min-height: calc(100vh - 2ex);  }
+    
+    html { text-shadow: 0.0625ex .125ex 0.25ex rgba(0,0,0,0.25); }
+    
+    .regfile, .hexbank {
+        display: inline-table;
+    }
+    .regfile, .hexbank, .boxed {
+        background: rgba(255,255,255,0.5);
+        box-shadow: 0.0625ex 0.125ex 0.25ex 0.25ex rgba(0,0,0,0.25); 
+    }
+    .boxed { border: thin solid white; }
+
+    .read { background: rgba(0,255,0,0.25); }
+    .write { background: rgba(255,63,0,0.25); }
+    .read.write { background: linear-gradient(to top, rgba(255,63,0,0.25), rgba(0,255,0,0.25)); }
+</style>
+<script src="hexedit3.js"></script>
+<script src="sim3.js"></script>
+<script>
+var memory = new HexBank(8);
+var registers = new Registers(8);
+var snapshot = null;
+
+function getR(i) { return registers.getR(i); }
+function setR(i, v) { return registers.setR(i, v); }
+function read8(i) { return memory.read8(i); }
+function write8(i, v) { return memory.write8(i, v); }
+
+function reset() {
+    if (snapshot !== null) {
+        let end = snapshot.length;
+        while (end > 0 && snapshot[end-1] == memory.bytes[end-1]) end -= 1;
+        if (end) memory.writeArray(0, snapshot, end);
+    }
+    registers.setR('pc', 0);
+    registers.setR('ir', 0);
+    for(let i=0; i<0x4; i+=1)
+        registers.setR(i, 0);
+
+    snaphot = null;
+    document.querySelectorAll('.read').forEach(function(x){ x.classList.remove('read'); });
+    document.querySelectorAll('.write').forEach(function(x){ x.classList.remove('write'); });
+}
+function load() {
+    memory.replaceElement('hex');
+    registers.replaceElement('reg');
+    reset();
+}
+
+function cycle() {
+    if (snapshot === null) snapshot = Uint8Array.from(memory.bytes);
+    document.querySelectorAll('.read').forEach(function(x){ x.classList.remove('read'); });
+    document.querySelectorAll('.write').forEach(function(x){ x.classList.remove('write'); });
+    let pc = registers.getR('pc');
+    let ir = memory.read8(pc);
+    registers.setR('ir', ir);
+    let npc = execute(ir, pc);
+    if (npc == pc) return false;
+    registers.setR('pc', npc);
+    return true;
+}
+
+const request = new XMLHttpRequest();
+request.open('GET', 'sim4.wasm');
+request.responseType = 'arraybuffer';
+request.onload = () => {
+    console.log('response received');
+    const bytes = request.response;
+    const importObject = {
+        env: { 
+            getR:getR,
+            setR:setR,
+            read8:read8,
+            write8:write8,
+        }
+    };
+    WebAssembly.instantiate(bytes, importObject).then(result => {
+        console.log('instantiated');
+        const { exports } = result.instance;
+        window.execute = exports.execute;
+    });
+};
+request.send();
+console.log('request sent');
+
+
+var running = null;
+function step() {
+    cycle();
+    stop();
+}
+function run() {
+    if (running) return;
+    document.getElementById('run').value = 'Stop';
+    document.getElementById('run').onclick = stop;
+    keep_running();
+}
+function keep_running() {
+    if (cycle())
+        running = setTimeout(keep_running, (Math.max(Number(document.getElementById('delay').value), 0.015625) || 0.125)*1000);
+    else
+        stop();
+}
+function stop() {
+    if (!running) return;
+    clearTimeout(running);
+    running = null;
+    document.getElementById('run').value = 'Run';
+    document.getElementById('run').onclick = run;
+}
+
+function resetToFile(files) {
+    registers.setR('pc', 0);
+    registers.setR('ir', 0);
+    for(let i=0; i<0x4; i+=1)
+        registers.setR(i, 0);
+
+    snaphot = null;
+    document.querySelectorAll('.read').forEach(function(x){ x.classList.remove('read'); });
+    document.querySelectorAll('.write').forEach(function(x){ x.classList.remove('write'); });
+    memory.readASCIIFiles(files);
+}
+
+</script>
+</head>
+<body onload="load()">
+    <input type="file" onchange="resetToFile(this.files)"/><br/>
+    <div id="hex">this should vanish</div>
+    <span style="display: inline-block; width: 1em;"></span>
+    <div id="reg">this should also</div>
+
+<div style="font-family: sans-serif;">
+<input type="button" value="Execute one instruction" onclick="window.step()"></input>
+<br/>
+<input type="button" id="run" value="Run" onclick="window.run()"></input> with <label><input type="text" id="delay" value="1.5"></input> seconds between instructions</label>
+<br/>
+<input type="button" id="reset" value="Reset" onclick="window.reset()"/>
+</div>
+
+</body>
+</html>
