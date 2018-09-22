@@ -139,6 +139,8 @@ Etc.
 
 ## Binary programming
 
+You may use [our visual simulator](files/toy-isa-sim.html) if you are unsure of the quality of your own. It lets you manually edit memory or upload memory files, and uses green highlights to show what was read, orange to show what was written.
+
 We suggest following these steps, carefully, saving the result of each in a file so you can go back and fix them if they were wrong:
 
 1. Write pseudocode that does the desired task
@@ -165,4 +167,4 @@ We suggest following these steps, carefully, saving the result of each in a file
 11. turn (`icode`, `a`, `b`) into hex
 12. Write all the hex into `fib.binary`
 
-Debugging binary is hard. That's part of why we don't generally write code in binary.
+Debugging binary is hard. That's part of why we don't generally write code in binary. If you get stuck, you should probably try pulling just the part you are stuck on separate from the rest and test it until it works, then put it back in the main solution.
