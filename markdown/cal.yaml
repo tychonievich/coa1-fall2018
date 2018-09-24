@@ -186,6 +186,57 @@ assignments:
         title: worksheet
         due: 2018-09-21 14:00:00
         notes: 
+        rubric:
+            kind: breakdown
+            parts:
+                -   name: mux
+                    ratio: 0.25
+                    rubric:
+                        kind: breakdown
+                        parts:
+                            -   name: basic gates
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                            -   name: wired like mux
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                            -   name: correct use of nots
+                                ratio: 0.05
+                                rubric: {"kind":"percentage"}
+                -   name: sets of bits
+                    ratio: 0.5
+                    rubric:
+                        kind: breakdown
+                        parts:
+                            -   name: intersection
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                            -   name: set minus
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                            -   name: union 7
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                            -   name: minus 7
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                            -   name: contains 8
+                                ratio: 0.1
+                                rubric: {"kind":"percentage"}
+                -   name: shifter
+                    ratio: 0.25
+                    rubric:
+                        kind: breakdown
+                        parts:
+                            -   name: intersection
+                                ratio: 0.05
+                                rubric: {"kind":"neat and readable"}
+                            -   name: set minus
+                                ratio: 0.1
+                                rubric: {"kind":"shifts right"}
+                            -   name: union 7
+                                ratio: 0.1
+                                rubric: {"kind":"sign extends"}
     PA03:
         title: simulator
         files: ['sim.py', 'Sim.java']
