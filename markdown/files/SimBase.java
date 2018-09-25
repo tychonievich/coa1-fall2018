@@ -34,7 +34,7 @@ public class SimBase {
         R = new byte[4];
         Scanner s =  new Scanner(Files.newInputStream(filepath));
         int i = 0;
-        while(s.hasNextByte()) {
+        while(s.hasNext()) {
             M[i] = (byte)s.nextShort(16); // cast because Java has signed bytes
             i += 1;
         }
@@ -52,7 +52,7 @@ public class SimBase {
     public static String toBin(int n, int width) {
         String ans = "";
         for(int i=0; i<width; i+=1) {
-            ans += (char)('0' + (n&1));
+            ans = (char)('0' + (n&1)) + ans;
             n >>= 1;
         }
         return ans;
