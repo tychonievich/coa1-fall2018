@@ -87,13 +87,15 @@ Submit your simulator as either a `.java` or `.py` file (any name is fine, but s
 
 ## Language nuances
 
-Python's syntax for `!x` is `not x` instead.
+Python's syntax for `!x`{.c} is `not x`{.python} instead.
 
-Java treats bytes (like `R[i]`) as signed integers, not unsigned.
-That means they are not good indices (e.g., `M[R[i]]` might throw an exception if `R[i]` is negative).
-However, `R[i] & 0xFF` treats it as unsigned instead,
-so `M[R[i] & 0xFF]` should work.
+Java treats bytes (like `R[i]`{.java}) as signed integers, not unsigned.
+That means they are not good indices (e.g., `M[R[i]]`{.java} might throw an exception if `R[i]`{.java} is negative).
+However, `R[i] & 0xFF`{.java} treats it as unsigned instead,
+so `M[R[i] & 0xFF]`{.java} should work.
 
+Python treats bytes as unsigned, so `R[i] <= 0`{.python} is always true.
+It can be re-written to work correctly as `R[i] == 0 or R[i] >= 0x80`{.python}
 
 ## Simulator building and testing
 
