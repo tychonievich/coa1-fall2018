@@ -62,8 +62,6 @@ The behavior of all instructions, including those in lab, is given in the follow
 |          |otherwise, increment `pc` like normal.                             |
 +----------+-------------------------------------------------------------------+
 
-Note: Python's syntax for `!x` is `not x` instead.
-
 # Write a program in binary
 
 Create a binary program that runs in this language as a file named `fib.binary`.
@@ -86,6 +84,15 @@ It should be the case that running your simulator on `fib.binary` for several hu
 Submit your simulator as either a `.java` or `.py` file (any name is fine, but submit only one java/python file) and your program and `fib.binary`.
 
 # Hints, tips, and suggestions
+
+## Language nuances
+
+Python's syntax for `!x` is `not x` instead.
+
+Java treats bytes (like `R[i]`) as signed integers, not unsigned.
+That means they are not good indices (e.g., `M[R[i]]` might throw an exception).
+However, `R[i] & 0xFF` treats it as unsigned instead,
+so `M[R[i] & 0xFF]` should work.
 
 
 ## Simulator building and testing
