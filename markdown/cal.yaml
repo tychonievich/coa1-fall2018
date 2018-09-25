@@ -239,7 +239,7 @@ assignments:
                                 rubric: {"kind":"sign extends"}
     PA03:
         title: simulator
-        files: ['sim.py', 'Sim.java']
+        files: ['*.py', '*.java', 'fib.binary']
         due: 2018-09-28 14:00:00
         notes: in Java or Python, implement a toy machine language fetch/decode/execute simulator
 
