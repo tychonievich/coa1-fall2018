@@ -114,6 +114,8 @@ reading:
     moves, memory, ALU ops: ["[ISA §3.1](isa.html)"]
     conditional jump; back doors: ["[ISA §3.4](isa.html)"]
     the stack: ["[ISA §3.4.2](isa.html)"]
+    
+    review: ["[practice exam](files/f2018e1practice.pdf)"]
 
 assignments:
     ".groups":
