@@ -212,8 +212,8 @@ We suggest following these steps, carefully, saving the result of each in a file
 5. Add more operations to convert ones not in the instruction set into ones in the instruction set
 6. Change each loop into a pair of instructions, opening with "`spot1` = `pc`" and closing with "if ..., goto `spot1`"
 7. Count the number of variables needed
-    - If^[depending on how you write your original code, this is possible for this task] it is ≤ 4, skip to step 10
-    - else^[… but you're probably in case], continue with next step
+    - If^[depending on how you write your original code, this is possible for this task …] it is ≤ 4, skip to step 10
+    - else^[… but most solutions are in this case instead.], continue with next step
 8. Pick a memory address for each variable. Make these big enough your cod is unlikely to get that big; for example, you might pick `0x80` though `0x80` + number of variables
 9. Convert each statement that uses variables into
     a. register ← load variable's memory
