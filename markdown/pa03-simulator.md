@@ -64,12 +64,16 @@ The behavior of all instructions, including those in lab, is given in the follow
 
 # Write a program in binary
 
-Create a binary program that runs in this language as a file named `fib.binary`.
-If should set memory at address `i` ≥ C0~16~ with the `i-0xC0`th Fibonacci number modulo 256
-(note: the modulo will take care of itself because the simulator works with 1-byte values).
-The file `fib.binary` itself must not be more than C0~12~ bytes long.
+Create a binary program (i.e., a file containing hex bytes)
+that runs in this language; name the file `fib.binary`.
+
+When run in a simulator (yours or [ours](files/toy-isa-sim.html)), `fib.binary`
+should change the contents of memory for all addresses `i` ≥ C0~16~,
+placing in address `i` the `i-0xC0`th Fibonacci number (modulo 256, since these are bytes).
 
 Once `0xC0` through `0xff` are set, halt by running an instruction with the `reserved` bit set.
+
+The file `fib.binary` itself must not contain more than C0~16~ (192~10~) hexadecimal bytes.
 
 It should be the case that running your simulator on `fib.binary` for several hundred cycles should result in output ending with the following:
 
