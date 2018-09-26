@@ -150,6 +150,49 @@ For example,
     
 Etc.
 
+A few minimal examples:
+
+icode = 0
+:   First load a value into R~1~ then set R~2~ to equal R~1~: `64 14` `09`
+
+icode = 1
+:   First load a value into R~1~ and R~2~ then add them together: `64 14` `68 20` `19`
+
+icode = 2
+:   First load a value into R~1~ and R~2~ then and them together: `64 14` `68 20` `29`
+
+icode = 3
+:   First load a value into R~1~ and then load that memory address into R~2~: `64 02` `39`
+
+icode = 4
+:   First load a value into R~1~ and R~2~ and then store R~1~ into memory at R~2~: `64 02` `68 20` `46`
+
+icode = 5
+:   First load a value into R~1~ and then do something to it: 
+    
+    - flip all bits: `64 89` `54`
+    - perform `!`: `64 89` `55`
+    - negate: `64 89` `56`
+    - replace with the PC (which is 2): `64 89` `57`
+
+icode = 6
+:   First load a value into R~1~ and then use an immediate: 
+
+    - replace with immediate: `64 14` `64 20`
+    - add immediate: `64 14` `65 20`
+    - and immediate: `64 14` `66 20`
+    - replace with memory contents at immediate: `64 14` `67 02`
+
+icode = 7
+:   First load an address into R~1~, a value into R~2~, and then conditionally jump: 
+
+    - jumps: `64 14` `68 ff` `79`
+    - jumps: `64 14` `68 80` `79`
+    - jumps: `64 14` `68 00` `79`
+    - does not jump: `64 14` `68 01` `79`
+    - does not jump: `64 14` `68 7f` `79`
+
+
 ## Binary programming
 
 You may use [our visual simulator](files/toy-isa-sim.html) if you are unsure of the quality of your own. It lets you manually edit memory or upload memory files, and uses green highlights to show what was read, orange to show what was written.
