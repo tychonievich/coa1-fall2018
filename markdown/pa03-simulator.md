@@ -150,7 +150,7 @@ For example,
     
 Etc.
 
-A few minimal examples:
+A few examples:
 
 icode = 0
 :   First load a value into R~1~ then set R~2~ to equal R~1~: `64 14` `09`
@@ -170,18 +170,18 @@ icode = 4
 icode = 5
 :   First load a value into R~1~ and then do something to it: 
     
-    - flip all bits: `64 89` `54`
-    - perform `!`: `64 89` `55`
-    - negate: `64 89` `56`
-    - replace with the PC (which is 2): `64 89` `57`
+    - flip all bits: `64 89` `54` (result: `76`)
+    - perform `!`: `64 89` `55` (result: `00`; try also `55` by itself to result in `01`)
+    - negate: `64 89` `56` (result: `77`)
+    - replace with the PC: `64 89` `57`  (result: `02`)
 
 icode = 6
 :   First load a value into R~1~ and then use an immediate: 
 
-    - replace with immediate: `64 14` `64 20`
-    - add immediate: `64 14` `65 20`
-    - and immediate: `64 14` `66 20`
-    - replace with memory contents at immediate: `64 14` `67 02`
+    - replace with immediate: `64 14` `64 20` (result: `20`)
+    - add immediate: `64 14` `65 20` (result: `34`)
+    - and immediate: `64 14` `66 24` (result: `04`)
+    - replace with memory contents at immediate: `64 14` `67 02` (result: `67`)
 
 icode = 7
 :   First load an address into R~1~, a value into R~2~, and then conditionally jump: 
@@ -212,8 +212,8 @@ We suggest following these steps, carefully, saving the result of each in a file
 5. Add more operations to convert ones not in the instruction set into ones in the instruction set
 6. Change each loop into a pair of instructions, opening with "`spot1` = `pc`" and closing with "if ..., goto `spot1`"
 7. Count the number of variables needed
-    - If it is ≤ 4, skip to step 10
-    - else, continue with next step
+    - If^[depending on how you write your original code, this is possible for this task] it is ≤ 4, skip to step 10
+    - else^[… but you're probably in case], continue with next step
 8. Pick a memory address for each variable. Make these big enough your cod is unlikely to get that big; for example, you might pick `0x80` though `0x80` + number of variables
 9. Convert each statement that uses variables into
     a. register ← load variable's memory
