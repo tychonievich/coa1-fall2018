@@ -230,15 +230,15 @@ assignments:
                     rubric:
                         kind: breakdown
                         parts:
-                            -   name: intersection
+                            -   name: neat and readable
                                 ratio: 0.05
-                                rubric: {"kind":"neat and readable"}
-                            -   name: set minus
+                                rubric: {"kind":"percentage"}
+                            -   name: shifts right
                                 ratio: 0.1
-                                rubric: {"kind":"shifts right"}
-                            -   name: union 7
+                                rubric: {"kind":"percentage"}
+                            -   name: sign extends
                                 ratio: 0.1
-                                rubric: {"kind":"sign extends"}
+                                rubric: {"kind":"percentage"}
     PA03:
         title: simulator
         files: ['*.py', '*.java', 'fib.binary']
