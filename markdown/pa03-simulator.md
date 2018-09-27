@@ -75,7 +75,7 @@ Once `0xC0` through `0xff` are set, halt by running an instruction with the `res
 
 The file `fib.binary` itself must not contain more than C0~16~ (192~10~) hexadecimal bytes.
 
-It should be the case that running your simulator on `fib.binary` for several hundred cycles should result in output ending with the following:
+It should be the case that running your simulator on `fib.binary` for many cycles should result in output ending with the following:
 
 
     0xc0-cf: 01 01 02 03 05 08 0d 15 22 37 59 90 e9 79 62 db
