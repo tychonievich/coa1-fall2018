@@ -187,58 +187,58 @@ assignments:
     PA02:
         title: worksheet
         due: 2018-09-21 14:00:00
-        total: 20
+        total: 100
         notes: 
         rubric:
             kind: breakdown
             parts:
                 -   name: mux
-                    ratio: 5
+                    ratio: 25
                     rubric:
                         kind: breakdown
                         parts:
                             -   name: basic gates
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: wired like mux
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: correct use of nots
-                                ratio: 1
+                                ratio: 5
                                 rubric: {"kind":"percentage"}
                 -   name: sets of bits
-                    ratio: 10
+                    ratio: 50
                     rubric:
                         kind: breakdown
                         parts:
                             -   name: intersection
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: set minus
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: union 7
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: minus 7
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: contains 8
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                 -   name: shifter
-                    ratio: 5
+                    ratio: 25
                     rubric:
                         kind: breakdown
                         parts:
                             -   name: neat and readable
-                                ratio: 1
+                                ratio: 5
                                 rubric: {"kind":"percentage"}
                             -   name: shifts right
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
                             -   name: sign extends
-                                ratio: 2
+                                ratio: 10
                                 rubric: {"kind":"percentage"}
     PA03:
         title: simulator
