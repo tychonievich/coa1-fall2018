@@ -199,13 +199,13 @@ assignments:
                         parts:
                             -   name: basic gates
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: wired like mux
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: correct use of nots
                                 ratio: 5
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                 -   name: sets of bits
                     ratio: 50
                     rubric:
@@ -213,19 +213,19 @@ assignments:
                         parts:
                             -   name: intersection
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: set minus
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: union 7
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: minus 7
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: contains 8
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                 -   name: shifter
                     ratio: 25
                     rubric:
@@ -233,13 +233,13 @@ assignments:
                         parts:
                             -   name: neat and readable
                                 ratio: 5
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: shifts right
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
                             -   name: sign extends
                                 ratio: 10
-                                rubric: {"kind":"percentage"}
+                                rubric: {"kind":"check"}
     PA03:
         title: simulator
         files: ['*.py', '*.java', 'fib.binary']
