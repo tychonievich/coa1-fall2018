@@ -245,6 +245,16 @@ assignments:
         files: ['*.py', '*.java', 'fib.binary']
         due: 2018-09-28 14:00:00
         notes: in Java or Python, implement a toy machine language fetch/decode/execute simulator
+        total: 100
+        rubric:
+            kind: breakdown
+            parts:
+                -   name: simulator
+                    ratio: 25
+                    rubric: {"kind": "percentage"}
+                -   name: Fibonacci
+                    ratio: 75
+                    rubric: {"kind": "percentage"}
 
     PA04:
         files: 'sieve.S'
