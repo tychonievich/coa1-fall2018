@@ -117,6 +117,8 @@ reading:
     
     review: ["[practice exam](files/f2018e1practice.pdf)"]
 
+    x86-64: ["x86.html"]
+
 assignments:
     ".groups":
         PA:
