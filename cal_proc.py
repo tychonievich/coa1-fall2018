@@ -103,11 +103,53 @@ def assignments_json(data):
     # process exams
     for k,v in data['Special Dates'].items():
         if k.startswith('Exam'):
-            ans[k] = {"group":"Exam", "due":v}
-            if k.endswith('3'): ans[k]['weight'] = 20/15
-            for ex,val in groups.get('Exam', {}).items():
-                if not ex.startswith('.') and ex not in totaling_keys and ex not in ans[k]:
-                    ans[k][ex] = val
+            if k.endswith('1'):
+                for p in range(4):
+                    ans['E1pg'+str(p+1)] = {
+                        'group':'Exam',
+                        'rubric': (
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 1"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 2"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 3"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 4"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 5"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 6"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 7"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 8"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 9"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 10"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 11"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 12"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 13"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 14"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 15"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 16"}
+                              ]
+                            },
+                        )[p],
+                        'weight':(6, 10, 8, 8)[p]/32,
+                        'total':(6, 10, 8, 8)[p],
+                    }
+            else:
+                ans[k] = {"group":"Exam", "due":v}
+                if k.endswith('3'): ans[k]['weight'] = 20/15
+                for ex,val in groups.get('Exam', {}).items():
+                    if not ex.startswith('.') and ex not in totaling_keys and ex not in ans[k]:
+                        ans[k][ex] = val
     # and assignments
     for k,v in data['assignments'].items():
         if k.startswith('.'): continue
