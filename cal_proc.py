@@ -143,6 +143,7 @@ def assignments_json(data):
                         )[p],
                         'weight':(6, 10, 8, 8)[p]/32,
                         'total':(6, 10, 8, 8)[p],
+                        'due':v,
                     }
             else:
                 ans[k] = {"group":"Exam", "due":v}
