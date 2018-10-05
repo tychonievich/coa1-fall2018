@@ -44,7 +44,7 @@ one that computes the product of two numbers, and one that computes the power of
 
 It should be possible to assemble your code by typing `clang matlib.s`
 and that should result in a file, `a.out`, that can be run by by typing `./a.out`.
-When run, it should^[Along the way, you might accidentally write code that runs forever. If the code appears to halt, try pressing Ctrl+C to interrupt it.] ask for two integers and display their product and exponent.
+When run, it should^[Along the way, you might accidentally write code that runs forever. If the program freezes while running, try pressing Ctrl+C to interrupt it.] ask for two integers and display their product and exponent.
 
 ## Product
 
@@ -66,7 +66,7 @@ but a simple one might follow an approach like the following pseudo-code:
         return z
     end function
 
-There is also a much more efficient solution family making use of bit shifts.
+There also exists a much more efficient solution that uses bit shifts.
 {/}
 
 You may assume that both of the parameters are positive integers
