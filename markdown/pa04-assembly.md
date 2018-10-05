@@ -44,7 +44,7 @@ one that computes the product of two numbers, and one that computes the power of
 
 It should be possible to assemble your code by typing `clang matlib.s`
 and that should result in a file, `a.out`, that can be run by by typing `./a.out`.
-When run, it should ask for two integers and display their product and exponent.
+When run, it should^[Along the way, you might accidentally write code that runs forever. If the code appears to halt, try pressing Ctrl+C to interrupt it.] ask for two integers and display their product and exponent.
 
 ## Product
 
