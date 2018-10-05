@@ -43,7 +43,7 @@ In AT\&T syntax x86-64 assembly, write two routines:
 one that computes the product of two numbers, and one that computes the power of two numbers.
 
 It should be possible to assemble your code by typing `clang matlib.s`
-and that should result in a file, `a.out`, that can be run by by typing `./a.out`.
+to generate a file, `a.out`, that can be run by by typing `./a.out`.
 When run, it should^[Along the way, you might accidentally write code that runs forever. If the program freezes while running, try pressing Ctrl+C to interrupt it.] ask for two integers and display their product and exponent.
 
 ## Product
@@ -76,7 +76,7 @@ and that the result can fit in a single 64-bit register.
 ## Power
 
 The second subroutine, `power`,
-should compute and return the its first argument raised to the power of its second argument.
+should compute and return its first argument raised to the power of its second argument.
 It **must use** the `product` routine you wrote to do this,
 not x86-64 multiplication instructions or other routines you did not write.
 It must compute this **recursively**, not iteratively.
