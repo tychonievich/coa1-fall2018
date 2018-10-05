@@ -259,7 +259,8 @@ assignments:
                     rubric: {"kind": "percentage"}
 
     PA04:
-        files: 'sieve.S'
+        title: assembly
+        files: 'matlib.s'
         due: 2018-10-19 14:00:00
     PA05:
         files: 'binary bomb'
