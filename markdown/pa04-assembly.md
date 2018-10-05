@@ -16,7 +16,7 @@ Write your code where the comments say "TO DO: write this function".
 
 You don't have to do this, but we strongly recommend you work with NX throughout this assignment.
 
-1. Log in to NX (see [lab 01](lab01-shell.html) for a reminder on how to do this).
+1. Log in to NX (see [lab01](lab01-shell.html) for a reminder on how to do this).
 2. Open a terminal
 3. Use [the modules tool] to get access to an assembler by typing
 
