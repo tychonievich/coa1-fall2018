@@ -77,10 +77,12 @@ $endfor$
   </div>
   <footer>
     $if(author)$
+      <span class="authors">
       Content copyright ©
       $for(author)$
-        $author$
+        <span class="author">$author$</span>
       $endfor$
+      </span>
     $else$
       Copyright © $year$ Luther Tychonievich.
     $endif$

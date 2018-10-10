@@ -166,3 +166,6 @@ dt,h2,h3,h4,h5,h6 { clear:both; }
     content: "Aside \2014  ";
     font-style: italic;
 }
+
+
+.author + .author:before { content: " and " }
