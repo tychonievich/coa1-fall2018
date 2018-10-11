@@ -1,6 +1,5 @@
 ---
 title: Debugger lab
-author: Luther Tychonievich
 ...
 
 
@@ -29,6 +28,7 @@ When using them on code you wrote, you want to compile with the `-g` flag to ena
 
 1. Log into NX and open a terminal
 2. Enable clang-llvm with `module enable clang-llvm`
+2. Enable the ghex hex editor with `module enable ghex`
 3. Invoke with `lldb program_to_debug`
 
 The following sections describe the important types of things you can do with `lldb`,
@@ -50,6 +50,11 @@ Command             Meaning
 `stepi`             step one ISA-instruction forward, entering functions if stepping on `call`
 `nexti`             step one ISA-instruction forward, skipping to return if stepping on `call`
 `finish`            run until the next `return`
+`continue`          resume running after run was interrupted (e.g., after a breakpoint or `step`).
+`exit`              leave the debugger
+
+
+You might also want to use Ctrl+C to interrupt a program if it is running too long (this works on the command line for programs run without a debugger too).
 
 
 ### Commands controlling break points
@@ -60,7 +65,7 @@ When `run`, the debugger pauses right *before* executing the code on which you p
 
 Command             Meaning
 ------------------- ----------------------------------------------------------
-`br main`           set a breakpoint on the first line of `main`
+`br set -n main`    set a breakpoint on the first line of `main`
 `br foo.c:23`       set a breakpoint on the line 23 of `foo.c` (must be a line with code, not a comment, blank line, etc)
 `br list`           list all breakpoints
 `br delete 1`       delete breakpoint number 1 (as indicated in the list)
@@ -76,8 +81,33 @@ Command                     Meaning
 `register read`             show the contents of the program registers
 `register read --format i`  show the contents of the program registers, formated as signed integers
 `register read rax rdx`     show the contents of `rax` and `rdx` (only)
-`me r -s4 -fx -c8 0x1234`   `me`mory `r`ead, with a `c`ount of 8 values, each value's `s`ize being 4 bytes, `f`ormated in he`x`adecimal, from address `0x1234`
+`me rea -s4 -fx -c8 0x1234`  `me`mory `rea1d, with a `c`ount of 8 values, each value's `s`ize being 4 bytes, `f`ormated in he`x`adecimal, from address `0x1234`
 `di -f`                     `diassemble` the code for the current call `f`rame.
 `di -n main`                `diassemble` the code for the function `name`ed `main`
+`di -n main -b`             `diassemble` the code for the function `name`ed `main`, with byte encoding of instructions included
 `di -s 0x1234 -c 20`        `diassemble` 20 bytes starting at address `0x1234`
 
+# Example: debugging `cmdadd`
+
+See the [cmdadd example](cmdadd.html) file for a detailed walkthrough.
+
+# Task: debug `recfib`
+
+> to do: add link to `recfib`
+
+The program `recfib` is supposed to print out the *n*th Fibonacci number, where *n* is provided on the command line, as e.g.
+
+    ./recfib 0
+    The 0th Fibonacci number is 1
+    
+    ./recfib 4
+    The 4th Fibonacci number is 3
+    
+    ./recfib 6
+    The 4th Fibonacci number is 8
+
+However, the program crashes when run because it has a bug in the recursive computation.
+
+Your task: use `lldb` to find the bug, then use `ghex` to fix it.
+
+We compiled `recfib` with the `-g` flag, so you'll see some source code as well as assembly.
