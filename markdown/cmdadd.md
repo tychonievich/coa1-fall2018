@@ -2,6 +2,7 @@
 title: Debugger example
 ...
 
+
 This file is a walk-through of locating and fixing a bug
 using `lldb` and `ghex` (a hex editor)
 to fix [`cmdadd`](files/cmdadd).
