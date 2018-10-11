@@ -93,21 +93,31 @@ See the [cmdadd example](cmdadd.html) file for a detailed walkthrough.
 
 # Task: debug `recfib`
 
-> to do: add link to `recfib`
-
-The program `recfib` is supposed to print out the *n*th Fibonacci number, where *n* is provided on the command line, as e.g.
+The program [`recfib`](files/recfib) is supposed to print out the *n*th Fibonacci number, where *n* is provided on the command line, as e.g.
 
     ./recfib 0
     The 0th Fibonacci number is 1
     
     ./recfib 4
-    The 4th Fibonacci number is 3
+    The 4th Fibonacci number is 5
     
     ./recfib 6
-    The 4th Fibonacci number is 8
+    The 6th Fibonacci number is 13
 
 However, the program crashes when run because it has a bug in the recursive computation.
 
 Your task: use `lldb` to find the bug, then use `ghex` to fix it.
+
+Note: the simplest fix (though not the only one) involves changing the conditions of a jump. There are multiple encodings of jumps, but the most common is a two-byte encoding, where the second byte is a relative offset and the first byte indicates the condition of the jump:
+
+Instruction First byte of "short jump" operation
+----------- ------------------------------------
+`je`        `74`
+`jne`       `75`
+`jl`        `7C`
+`jge`       `7D`
+`jle`       `7E`
+`jg`        `7F`
+
 
 We compiled `recfib` with the `-g` flag, so you'll see some source code as well as assembly.
