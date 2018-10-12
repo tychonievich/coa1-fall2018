@@ -119,6 +119,8 @@ reading:
 
     x86-64: ["[x86-64 summary](x86.html)"]
     tracing variables: ["[debugger example](cmdadd.html)"]
+    
+    C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)"]
 
 assignments:
     ".groups":
