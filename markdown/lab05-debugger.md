@@ -84,10 +84,10 @@ Command                     Meaning
 `register read`             show the contents of the program registers
 `register read --format i`  show the contents of the program registers, formated as signed integers
 `register read rax rdx`     show the contents of `rax` and `rdx` (only)
-`me rea -s4 -fx -c8 0x1234`  `me`mory `rea1d, with a `c`ount of 8 values, each value's `s`ize being 4 bytes, `f`ormated in he`x`adecimal, from address `0x1234`
+`me rea -s4 -fx -c8 0x1234` `me`mory `rea`d, with a `c`ount of 8 values, each value's `s`ize being 4 bytes, `f`ormated in he`x`adecimal, from address `0x1234`
 `di -f`                     `diassemble` the code for the current call `f`rame.
-`di -n main`                `diassemble` the code for the function `name`ed `main`
-`di -n main -b`             `diassemble` the code for the function `name`ed `main`, with byte encoding of instructions included
+`di -n main`                `diassemble` the code for the function `n`amed `main`
+`di -n main -b`             `diassemble` the code for the function `n`amed `main`, with byte encoding of instructions included
 `di -s 0x1234 -c 20`        `diassemble` 20 bytes starting at address `0x1234`
 
 # Example: debugging `cmdadd`
