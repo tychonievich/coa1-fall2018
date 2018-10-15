@@ -121,3 +121,10 @@ Instruction First byte of "short jump" operation
 
 
 We compiled `recfib` with the `-g` flag, so you'll see some source code as well as assembly.
+
+# Check-off
+
+To check-off this lab, show a TA your working code.
+The TA may also request that you discuss how you used the debugger to solve the problem
+and/or that you do a few simple debugger actions for them.
+
