@@ -3,7 +3,8 @@ title: Command-fu
 ...
 
 This is a place to record various command-line tricks and options I use in class.
-Due to a series of mis-translations, this is traditionally called command-fu, command-line fu, script-fu, etc.
+Due to a series of mis-translations involving 功夫 and Hollywood stereotypes,
+the "magic you can do on the command line" is traditionally called command-fu, command-line fu, script-fu, etc.
 
 # 2018-10-15
 
