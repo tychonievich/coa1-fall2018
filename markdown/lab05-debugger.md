@@ -34,6 +34,9 @@ When using them on code you wrote, you want to compile with the `-g` flag to ena
 The following sections describe the important types of things you can do with `lldb`,
 organized by "category" of activity.
 
+> Due to a misconfiguration of the NX servers prior to 2018-10-15 15:18 EDT,
+> you might need to run `module unload clang-llvm` prior to running `module clang-llvm`
+> once for `lldb` to be loaded properly.
 
 ## Useful commands
 
