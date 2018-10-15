@@ -27,8 +27,8 @@ When using them on code you wrote, you want to compile with the `-g` flag to ena
 # How to Start Using `lldb` in NX
 
 1. Log into NX and open a terminal
-2. Enable clang-llvm with `module enable clang-llvm`
-2. Enable the ghex hex editor with `module enable ghex`
+2. Enable clang-llvm with `module load clang-llvm`
+2. Enable the ghex hex editor with `module load ghex`
 3. Invoke with `lldb program_to_debug`
 
 The following sections describe the important types of things you can do with `lldb`,
