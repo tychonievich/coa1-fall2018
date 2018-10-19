@@ -364,3 +364,27 @@ with a slight twist: if `s` contains a `continue`, it jumps to `e3` instead of t
 If `e2` is omitted, it is assumed to be `1`, so `for(;;) s;` repeats `s` forever.
 
 ### Ugly and uncommon ones
+
+#### do-while
+
+The syntax `do s; while (e);`{.c} means the same as `s; while (e) s;`:
+that is, it always does `s` once before first checking `e`.
+In my experience, this is used for less than 1% of loops.
+
+#### label and goto
+
+Any line of code may be preceded by a label:
+an identifier followed by a colon.
+
+The `goto some_label;`{.c} statement unconditionally jumps to the code identified by that label.
+
+In 1968 Edgar Dijkstra write an article "[Go To Statement Considered Harmful](Dijkstra68.pdf)".
+Since then, the use of `goto` in code has dropped significantly; 
+it's now usually a sign either of over-emphasis on optimization
+or a shim to avoid having to redesign poorly-organized code.
+However, there are a few situations where it can be handy, so it does sometimes show up in high-quality code.
+
+#### switch
+
+# Functions
+
