@@ -314,3 +314,53 @@ It might make you do some complicated casting to do things, but it won't stop yo
 ## Braces and scope
 
 Any statement may be replaced with a sequence of statements inside braces.
+Variables declared inside a set of braces vanish at the end of those braces.
+
+````c
+int x;
+{
+    int y;
+    x = y;  /* OK, both x and y in scope */
+}
+y = x; /* ERROR: y is no longer in scope */
+````
+
+## Flow of control
+
+### Nice and common ones
+
+#### if
+
+Any statement may be preceded by `if ( ... )`;
+the statement will only be executed if the expression inside the parentheses yields a non-zero value.
+
+Any statement following a statement preceded by `if ( ... )` may be preceded by `else`;
+the statement will only be executed if the expression inside the `if`'s parentheses yields a zero value.
+
+#### while
+
+Any statement may be preceded by `while ( ... )`;
+the statement will only be executed if the expression inside the parentheses yields a non-zero value,
+and will continue to be executed until that condition stops being true.
+
+#### for
+
+The special construct `for (e1; e2; e3) s;`{.c}
+is equivalent to the following:
+
+````c
+{
+    e1
+    while (e2) {
+        s;
+        e3;
+    }
+}
+````
+
+with a slight twist: if `s` contains a `continue`, it jumps to `e3` instead of to `while (e2)`.
+
+
+If `e2` is omitted, it is assumed to be `1`, so `for(;;) s;` repeats `s` forever.
+
+### Ugly and uncommon ones
