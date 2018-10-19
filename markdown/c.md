@@ -263,6 +263,13 @@ z.y = **y;
 `typedef` type names are aliases to the old names;
 the compiler will treat both the original and new name as equivalent in all type checking.
 
+Sometimes `typedef` is used with *anonymous* `struct`s:
+
+````c
+struct { int x; double y; } foo;
+foo z;
+````
+
 ## Union
 
 A union is like a struct, except that all of the fields are stored in the same memory address.
@@ -300,3 +307,10 @@ t[0] = 'H';           /* we try to change that memory (the OS will crash our pro
 
 C's general attitude is "every rule has an exception" and "the programmer knows best".
 It might make you do some complicated casting to do things, but it won't stop you if you are determined.
+
+
+# Control constructs
+
+## Braces and scope
+
+Any statement may be replaced with a sequence of statements inside braces.
