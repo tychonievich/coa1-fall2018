@@ -226,3 +226,6 @@ const char *s = "hi"; /* compiler makes the string in memory the OS won't allow 
 char *t = (char *)s;  /* we get a pointer to that memory that C will allow us to change */
 t[0] = 'H';           /* we try to change that memory (the OS will crash our program) */
 ````
+
+C's general attitude is "every rule has an exception" and "the programmer knows best".
+It might make you do some complicated casting to do things, but it won't stop you if you are determined.
