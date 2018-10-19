@@ -37,6 +37,9 @@ This only works up to int-sized literals.
 To force a literal to be long add a `l` or `L` to the end; to force it to be unsigned add a `u` or `U`.
 This is generally only needed for very large constants, like `unsigned long very_big = 9223372036854775808ul`{.c}.
 
+Character literals are integer literals written with a different syntax.
+There is no significant difference between `'0'` and `48` other than legibility.
+
 ### Floating-point
 
 The floating-point datatypes are
@@ -157,6 +160,16 @@ The rule here is that we declare variables *exactly* as we would use them:
 a point to an array would first be dereferenced (`(*pc)`) and then indexed (`(*pc)[i]`) to get a `char`
 so we declare it as `char (*pc)[10]`.
 
+Arrays literals use curly braces and commas.
+
+````c
+int x[10] = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
+````
+
+Unless initialized with a literal like this, the contents of an array are *undefined* (i.e., may be any random values the compiler thinks is most efficient) when created.
+
+Arrays cannot be resized after being created.
+
 ### Struct
 
 
@@ -202,6 +215,22 @@ void swozzle(struct baz *, int n) {
 }
 ````
 
+Structure literals are written using curly braces and commas, optionally with `.fieldname =` prefixes
+
+````c
+struct a {
+    int b;
+    double c;
+}
+
+/* Both of the following initialize b to 0 and c to 1.0 */
+struct a x = { 0, 1.0 };
+struct a y = { .b = 0, .c = 1.0 };
+````
+
+Unless initialized with a literal like this, the values of fields of a struct are *undefined* (i.e., may be any random values the compiler thinks is most efficient) when created.
+
+
 ## Constant
 
 If a type is preceded by `const`, the compiler is free to perform optimizations that assume that no code will ever change the values of this type after they are first initialized.
@@ -210,6 +239,48 @@ As a special syntax, a string literal like `"hello"`{.c} does two things:
 
 1. It ensures there exists somewhere an array of characters `{'h', 'e', 'l', 'l', 'o', 0}`, typically in read-only memory.
 2. It returns a `const char *` pointing to the `h`.
+
+## typedef
+
+You can give new names to any type by using the `typedef` statement:
+
+````c
+typedef int Integer;
+Integer x = 23;
+
+typedef double ** dpp;
+double y0 = 12.34;
+double *y1 = &y0;
+dpp y = &y1;
+
+struct foo { int x; double y; };
+typedef struct foo foo;
+foo z;
+z.x = x;
+z.y = **y;
+````
+
+`typedef` type names are aliases to the old names;
+the compiler will treat both the original and new name as equivalent in all type checking.
+
+## Union
+
+A union is like a struct, except that all of the fields are stored in the same memory address.
+In practice, this means only one of them has a meaningful value at a time.
+
+````c
+union odd {
+    long long i;
+    double d;
+};
+
+union odd x;
+x.i = 0x1234;    /* x's memory now contains 34 12 00 00 00 00 00 00 */
+double y = x.d;  /* y is now the double value interpretation of those same bytes */
+
+x.d = 0x1234;    /* x's memory now contains the floating-point representation of 0x1234 */
+double z = x.d;  /* z is now the integer value interpretation of those same bytes */
+````
 
 ## You can do bad things
 
