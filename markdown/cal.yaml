@@ -72,9 +72,9 @@ classes:
     -   compile-time info
 
     -   C introduction
-    -   simple and compound types
-    -   control constructs
-    -   function calls and the stack
+    -   C introduction
+    -   C introduction
+    -   C introduction
     -   global, stack, heap
     -   malloc and free
 
