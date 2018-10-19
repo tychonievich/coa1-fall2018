@@ -276,10 +276,10 @@ union odd {
 
 union odd x;
 x.i = 0x1234;    /* x's memory now contains 34 12 00 00 00 00 00 00 */
-double y = x.d;  /* y is now the double value interpretation of those same bytes */
+double y = x.d;  /* y is now 2.30235e-320 (those same bytes) */
 
-x.d = 0x1234;    /* x's memory now contains the floating-point representation of 0x1234 */
-double z = x.d;  /* z is now the integer value interpretation of those same bytes */
+x.d = 0x1234;       /* x's memory now contains 00 00 00 00 00 34 b2 40 */
+long long z = x.d;  /* z is now 0x40b2340000000000 (those same bytes) */
 ````
 
 ## You can do bad things
