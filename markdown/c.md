@@ -484,11 +484,57 @@ int is_odd(unsigned n) {
 }
 ````
 
-Often the declarations or **function headers** are even put in a separate file,
+Often the declarations or **function headers** are put in a separate file,
 called a **header file** and traditionally named with the suffix `.h`.
 The `#include` directive can thus grab all of these at once,
 simplifying coding without increasing the size of the resulting `.c` file or the compiled binary.
 
+## It's all convention
+
+C passes arguments using a calling convention.
+This is obeyed blindly by both the caller and the callee;
+so if the caller thought the callee had different argument types than it did,
+neither will notice they have a problem; they'll just silently do the wrong thing.
+
+{.example ...}
+Consider the following pair of files:
+
+<figure><caption>baz.c</caption>
+````c
+long bar(char *);
+
+/** adds bar("hello") to its argument **/
+long baz(long x) {
+    return bar("hello") + x;
+}
+````
+</figure>
+
+<figure><caption>bar.c</caption>
+````c
+/** returns the requested suffix of "ten letter" **/
+char *bar(long x) {
+    char *c = "ten letter";
+    return c + (x%10);
+}
+````
+</figure>
+
+When executed, 
+
+1. `baz` will put the address of the first character of `"hello"` into the `%rdi` register and then `callq bar`.
+2. `bar` will look in `%rdi` for an integer, modulo it by 10, and use it to put an address of a character in the string `"ten letter"` into `%rax`
+3. `baz` will look in `%rax` for an integer, add `x` to it, and return
+
+This is almost certainly not what was wanted,
+but no part of it violates the rules.
+{/}
+
+<!--
+Technically, mis-matched declarations and definitions are undefined behavior,
+but unless the compiler has awareness of both files at once
+it cannot do anything other than assume all other files agrees with the one it is seeing.
+-->
 
 ## Syntax variations
 
