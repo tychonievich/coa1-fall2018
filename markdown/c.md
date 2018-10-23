@@ -489,52 +489,6 @@ called a **header file** and traditionally named with the suffix `.h`.
 The `#include` directive can thus grab all of these at once,
 simplifying coding without increasing the size of the resulting `.c` file or the compiled binary.
 
-## It's all convention
-
-C passes arguments using a calling convention.
-This is obeyed blindly by both the caller and the callee;
-so if the caller thought the callee had different argument types than it did,
-neither will notice they have a problem; they'll just silently do the wrong thing.
-
-{.example ...}
-Consider the following pair of files:
-
-<figure><caption>baz.c</caption>
-````c
-long bar(char *);
-
-/** adds bar("hello") to its argument **/
-long baz(long x) {
-    return bar("hello") + x;
-}
-````
-</figure>
-
-<figure><caption>bar.c</caption>
-````c
-/** returns the requested suffix of "ten letter" **/
-char *bar(long x) {
-    char *c = "ten letter";
-    return c + (x%10);
-}
-````
-</figure>
-
-When executed, 
-
-1. `baz` will put the address of the first character of `"hello"` into the `%rdi` register and then `callq bar`.
-2. `bar` will look in `%rdi` for an integer, modulo it by 10, and use it to put an address of a character in the string `"ten letter"` into `%rax`
-3. `baz` will look in `%rax` for an integer, add `x` to it, and return
-
-This is almost certainly not what was wanted,
-but no part of it violates the rules.
-{/}
-
-<!--
-Technically, mis-matched declarations and definitions are undefined behavior,
-but unless the compiler has awareness of both files at once
-it cannot do anything other than assume all other files agrees with the one it is seeing.
--->
 
 ## Syntax variations
 
@@ -587,6 +541,67 @@ However, C allows several variations on this theme.
 -   The `main` function (only) will return `0` if it is missing a `return`,
     and may omit its arguments upon definition.
     
+
+## It's all convention
+
+C passes arguments using a calling convention.
+This is obeyed blindly by both the caller and the callee;
+so if the caller thought the callee had different argument types than it did,
+neither will notice they have a problem; they'll just silently do the wrong thing.
+
+{.example ...}
+Consider the following pair of files:
+
+<figure><caption>baz.c</caption>
+````c
+long bar(char *);
+
+/** adds bar("hello") to its argument **/
+long baz(long x) {
+    return bar("hello") + x;
+}
+````
+</figure>
+
+<figure><caption>bar.c</caption>
+````c
+/** returns the requested suffix of "ten letter" **/
+char *bar(long x) {
+    char *c = "ten letter";
+    return c + (x%10);
+}
+````
+</figure>
+
+When executed, 
+
+1. `baz` will put the address of the first character of `"hello"` into the `%rdi` register and then `callq bar`.
+2. `bar` will look in `%rdi` for an integer, modulo it by 10, and use it to put an address of a character in the string `"ten letter"` into `%rax`
+3. `baz` will look in `%rax` for an integer, add `x` to it, and return
+
+This is almost certainly not what was wanted,
+but no part of it violates the rules.
+{/}
+
+<!--
+Technically, mis-matched declarations and definitions are undefined behavior,
+but unless the compiler has awareness of both files at once
+it cannot do anything other than assume all other files agrees with the one it is seeing.
+-->
+
     
 ## Variadic functions
+
+The number of arguments in a function is known as the functions **arity**.
+Many functions have fixed arity, requiring the same number of arguments each time they are invoked,
+but sometimes it is nice to have a function that has variable arity, or a **variadic** function.
+
+In C, when invoking a function of variable arity
+the invoking code simply follows the calling convention,
+putting some arguments in registers and others on the stack.
+The invoked function then needs to know how many arguments it received.
+Since it can't tell anything without consulting at least one argument,
+all variadic functions in C require at least one argument,
+and almost all use that argument to decide how many (and what type) the other arguments are.
+
 
