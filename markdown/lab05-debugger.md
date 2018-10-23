@@ -107,11 +107,11 @@ The program [`recfib`](files/recfib) is supposed to print out the *n*th Fibonacc
     ./recfib 6
     The 6th Fibonacci number is 13
 
-However, the program crashes when run because it has a bug in the recursive computation.
+However, the program prints the wrong numbers.
 
 Your task: use `lldb` to find the bug, then use `ghex` to fix it.
 
-Note: the simplest fix (though not the only one) involves changing the conditions of a jump. There are multiple encodings of jumps, but the most common is a two-byte encoding, where the second byte is a relative offset and the first byte indicates the condition of the jump:
+Note: the simplest fix (though not the only one) includes changing the conditions of a jump. There are multiple encodings of jumps, but the most common is a two-byte encoding, where the second byte is a relative offset and the first byte indicates the condition of the jump:
 
 Instruction First byte of "short jump" operation
 ----------- ------------------------------------

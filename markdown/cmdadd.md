@@ -257,12 +257,12 @@ So we need to debug it.
 10. Looking at the above, I notice we seem to be counting down each of the arguments, and counting up by twos.
     If all of the counting up steps were by 1 instead, we'd be OK.
     So I need to figure out where the down-by-2 is in the binary:
-    `di -n add -d` includes this line
+    `di -n add -b` includes this line
     
         0x55555555517c <+44>: 48 83 c0 02        addq   $0x2, %rax
 
 11. Let's fix that. I wanted `01` not `02`.
-    So I open up a hex editor, such as `ghex addq`
+    So I open up a hex editor, such as `ghex cmdadd`
     In that, I find the instruction I don't want by
     
     a. Ctrl+F to open the find dialog

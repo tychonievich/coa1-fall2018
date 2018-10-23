@@ -72,9 +72,9 @@ classes:
     -   compile-time info
 
     -   C introduction
-    -   simple and compound types
-    -   control constructs
-    -   function calls and the stack
+    -   C introduction
+    -   C introduction
+    -   C introduction
     -   global, stack, heap
     -   malloc and free
 
@@ -120,7 +120,7 @@ reading:
     x86-64: ["[x86-64 summary](x86.html)"]
     tracing variables: ["[debugger example](cmdadd.html)"]
     
-    C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)"]
+    C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)", "[incomplete reference](c.html)"]
 
 assignments:
     ".groups":
@@ -162,7 +162,7 @@ assignments:
         notes: a guided walk-through of a GUI binary debugger (nemiver/eclipse CDT/kdbg)
     Lab06:
         due: 2018-10-23
-        title: 'bomb lab'
+        title: 'bomb'
         notes: given a compiled binary, use a debugger to adjust its behavior
     Lab07:
         due: 2018-10-30
@@ -266,7 +266,7 @@ assignments:
         files: 'matlib.s'
         due: 2018-10-19 14:00:00
     PA05:
-        files: 'binary bomb'
+        title: 'bomb'
         due: 2018-10-26 14:00:00
     PA06:
         files: sieve.c
