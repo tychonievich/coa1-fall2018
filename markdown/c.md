@@ -386,5 +386,64 @@ However, there are a few situations where it can be handy, so it does sometimes 
 
 #### switch
 
+The `switch` statement in C may be implemented in several ways by the compiler,
+but it is designed to be a good match for the "jump table" approach.
+
+The syntax of the `switch` is as follows:
+
+````c
+switch(i) {
+    case 0:
+        statements;
+        break;
+    case 1:
+        statements;
+        break;
+    case 3:
+        statements;
+        break;
+    case 4:
+        statements;
+        break;
+    default:
+        statements;
+}
+````
+
+Conceptually, this is
+
+- a block of code
+- with multiple labels
+- where the labels are numbered, not named
+
+and it operates like the (invalid) code
+
+````c
+c_code *targets[5] = { (case 0), (case 1), (default), (case 3), (case 4) };
+if (0 <= i && i < 5) goto targets[i];
+else goto default;
+````
+
+The `break` (as with a `break` in a loop) stops running the code block and goes to the first statement after it.
+
+Many people think of a `switch` as being a nice way to write a long `if`/`else if` sequence,
+and are then annoyed by its limitations and quirks:
+it has to have an integer selector (as this is really an index),
+and it "falls through" to the next case if there is no `break`.
+Hence the following example, taken from [wikipedia](https://en.wikipedia.org/wiki/Switch_statement)
+
+````c
+switch (age) {
+  case 1:  printf("You're one.");            break;
+  case 2:  printf("You're two.");            break;
+  case 3:  printf("You're three.");
+  case 4:  printf("You're three or four.");  break;
+  default: printf("You're not 1,2,3 or 4!");
+}
+````
+
+Most compilers have several different implementations of `switch` they can pick between;
+they might use a jump table, a sequence of `if`/`else if`s, a binary search, etc.
+
 # Functions
 
