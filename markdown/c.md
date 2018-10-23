@@ -604,4 +604,57 @@ Since it can't tell anything without consulting at least one argument,
 all variadic functions in C require at least one argument,
 and almost all use that argument to decide how many (and what type) the other arguments are.
 
+By far the most famous variadic function in C is `printf`,
+which is defined as
 
+````c
+int printf(const char *format, ...);
+````
+
+Note the trailing `...` means "this is a variadic function."
+Thus, `printf` may be invoked with any arguments you want,
+as long as the first is a `const char *` (that is, a string):
+
+````c
+printf("%s, %s %d, %.2d:%.2d\n", weekday, month, day, hour, min);
+````
+
+The `printf` function uses fairly involved rules about `%`s in its first argument
+to determine how many and what type the other arguments should be.
+
+Writing a variadic function is somewhat complicated
+by the fact that the extra arguments do not have names.
+C provides (declared in `stdarg.h`) a special data type `va_list`
+and a set of special macros to use in accessing variadic arguments.
+
+````c
+void va_start(va_list ap, argN);
+type va_arg(va_list ap, type);
+void va_end(va_list ap);
+````
+
+To use these, you might do something like
+
+````c
+int sign_swaps(int num0, ...) {
+    va_list ap;
+    int last = num0;
+    int ans = 0;
+
+    va_start(ap, num0);
+    while(last != 0) {
+        int next = va_arg(ap, int);
+        if ((last < 0) != (next < 0)) ans += 1;
+        last = next;
+    }
+    va_end(ap);
+
+    return ans;
+}
+````
+
+If you want to write variadic functions, you should
+
+1. Read all of `man stdarg.h` twice
+2. Look up variadic security vulnerabilities like the [format string attack](https://en.wikipedia.org/wiki/Format_string_attack)
+3. Write good tests, including too-few- and too-many- and wrong-type-argument invocations.
