@@ -434,10 +434,10 @@ Hence the following example, taken from [wikipedia](https://en.wikipedia.org/wik
 
 ````c
 switch (age) {
-  case 1:  printf("You're one.");            break;
-  case 2:  printf("You're two.");            break;
+  case 1:  printf("You're one.");              break;
+  case 2:  printf("You're two.");              break;
   case 3:  printf("You're three.");
-  case 4:  printf("You're three or four.");  break;
+  case 4:  printf("You're three or four.");    break;
   default: printf("You're not 1, 2, 3 or 4!");
 }
 ````
@@ -454,3 +454,67 @@ they might use a jump table, a sequence of `if`/`else if`s, a binary search, etc
 
 # Functions
 
+The most common use of functions in C looks much like you are used to from other languages:
+a return type, a name, a list of typed parameters in parentheses, and a body in braces.
+
+## Most common use
+
+````c
+void baz(int i, char *b, float c) {
+    b[i] = (char)c;
+    return;
+}
+````
+
+## Syntax variations
+
+However, C allows several variations on this theme.
+
+-   Function return types can be omitted, defaulting to `int`:
+    
+    ````c
+    min(int a, int b) { return a < b ? a : b; }
+    ````
+    
+-   Function parameter types can be omitted, defaulting to `int`:
+
+    ````c
+    min(a, b) { return a < b ? a : b; }
+    ````
+
+-   Function parameter types can be specified between the `)` and the `{`:
+
+    ````c
+    void baz(i, b, c)
+    int i;
+    char *b;
+    float c;
+    {
+        b[i] = (char)c;
+        return;
+    }
+    ````
+    
+    Technically, this does something called "promotion" and has various quirks;
+    for this and other reasons it is often called "old-style" and generally discouraged.
+
+-   A zero-argument function can be written as either
+
+    ````c
+    int three() {
+        return 3;
+    }
+    ````
+    
+    or 
+    
+    ````c
+    int three(void) {
+        return 3;
+    }
+    ````
+
+-   The `main` function (only) will return `0` if it is missing a `return`,
+    and may omit its arguments upon definition.
+    
+    
