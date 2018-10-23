@@ -474,19 +474,21 @@ int is_even(unsigned n);
 int is_odd(unsigned n);
 
 int is_even(unsigned n) {
-    if (n == 0)
-        return true;
-    else
-        return is_odd(n - 1);
+    if (n == 0) return true;
+    else        return is_odd(n - 1);
 }
 
 int is_odd(unsigned n) {
-    if (n == 0)
-        return false;
-    else
-        return is_even(n - 1);
+    if (n == 0) return false;
+    else        return is_even(n - 1);
 }
 ````
+
+Often the declarations or **function headers** are even put in a separate file,
+called a **header file** and traditionally named with the suffix `.h`.
+The `#include` directive can thus grab all of these at once,
+simplifying coding without increasing the size of the resulting `.c` file or the compiled binary.
+
 
 ## Syntax variations
 
