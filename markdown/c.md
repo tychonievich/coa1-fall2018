@@ -454,15 +454,37 @@ they might use a jump table, a sequence of `if`/`else if`s, a binary search, etc
 
 # Functions
 
+## Most common use
+
 The most common use of functions in C looks much like you are used to from other languages:
 a return type, a name, a list of typed parameters in parentheses, and a body in braces.
-
-## Most common use
 
 ````c
 void baz(int i, char *b, float c) {
     b[i] = (char)c;
     return;
+}
+````
+
+It is also common to declare functions before defining them,
+in part because C requires functions to be declared before use.
+
+````c
+int is_even(unsigned n);
+int is_odd(unsigned n);
+
+int is_even(unsigned n) {
+    if (n == 0)
+        return true;
+    else
+        return is_odd(n - 1);
+}
+
+int is_odd(unsigned n) {
+    if (n == 0)
+        return false;
+    else
+        return is_even(n - 1);
 }
 ````
 
