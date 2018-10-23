@@ -430,7 +430,7 @@ Many people think of a `switch` as being a nice way to write a long `if`/`else i
 and are then annoyed by its limitations and quirks:
 it has to have an integer selector (as this is really an index),
 and it "falls through" to the next case if there is no `break`.
-Hence the following example, taken from [wikipedia](https://en.wikipedia.org/wiki/Switch_statement)
+Hence the following example, taken from [wikipedia](https://en.wikipedia.org/wiki/Switch_statement):
 
 ````c
 switch (age) {
@@ -438,9 +438,16 @@ switch (age) {
   case 2:  printf("You're two.");            break;
   case 3:  printf("You're three.");
   case 4:  printf("You're three or four.");  break;
-  default: printf("You're not 1,2,3 or 4!");
+  default: printf("You're not 1, 2, 3 or 4!");
 }
 ````
+
+Because many programmers make mistakes with `switch`,
+it is common to see them banned by style,
+or augmented with a special style,
+or later languages to use a similar syntax in ways a jump table cannot handle,
+or mostly C-compatible languages augmenting them with rules like
+"each case bust either end with `break` or with an explicit `fallthrough`/`goto case`".
 
 Most compilers have several different implementations of `switch` they can pick between;
 they might use a jump table, a sequence of `if`/`else if`s, a binary search, etc.
