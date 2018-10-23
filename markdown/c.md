@@ -588,3 +588,5 @@ However, C allows several variations on this theme.
     and may omit its arguments upon definition.
     
     
+## Variadic functions
+
