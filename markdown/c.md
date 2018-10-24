@@ -238,6 +238,7 @@ If a type is preceded by `const`, the compiler is free to perform optimizations 
 As a special syntax, a string literal like `"hello"`{.c} does two things:
 
 1. It ensures there exists somewhere an array of characters `{'h', 'e', 'l', 'l', 'o', 0}`, typically in read-only memory.
+    - Note the `0` at the end (that's byte-0 not character-0). This is how C knows the string is over.
 2. It returns a `const char *` pointing to the `h`.
 
 ## typedef
