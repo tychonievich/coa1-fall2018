@@ -166,7 +166,7 @@ assignments:
         notes: given a compiled binary, use a debugger to adjust its behavior
     Lab07:
         due: 2018-10-30
-        title: 'char * coding'
+        title: 'char*'
         notes: a set of puzzles using strlen/strcmp/strsep/strtok/...
 
     Lab08:
