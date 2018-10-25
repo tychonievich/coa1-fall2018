@@ -34,6 +34,8 @@ will display
     THE BOOK "THE C PROGRAMMING LANGUAGE."
 {/}
 
+Tip: test this with empty strings, strings with digits and punctuation in them, etc.
+
 
 # `void fibarray(unsigned char *dest, unsigned num);`
 
@@ -64,6 +66,7 @@ will display
      21 61 82 e3 65 48 ad f5 a2 97 39 d0 09 d9 e2 bb
 {/}
 
+Tip: test this with 0- and 1-entry arrays as well as larger ones, and make sure you don't go off the end of the array.
 
 # `long recpow(long x, unsigned char e);`
 
