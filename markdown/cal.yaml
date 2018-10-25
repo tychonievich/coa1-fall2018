@@ -120,7 +120,7 @@ reading:
     x86-64: ["[x86-64 summary](x86.html)"]
     tracing variables: ["[debugger example](cmdadd.html)"]
     
-    C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)", "[incomplete reference](c.html)"]
+    C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)", "[language reference](c.html)"]
 
 assignments:
     ".groups":
@@ -166,7 +166,7 @@ assignments:
         notes: given a compiled binary, use a debugger to adjust its behavior
     Lab07:
         due: 2018-10-30
-        title: 'char * coding'
+        title: 'char*'
         notes: a set of puzzles using strlen/strcmp/strsep/strtok/...
 
     Lab08:
@@ -265,6 +265,42 @@ assignments:
         title: assembly
         files: 'matlib.s'
         due: 2018-10-19 14:00:00
+        rubric:
+            kind: breakdown
+            parts:
+                -   name: code assembles, runs, and terminates
+                    ratio: 10
+                    rubric: {"kind":"check"}
+
+                -   name: product assembly is a good effort
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: product has right answer
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: product is iterative
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: product does not use multiply instructions
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                    
+                -   name: power assembly is a good effort
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: power has right answer
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: power is recursive
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: power does not use multiply instructions or foreign functions
+                    ratio: 10
+                    rubric: {"kind":"check"}
+                -   name: power invokes product
+                    ratio: 10
+                    rubric: {"kind":"check"}
+
     PA05:
         title: 'bomb'
         due: 2018-10-26 14:00:00

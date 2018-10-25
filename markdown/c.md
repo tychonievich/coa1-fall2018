@@ -238,6 +238,7 @@ If a type is preceded by `const`, the compiler is free to perform optimizations 
 As a special syntax, a string literal like `"hello"`{.c} does two things:
 
 1. It ensures there exists somewhere an array of characters `{'h', 'e', 'l', 'l', 'o', 0}`, typically in read-only memory.
+    - Note the `0` at the end (that's byte-0 not character-0). This is how C knows the string is over.
 2. It returns a `const char *` pointing to the `h`.
 
 ## typedef
@@ -386,5 +387,275 @@ However, there are a few situations where it can be handy, so it does sometimes 
 
 #### switch
 
+The `switch` statement in C may be implemented in several ways by the compiler,
+but it is designed to be a good match for the "jump table" approach.
+
+The syntax of the `switch` is as follows:
+
+````c
+switch(i) {
+    case 0:
+        statements;
+        break;
+    case 1:
+        statements;
+        break;
+    case 3:
+        statements;
+        break;
+    case 4:
+        statements;
+        break;
+    default:
+        statements;
+}
+````
+
+Conceptually, this is
+
+- a block of code
+- with multiple labels
+- where the labels are numbered, not named
+
+and it operates like the (invalid) code
+
+````c
+c_code *targets[5] = { (case 0), (case 1), (default), (case 3), (case 4) };
+if (0 <= i && i < 5) goto targets[i];
+else goto default;
+````
+
+The `break` (as with a `break` in a loop) stops running the code block and goes to the first statement after it.
+
+Many people think of a `switch` as being a nice way to write a long `if`/`else if` sequence,
+and are then annoyed by its limitations and quirks:
+it has to have an integer selector (as this is really an index),
+and it "falls through" to the next case if there is no `break`.
+Hence the following example, taken from [wikipedia](https://en.wikipedia.org/wiki/Switch_statement):
+
+````c
+switch (age) {
+  case 1:  printf("You're one.");              break;
+  case 2:  printf("You're two.");              break;
+  case 3:  printf("You're three.");
+  case 4:  printf("You're three or four.");    break;
+  default: printf("You're not 1, 2, 3 or 4!");
+}
+````
+
+Because many programmers make mistakes with `switch`,
+it is common to see them banned by style,
+or augmented with a special style,
+or later languages to use a similar syntax in ways a jump table cannot handle,
+or mostly C-compatible languages augmenting them with rules like
+"each case bust either end with `break` or with an explicit `fallthrough`/`goto case`".
+
+Most compilers have several different implementations of `switch` they can pick between;
+they might use a jump table, a sequence of `if`/`else if`s, a binary search, etc.
+
 # Functions
 
+## Most common use
+
+The most common use of functions in C looks much like you are used to from other languages:
+a return type, a name, a list of typed parameters in parentheses, and a body in braces.
+
+````c
+void baz(int i, char *b, float c) {
+    b[i] = (char)c;
+    return;
+}
+````
+
+It is also common to declare functions before defining them,
+in part because C requires functions to be declared before use.
+
+````c
+int is_even(unsigned n);
+int is_odd(unsigned n);
+
+int is_even(unsigned n) {
+    if (n == 0) return true;
+    else        return is_odd(n - 1);
+}
+
+int is_odd(unsigned n) {
+    if (n == 0) return false;
+    else        return is_even(n - 1);
+}
+````
+
+Often the declarations or **function headers** are put in a separate file,
+called a **header file** and traditionally named with the suffix `.h`.
+The `#include` directive can thus grab all of these at once,
+simplifying coding without increasing the size of the resulting `.c` file or the compiled binary.
+
+
+## Syntax variations
+
+However, C allows several variations on this theme.
+
+-   Function return types can be omitted, defaulting to `int`:
+    
+    ````c
+    min(int a, int b) { return a < b ? a : b; }
+    ````
+    
+-   Function parameter types can be omitted, defaulting to `int`:
+
+    ````c
+    min(a, b) { return a < b ? a : b; }
+    ````
+
+-   Function parameter types can be specified between the `)` and the `{`:
+
+    ````c
+    void baz(i, b, c)
+    int i;
+    char *b;
+    float c;
+    {
+        b[i] = (char)c;
+        return;
+    }
+    ````
+    
+    Technically, this does something called "promotion" and has various quirks;
+    for this and other reasons it is often called "old-style" and generally discouraged.
+
+-   A zero-argument function can be written as either
+
+    ````c
+    int three() {
+        return 3;
+    }
+    ````
+    
+    or 
+    
+    ````c
+    int three(void) {
+        return 3;
+    }
+    ````
+
+-   The `main` function (only) will return `0` if it is missing a `return`,
+    and may omit its arguments upon definition.
+    
+
+## It's all convention
+
+C passes arguments using a calling convention.
+This is obeyed blindly by both the caller and the callee;
+so if the caller thought the callee had different argument types than it did,
+neither will notice they have a problem; they'll just silently do the wrong thing.
+
+{.example ...}
+Consider the following pair of files:
+
+<figure><caption>baz.c</caption>
+````c
+long bar(char *);
+
+/** adds bar("hello") to its argument **/
+long baz(long x) {
+    return bar("hello") + x;
+}
+````
+</figure>
+
+<figure><caption>bar.c</caption>
+````c
+/** returns the requested suffix of "ten letter" **/
+char *bar(long x) {
+    char *c = "ten letter";
+    return c + (x%10);
+}
+````
+</figure>
+
+When executed, 
+
+1. `baz` will put the address of the first character of `"hello"` into the `%rdi` register and then `callq bar`.
+2. `bar` will look in `%rdi` for an integer, modulo it by 10, and use it to put an address of a character in the string `"ten letter"` into `%rax`
+3. `baz` will look in `%rax` for an integer, add `x` to it, and return
+
+This is almost certainly not what was wanted,
+but no part of it violates the rules.
+{/}
+
+<!--
+Technically, mis-matched declarations and definitions are undefined behavior,
+but unless the compiler has awareness of both files at once
+it cannot do anything other than assume all other files agrees with the one it is seeing.
+-->
+
+    
+## Variadic functions
+
+The number of arguments in a function is known as the functions **arity**.
+Many functions have fixed arity, requiring the same number of arguments each time they are invoked,
+but sometimes it is nice to have a function that has variable arity, or a **variadic** function.
+
+In C, when invoking a function of variable arity
+the invoking code simply follows the calling convention,
+putting some arguments in registers and others on the stack.
+The invoked function then needs to know how many arguments it received.
+Since it can't tell anything without consulting at least one argument,
+all variadic functions in C require at least one argument,
+and almost all use that argument to decide how many (and what type) the other arguments are.
+
+By far the most famous variadic function in C is `printf`,
+which is defined as
+
+````c
+int printf(const char *format, ...);
+````
+
+Note the trailing `...` means "this is a variadic function."
+Thus, `printf` may be invoked with any arguments you want,
+as long as the first is a `const char *` (that is, a string):
+
+````c
+printf("%s, %s %d, %.2d:%.2d\n", weekday, month, day, hour, min);
+````
+
+The `printf` function uses fairly involved rules about `%`s in its first argument
+to determine how many and what type the other arguments should be.
+
+Writing a variadic function is somewhat complicated
+by the fact that the extra arguments do not have names.
+C provides (declared in `stdarg.h`) a special data type `va_list`
+and a set of special macros to use in accessing variadic arguments.
+
+````c
+void va_start(va_list ap, argN);
+type va_arg(va_list ap, type);
+void va_end(va_list ap);
+````
+
+To use these, you might do something like
+
+````c
+int sign_swaps(int num0, ...) {
+    va_list ap;
+    int last = num0;
+    int ans = 0;
+
+    va_start(ap, num0);
+    while(last != 0) {
+        int next = va_arg(ap, int);
+        if ((last < 0) != (next < 0)) ans += 1;
+        last = next;
+    }
+    va_end(ap);
+
+    return ans;
+}
+````
+
+If you want to write variadic functions, you should
+
+1. Read all of `man stdarg.h` twice
+2. Look up variadic security vulnerabilities like the [format string attack](https://en.wikipedia.org/wiki/Format_string_attack)
+3. Write good tests, including too-few- and too-many- and wrong-type-argument invocations.
