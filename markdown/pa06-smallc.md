@@ -170,7 +170,7 @@ Reverse the fist `length` elements of `arr` in place.
 The following usage code
 
 ````c
-int[] x = {1, 1, 2, 3, 5, 8, 13, 21};
+int x[] = {1, 1, 2, 3, 5, 8, 13, 21};
 for (int i=0; i<8; i+=1) printf("%d, ", x[i]); printf("\n");
 reverse(x, 6);
 for (int i=0; i<8; i+=1) printf("%d, ", x[i]); printf("\n");
@@ -193,7 +193,7 @@ appear in their original order, followed by all of its zero values.
 The following usage code
 
 ````c
-int[] x = {1, 7, 3, 2, 0, 5, 0, 8, 0, 7, 5, 6, 8, 8, 7, 7, 2, 9};
+int x[] = {1, 7, 3, 2, 0, 5, 0, 8, 0, 7, 5, 6, 8, 8, 7, 7, 2, 9};
 for (int i=0; i<18; i+=1) printf("%d ", x[i]); printf("\n");
 push(x, 15);
 for (int i=0; i<18; i+=1) printf("%d ", x[i]); printf("\n");
