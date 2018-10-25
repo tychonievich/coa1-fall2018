@@ -10,7 +10,7 @@ No function you write in this file should invoke a function you did not write.
 
 When you submit **do not include main** in your file. You are welcome to add it for testing, but remove it before submitting.
 
-# `void toupper(char *s);`
+# `void capitalize(char *s);`
 
 Write a function with the above signature
 that converts all lower-case letters in `s` into upper-case letters.
@@ -23,7 +23,7 @@ The following usage code
 ````c
 char *s = strdup("the book \"The C Programming Language.\"");
 printf("before: %s\n", s);
-toupper(s);
+capitalize(s);
 printf("after:  %s\n", s);
 free(s);
 ````
