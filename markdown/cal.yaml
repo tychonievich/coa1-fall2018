@@ -305,7 +305,8 @@ assignments:
         title: 'bomb'
         due: 2018-10-26 14:00:00
     PA06:
-        files: sieve.c
+        title: smallc
+        files: smallfunc.c
         due: 2018-11-02 14:00:00
 
     PA07:
