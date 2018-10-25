@@ -2,11 +2,11 @@
 title: Small C functions
 ...
 
-Write a C file named `smallfunc.c` that contains implementations of at least five of the following eight functions.
+Write a C file named `smallfunc.c` that contains implementations of **at least five** of the following eight functions.
 
 When you compile, make sure to use the `-m64` flag to ensure that `long` is a 64-bit number and `void *` a 64-bit pointer.
 
-No function you write in this file should make use of a function you did not write.
+No function you write in this file should invoke a function you did not write.
 
 When you submit **do not include main** in your file. You are welcome to add it for testing, but remove it before submitting.
 
