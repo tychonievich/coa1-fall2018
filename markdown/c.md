@@ -557,7 +557,7 @@ Consider the following pair of files:
 ````c
 long bar(char *);
 
-/** adds bar("hello") to its argument            **/
+/******* adds bar("hello") to its argument *******/
 long baz(long x) {
     return bar("hello") + x;
 }
@@ -566,7 +566,7 @@ long baz(long x) {
 
 <figure><caption>bar.c</caption>
 ````c
-/** returns the requested suffix of "ten letter" **/
+/** returns the requested suffix of "ten letter" */
 char *bar(long x) {
     char *c = "ten letter";
     return c + (x%10);
