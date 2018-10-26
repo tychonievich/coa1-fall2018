@@ -213,7 +213,7 @@ Tip: Test this with both arrays that do and don't include zeros.
 
 # `int nondup(int *arr, unsigned length);`
 
-Assume that `arr`'s first `length` elements contains two copies of each value it contains, except one value it has only once.
+Assume that `arr`'s first `length` elements contains exactly two copies of each value it contains, except one value it has only once.
 Return that one non-duplicated element.
 
 If the array does not have a unique non-duplicated element, the behavior of `nondup` is undefined.
