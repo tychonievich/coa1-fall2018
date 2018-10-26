@@ -557,7 +557,7 @@ Consider the following pair of files:
 ````c
 long bar(char *);
 
-/** adds bar("hello") to its argument **/
+/** adds bar("hello") to its argument            **/
 long baz(long x) {
     return bar("hello") + x;
 }
@@ -749,4 +749,4 @@ but also processes various *macros* and *directives*.
 :   Shows `error message` as an error message during compilation.
 
 Most C compilers add several other compiler-specific preprocessor directives, like `#warning`, `#pragma message`, `#pragma once`, `#include_next`, `#import`, etc.
-
+Each is added to simplify some common task, but also makes code easily ported to other platforms.
