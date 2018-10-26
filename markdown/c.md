@@ -659,3 +659,94 @@ If you want to write variadic functions, you should
 1. Read all of `man stdarg.h` twice
 2. Look up variadic security vulnerabilities like the [format string attack](https://en.wikipedia.org/wiki/Format_string_attack)
 3. Write good tests, including too-few- and too-many- and wrong-type-argument invocations.
+
+# Preprocessor
+
+Before compilers compile code, they run the C Preprocessor.
+This does several uninteresting tasks like removing comments,
+but also processes various *macros* and *directives*.
+
+`#include <somefile.h>`
+:   Looks for `somefile.h` in the *include path*, a set of directories
+    typically including `/usr/include` and sometimes a few others.
+    
+    Upon finding the file, it dumps its entire contents into this part of the file,
+    as if you had copy-pasted it here.
+
+`#include "somefile.h"`
+:   Looks for `somefile.h` in the current source directory
+    and, if not found there, in the *include path*.
+    
+    Upon finding the file, it dumps its entire contents into this part of the file,
+    as if you had copy-pasted it here.
+
+`#if expression`, `#else`, `#elif expression`, and `#endif`
+:   Upon encountering an `#if`, the preprocessor evaluates the truth of the expression,
+    which must contain only literals (and operators) because the preprocessor is not running code.
+    If it is false, all code from that `#if` to the matching `#else`, `#elif`, or `#endif` is removed from the source code as if you had deleted it.
+    
+    `#else` and `#elif expression` behave like `else` and `else if (expression)` would in C.
+
+`#define NAME anything at all`
+:   Defines an *object-like macro*.
+    Anywhere `NAME` appears in the source code, this tells the preprocessor to replace it with `anything at all`---literally those exact tokens,
+    as if you had done a global find-and-replace in your source file.
+    
+`#define NAME(a,b,c) anything including a and b and c`
+:   Defines a *function-like macro*.
+    Anywhere `NAME(x,y,z)` appears in the source code, this tells the preprocessor to replace it with `anything including x and y and z`---that is,
+    it does a find-and-replace with some parameterization.
+    
+    This is a lexical replacement, not a syntactic one, so you should almost always add parentheses around each argument and around the full expression:
+    
+    ````c
+    #define TIMES2(x)  x * 2        /* bad practice */
+    #define TIMES2b(x) ((x) * 2)    /* good practice */
+    
+    int x = ! TIMES2(2 + 3);   /* int x = ! 2 + 3 * 2;      (i.e., !2 + 6 == 6) */
+    int y = ! TIMES2b(2 + 3);  /* int x = ! ((2 + 3) * 2);  (i.e., !8 == 0) */
+    ````
+    
+    If you decide to become a C expert, there is more to know about macros;
+    see <https://en.wikipedia.org/wiki/C_preprocessor#Special_macros_and_directives> for a reasonable overview.
+    
+    
+`#ifdef NAME`, `#ifndef NAME`
+:   These act like `#if`, except instead of checking if something is true
+    they check if a name has been `#defined` (`#ifdef`) or not (`#ifndef`).
+
+    A *very* common use of these macros is to ensure only one copy of an `.h` file is included.
+    For example, `my_file.h` might look like
+    
+    ````c
+    #ifndef __MY_FILE_HAS_BEEN_INCLUDED__
+    #define __MY_FILE_HAS_BEEN_INCLUDED__
+    
+    /* file contents here */
+    
+    #endif
+    ````
+    
+    This way if a file `#include "my_file.h"` twice
+    (as, for example, because it includes two other `.h` files that each `#include` `my_file.h`)
+    then the first one will define `__MY_FILE_HAS_BEEN_INCLUDED__`
+    and the second one, seeing `__MY_FILE_HAS_BEEN_INCLUDED__` is already defined,
+    will have all its contents removed by the `#ifndef`.
+    
+`__FILE__` and `__LINE__`
+:   The preprocessor is guaranteed to define `__FILE__` as an object-like macro expanding to the name of the current file, in quotes,
+    like `"my_file.c"`.
+    The preprocessor is also guaranteed to define `__LINE__` as an object-like macro expanding to the line number on which __LINE__ appears,
+    like `23`.
+    
+    These are often used in debugging messages, as e.g. `printf("Error in %s on line %d\n", __FILE__, __LINE__);`.
+    
+    Because the preprocessor redefines these on its own on each new line of code,
+    they have a special `#line` directive to change them if you need to do that (not the usual `#define`).
+    The `#include` processing and comment removing adds such `#line` directives so that it does not change source line numbers.
+
+`#error "error message"`
+:   Shows `error message` as an error message during compilation.
+
+Most C compilers add several other compiler-specific preprocessor directives, like `#warning`, `#pragma message`, `#pragma once`, `#include_next`, `#import`, etc.
+
