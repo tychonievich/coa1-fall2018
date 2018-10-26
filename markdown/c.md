@@ -66,7 +66,7 @@ int f = e; /* equivalent to f = 101 */
 
 ### void and casting
 
-There is also a special `void` type that means "a byte with no known meaning."
+There is also a special `void` type that means either "a byte with no known meaning" (if used as part of a pointer type) or "nothing at all" (if used as a return type or parameter list).
 
 Casting between integer types truncates (if going smaller) or zero- or sign-extends (if going larger, depending on the signedness of the value) to fit the available space.
 Casting to or from floating-point types converts to a nearby^[Oddly, not always *the* nearest value; floating-point numbers use a "round to even" rule that sometimes rounds in a different direction than you expect in order to get the last bit of the fraction to be a `0`.] representable value (which may be infinity),
@@ -81,7 +81,7 @@ These are written with a `*` after the type:
 int *x;     /* points to an int */
 char *s;    /* points to a char */
 float **w;  /* points to a pointer that points to a float */
-float ***a;  /* points to a pointer that points to a pointer that points to a  float */
+float ***a; /* points to a pointer that points to a pointer that points to a float */
 ````
 
 A pointer to any value stored in memory can be taken by using the address-of operator `&`
@@ -109,7 +109,7 @@ so you *should always* use parentheses in these cases.
 All pointers are the same size (the size of an address in the underlying ISA) regardless of the size of what they are pointing to;
 thus `sizeof(char *) == sizeof(long double *)`{.c}.
 Two special int types are used to be "an integer the size of a pointer":
-`size_t` is an `unsigned` integer of this size, and `ptrdiff_t` is a `signed` integer of this size.
+`size_t` is an `unsigned` integer of this size, and `ssize_t` is a `signed` integer of this size.
 With the compilers and ISAs we are using this semester `size_t` is the same as `unsigned long` and `ptrdiff_t` is the same as `long`.
 
 When you add an integer to a pointer, the address stored in the pointer increases by a multiple of the `sizeof` the pointed-to type.
@@ -475,12 +475,12 @@ int is_even(unsigned n);
 int is_odd(unsigned n);
 
 int is_even(unsigned n) {
-    if (n == 0) return true;
+    if (n == 0) return 1;
     else        return is_odd(n - 1);
 }
 
 int is_odd(unsigned n) {
-    if (n == 0) return false;
+    if (n == 0) return 0;
     else        return is_even(n - 1);
 }
 ````
