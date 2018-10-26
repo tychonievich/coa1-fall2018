@@ -150,15 +150,15 @@ The following usage code
 
 ````c
 printf("%lx\n", binterleave(0x100030f, 0x1003f0));
-printf("%lx\n", binterleave(0xffffffff, 0x00000000));
-printf("%lx\n", binterleave(0x00000000, 0xffffffff));
+printf("%lx\n", binterleave(0xffffff0f, 0x00000000));
+printf("%lx\n", binterleave(0x00000000, 0xffffff0f));
 ````
 
 will display 
 
     10200000faa55
-    5555555555555555
-    aaaaaaaaaaaaaaaa
+    5555555555550055
+    aaaaaaaaaaaa00aa
 {/}
 
 Tip: Remember that most operations, if given only 32-bit arguments, will truncate their result to 32 bits. You'll probably want to make sure you have a `long` value (such as `0L`) involved in important operations in your code.
