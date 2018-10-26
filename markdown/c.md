@@ -108,9 +108,9 @@ so you *should always* use parentheses in these cases.
 
 All pointers are the same size (the size of an address in the underlying ISA) regardless of the size of what they are pointing to;
 thus `sizeof(char *) == sizeof(long double *)`{.c}.
-Two special int types are used to be "an integer the size of a pointer":
+Two special int types^[Defined using `typedef` in `<types.h>`] are used to be "an integer the size of a pointer":
 `size_t` is an `unsigned` integer of this size, and `ssize_t` is a `signed` integer of this size.
-With the compilers and ISAs we are using this semester `size_t` is the same as `unsigned long` and `ptrdiff_t` is the same as `long`.
+With the compilers and ISAs we are using this semester `size_t` is the same as `unsigned long` and `ssize_t` is the same as `long`.
 
 When you add an integer to a pointer, the address stored in the pointer increases by a multiple of the `sizeof` the pointed-to type.
 
