@@ -733,6 +733,68 @@ but also processes various *macros* and *directives*.
     and the second one, seeing `__MY_FILE_HAS_BEEN_INCLUDED__` is already defined,
     will have all its contents removed by the `#ifndef`.
     
+    {.example ...}
+    If we have something like
+    
+    +---------------------+-----------------+
+    | foo.c               | foo.h           |
+    +=====================+=================+
+    |````c                |````c            |
+    |int x;               |#ifndef __FOO_H  |
+    |#include "foo.h"     |#define __FOO_H  |
+    |int y;               |int foo;         |
+    |#include "foo.h"     |                 |
+    |int x;               |#endif           |
+    |````                 |````             |
+    +---------------------+-----------------+
+    
+    the `#include` processing will create
+
+    ````c
+    int x;
+    #ifndef __FOO_H
+    #define __FOO_H
+    int foo;
+    
+    #endif
+    int y;
+    #ifndef __FOO_H
+    #define __FOO_H
+    int foo;
+    
+    #endif
+    int x;
+    ````
+    
+    The first `#ifndef` is true, since `__FOO_H` had not been defineed before that line
+
+    ````c
+    int x;
+    #define __FOO_H
+    int foo;
+    
+    int y;
+    #ifndef __FOO_H
+    #define __FOO_H
+    int foo;
+    
+    #endif
+    int x;
+    ````
+
+    That means that the second `#ifndef` is false, since the first defined `__FOO_H`
+
+    ````c
+    int x;
+    #define __FOO_H
+    int foo;
+    
+    int y;
+    int x;
+    ````
+    {/}
+    
+    
 `__FILE__` and `__LINE__`
 :   The preprocessor is guaranteed to define `__FILE__` as an object-like macro expanding to the name of the current file, in quotes,
     like `"my_file.c"`.
@@ -749,4 +811,4 @@ but also processes various *macros* and *directives*.
 :   Shows `error message` as an error message during compilation.
 
 Most C compilers add several other compiler-specific preprocessor directives, like `#warning`, `#pragma message`, `#pragma once`, `#include_next`, `#import`, etc.
-Each is added to simplify some common task, but also makes code easily ported to other platforms.
+Each is added to simplify some common task, but also makes code harder to port to other platforms.

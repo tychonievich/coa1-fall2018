@@ -9,7 +9,7 @@ written by Richard Smith.
 
 import sys, re
 
-tag_open = re.compile(r'^\{\.([a-z]+)\s*(\.{3})?\}\s*(.*)', re.DOTALL)
+tag_open = re.compile(r'^([ \t]*)\{\.([a-z]+)\s*(\.{3})?\}\s*(.*)', re.DOTALL)
 tag_close = re.compile(r'^(.*)\{/\}\s*$', re.DOTALL)
 tag_import = re.compile(r'^\{#include\s+(.*)\}$')
 
@@ -23,9 +23,9 @@ def process(fname):
                 process(i.group(1))
 
             elif newp and o is not None:
-                print('\n<div class="'+(o.group(1)+' long' if o.group(2) else o.group(1))+r'">\safeopenclass{'+o.group(1)+'}')
-                if o.group(3): sys.stdout.write(o.group(3))
-                if o.group(2): tags.append(o.group(1))
+                print('\n'+o.group(1)+'<div class="'+(o.group(2)+' long' if o.group(3) else o.group(1))+r'">\safeopenclass{'+o.group(2)+'}')
+                if o.group(4): sys.stdout.write(o.group(4))
+                if o.group(3): tags.append(o.group(2))
             elif c:
                 if c.group(1): print(c.group(1))
                 print('\n\\safecloseclass{'+tags.pop()+'}</div>\n')
