@@ -121,6 +121,8 @@ reading:
     tracing variables: ["[debugger example](cmdadd.html)"]
     
     C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)", "[language reference](c.html)"]
+    "global, stack, heap": ["[memory writeup](memory.html)"]
+    "malloc and free": ["[memory writeup](memory.html)"]
 
 assignments:
     ".groups":
