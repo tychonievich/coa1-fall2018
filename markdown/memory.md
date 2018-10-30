@@ -417,8 +417,10 @@ becoming slower and slower the longer it runs.
 In the worst case, this can even cause your entire system to grind to a halt.
 
 [Garbage collectors] are often said to remove the chance of memory leaks,
-but this not not strictly true as they measure *reachability* of code,
-not *possibility of future use*
+but this not not strictly true: they measure *reachability* of heap memory, not *possibility of future use*.
+Even when writing in Java, Python, or other garbage-collected languages,
+make sure you set unused references to objects to `None`/`null`
+and otherwise don't maintain references to data you will not reuse.
 
 ### Uninitialized memory
 
