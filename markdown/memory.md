@@ -465,7 +465,7 @@ It is fairly common to make mistakes with `sizeof`, such as
 
 -   using `sizeof(T)` when you meant `sizeof(T *)`
 
-    {.example} `int **A = (int **)malloc(sizeof(int) * n);`{.c}
+    {.example ...} `int **A = (int **)malloc(sizeof(int) * n);`{.c} {/}
 
 -   using `sizeof(T)` when adding to a `T *`
 
