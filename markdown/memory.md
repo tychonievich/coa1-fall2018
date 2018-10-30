@@ -424,10 +424,13 @@ and otherwise don't maintain references to data you will not reuse.
 
 ### Uninitialized memory
 
-Because `malloc` and `realloc` do not initialize the memory it allocates,
+Because `malloc` and `realloc` do not initialize the memory they allocate,
 it is an error to access that memory before you initialize it.
-This is a particularly pernicious bug because the contents of uninitialized memory
-may be all 0 bytes most times you run the code, and then randomly have other contents on another run.
+This is also true of local or global variables, structs, and arrays.
+Using uninitialized memory is a particularly tricky bug to notice
+because it is often the case that for many runs in a row the uninitialized memory
+just happens to be all `0` bytes,
+and then one time it happens to be other values instead, causing the bug to manifest itself intermittently.
 
 {.example ...}
 ````c
@@ -444,7 +447,7 @@ int *allsum(int *y, int n) {
 ### Accidental cast-to-pointer
 
 If a function expects a pointer and you give it an integer instead,
-it will interpret the integer value as being an address...
+it will interpret the integer value as being an address.
 This is particularly problematic with variadic functions like `printf` and `scanf`
 that are harder for the compiler to type-check.
 
