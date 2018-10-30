@@ -481,7 +481,7 @@ It is fairly common to make mistakes with `sizeof`, such as
 
 -   failing to use `sizeof` when `malloc`ing
 
-    {.example ...}  `int *ten_ints = (int *)malloc(10);`{.c}
+    {.example ...}<span class="gap"> </span>  `int *ten_ints = (int *)malloc(10);`{.c}
     {/}
 
 
