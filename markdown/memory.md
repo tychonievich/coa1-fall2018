@@ -481,7 +481,7 @@ It is fairly common to make mistakes with `sizeof`, such as
 
 -   failing to use `sizeof` when `malloc`ing
 
-    {.example ...}<span class="gap"> </span>  `int *ten_ints = (int *)malloc(10);`{.c}
+    {.example ...}<span class="gap"> </span> `int *ten_ints = (int *)malloc(10);`{.c}
     {/}
 
 
@@ -610,7 +610,7 @@ Each set of braces and each for loop creates its own variable scope.
 The compiler is free to re-use that stack space after the scope ends if it wants.
 If you use a pointer to an out-of-scope variable, this creates a user-after-scope bug.
 
-The [address sanitizer](#using-the-address-sanitizer) is usually able to detect this bug,
+The [address sanitizer](#using-the-address-sanitizer) is able to detect this bug,
 but requires a special additional flag during compilation to do so: `-fsanitize-address-use-after-scope`.
 
 {.example ...} The following code may or may not have this bug, depending on how the compiler choses to optimize it.
