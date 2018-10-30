@@ -10,7 +10,7 @@ No function you write in this file should invoke a function you did not write.
 
 When you submit **do not include main** in your file. You are welcome to add it for testing, but remove it before submitting.
 
-> The submission server is configured to test your code and give preliminary feedback within 15 minutes of recieving a submission. We encourage you to submit each time you think you've completed one of the five functions so that you can verify that it is working according to our tests.
+> The submission server is configured to test your code and give preliminary feedback within 15 minutes of recieving a submission. We encourage you to submit each time you think you've completed one of the functions so that you can verify that it is working according to our tests.
 
 # `void capitalize(char *s);`
 
