@@ -465,20 +465,23 @@ It is fairly common to make mistakes with `sizeof`, such as
 
 -   using `sizeof(T)` when you meant `sizeof(T *)`
 
-    {.example ...}
-    `int **A = (int **)malloc(sizeof(int) * n);`{.c}
+    {.example ...}  `int **A = (int **)malloc(sizeof(int) * n);`{.c}
     {/}
 
 -   using `sizeof(T)` when adding to a `T *`
 
     {.example ...}
-    `int *find(int *p, int val) { while(*p && *p != val) p += sizeof(int); return p; }`{.c}
+    ````c
+    int *find(int *p, int val) { 
+        while(*p && *p != val) p += sizeof(int);
+        return p;
+    }
+    ````
     {/}
 
 -   failing to use `sizeof` when `malloc`ing
 
-    {.example ...}
-    `int *ten_ints = (int *)malloc(10);`{.c}
+    {.example ...}  `int *ten_ints = (int *)malloc(10);`{.c}
     {/}
 
 
