@@ -536,8 +536,11 @@ The [address sanitizer](#using-the-address-sanitizer) is usually able to detect 
 {.example ...}
 ````c
 char word[16];
-scanf("%s", word);
+scanf("%s", word); // overflows if type a 16+-character word
 ````
+
+Since `scanf`'s `%s` format specifier reads a non-whitespace sequence of characters into `word`,
+this will be a buffer overflow if you type sixteen or more characters without any whitespace.
 {/}
 
 ### Heap buffer overflow
@@ -552,11 +555,8 @@ The [address sanitizer](#using-the-addresssanitizer) is usually able to detect t
 {.example ...}
 ````c
 char word = (char *)malloc(16 * sizeof(char));
-scanf("%s", word);
+scanf("%s", word); // overflows if type a 16+-character word
 ````
-
-Since `scanf`'s `%s` format specifier reads a non-whitespace sequence of characters into `word`,
-this will be a buffer overflow if you type sixteen or more characters without any whitespace.
 {/}
 
 
@@ -571,7 +571,7 @@ The [address sanitizer](#using-the-address-sanitizer) is usually able to detect 
 ````c
 char word[16];
 int f() {
-    scanf("%s", word);
+    scanf("%s", word); // overflows if type a 16+-character word
 }
 ````
 {/}
