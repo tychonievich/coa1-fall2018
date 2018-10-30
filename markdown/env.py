@@ -28,7 +28,7 @@ def process(fname):
                 if o.group(3): tags.append(o.group(2))
             elif c:
                 if c.group(1): print(c.group(1))
-                print('\n\\safecloseclass{'+tags.pop()+'}</div>\n')
+                print('\\safecloseclass{'+tags.pop()+'}</div>\n')
             else:
                 sys.stdout.write(line)
             if o is not None and not o.group(2):
