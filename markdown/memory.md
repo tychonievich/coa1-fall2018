@@ -533,7 +533,7 @@ This can "corrupt the heap" -- that is, the program continues to run,
 but the overflow modified some other data structure,
 messing up some other part of your program.
 
-The [address sanitizer](#using-the-address-sanitizer) is usually able to detect this bug.
+The [address sanitizer](#using-the-addresssanitizer) is usually able to detect this bug.
 
 {.example ...}
 ````c
