@@ -80,21 +80,21 @@ classes:
 
     -   review
     
-    -   buffer overrun; reporting exploits
-    -   bad pointers; open source?
-
+    -   malloc examples
     -   C std library conventions
     -   string.h
     -   stdio.h and varargs
     -   stdio.h and varargs
     -   fcntl.h and so on
 
+    -   optimization
+    -   buffer overrun; reporting exploits
+    -   bad pointers; open source?
+
     -   defensive programming
     -   defensive programming
     -   languages safer than C
     
-    -   (flex day)
-    -   (flex day)
     -   (flex day)
 
 
