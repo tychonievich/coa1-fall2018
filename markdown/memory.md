@@ -398,16 +398,16 @@ long flatten(expr *e) {
         e->kind = '=';
         e->value = flatten(e->left) - flatten(e->right);\
         free(e->left);
-        free(r->right);
+        free(e->right);
         e->left = e->right = NULL;
     } else if (e->kind == '*') {
         e->kind = '=';
-        e->lv.value = flatten(e->lv.left) * flatten(e->right);
-        free(e->lv.left);
-        free(r->right);
+        e->value = flatten(e->left) * flatten(e->right);
+        free(e->left);
+        free(e->right);
         e->left = e->right = NULL;
     }
-    return e->lv.value;
+    return e->value;
 }
 ````
 {/}
