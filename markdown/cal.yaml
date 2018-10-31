@@ -89,10 +89,10 @@ classes:
 
     -   optimization
     -   buffer overrun; reporting exploits
-    -   bad pointers; open source?
+    -   open source?; defensive programming
 
     -   defensive programming
-    -   defensive programming
+    -   closures
     -   languages safer than C
     
     -   review
