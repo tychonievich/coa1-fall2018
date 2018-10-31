@@ -127,7 +127,7 @@ unsigned classes = 0;
 
 int main(int argc, const char *argv[]) {
     while (classes < MAX_CLASSES) {
-        puts("What class are you interested in? Press enter when done.")
+        puts("What class are you interested in? Press enter when done.");
         unsigned got = get_input(interest[classes], MAX_CLASS_SIZE);
         if (got == 0) break;
         else classes += 1;
