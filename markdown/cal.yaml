@@ -78,7 +78,7 @@ classes:
     -   global, stack, heap
     -   malloc and free
 
-    -   optimization
+    -   review
     
     -   buffer overrun; reporting exploits
     -   bad pointers; open source?
@@ -115,7 +115,7 @@ reading:
     conditional jump; back doors: ["[ISA §3.4](isa.html)"]
     the stack: ["[ISA §3.4.2](isa.html)"]
     
-    review: ["[practice exam](files/f2018e1practice.pdf)"]
+    review: ["[E1 practice](files/f2018e1practice.pdf)", "[E2 practice](files/f2018e2practice.pdf)"]
 
     x86-64: ["[x86-64 summary](x86.html)"]
     tracing variables: ["[debugger example](cmdadd.html)"]
