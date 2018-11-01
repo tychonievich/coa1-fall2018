@@ -68,7 +68,7 @@ will display
      21 61 82 e3 65 48 ad f5 a2 97 39 d0 09 d9 e2 bb
 {/}
 
-Tip: test this with 0- and 1-entry arrays as well as larger ones, and make sure you don't go off the end of the array.
+Tip: test this with 0- and 1-entry arrays as well as larger ones, and make sure you don't set more values of the array than the requested `num`.
 
 # `long recpow(long x, unsigned char e);`
 
