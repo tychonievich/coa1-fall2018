@@ -224,7 +224,7 @@ If the array does not have a unique non-duplicated element, the behavior of `non
 The following usage code
 
 ````c
-int[] x = {28, 12, 8, 0, 0, 28, 8};
+int x[] = {28, 12, 8, 0, 0, 28, 8};
 printf("%d\n", nondup(x, 7));
 printf("%d\n", nondup(x + 2, 5));
 ````
