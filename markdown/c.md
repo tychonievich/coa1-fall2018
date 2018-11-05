@@ -210,8 +210,8 @@ void swizzle(struct baz *);  /* just says "a function of this name exists" */
 
 /* Swizzles an array of struct bazs                           *
  * This code does not need to understand what a struct baz is */
-void swozzle(struct baz *, int n) {
-    for(int i=0; i<n; i+=1) swizzle(baz + i);
+void swozzle(struct baz *x, int n) {
+    for(int i=0; i<n; i+=1) swizzle(x + i);
 }
 ````
 
