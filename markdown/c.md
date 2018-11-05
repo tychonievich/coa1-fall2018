@@ -151,9 +151,13 @@ The `&` an array is the `&` of its first element (i.e., `&array == &(array[0])`)
 Parentheses are allowed when declaring types, although their meaning is counter-intuitive to many students:
 
 ````c
-char *pc[10] x;     /* an array of 10 (char *)s */
-char *(pc[10]) x;   /* an array of 10 (char *)s */
-char (*pc)[10] x;   /* a pointer to an array of 10 (char)s */
+char *pc[10];     /* an array of 10 (char *)s */
+````
+````c
+char *(pc[10]);   /* an array of 10 (char *)s */
+```
+````c
+char (*pc)[10];   /* a pointer to an array of 10 (char)s */
 ````
 
 The rule here is that we declare variables *exactly* as we would use them:
