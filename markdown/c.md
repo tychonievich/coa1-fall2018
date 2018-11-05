@@ -155,7 +155,7 @@ char *pc[10];     /* an array of 10 (char *)s */
 ````
 ````c
 char *(pc[10]);   /* an array of 10 (char *)s */
-```
+````
 ````c
 char (*pc)[10];   /* a pointer to an array of 10 (char)s */
 ````
