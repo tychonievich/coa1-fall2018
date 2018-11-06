@@ -206,7 +206,7 @@ This is inefficient for all by the smallest `structs`, so often pointers to stru
 
 Because all pointers are the same size, you can have code use a pointer to a `struct`
 without knowing what is inside the `struct`;
-the only need to be known for the `.` operator to work.
+the only need to be known for `sizeof` and the `.` operator to work.
 
 ````c
 struct baz;                  /* just says "a struct of this name exists"   */
@@ -214,8 +214,8 @@ void swizzle(struct baz *);  /* just says "a function of this name exists" */
 
 /* Swizzles an array of struct bazs                           *
  * This code does not need to understand what a struct baz is */
-void swozzle(struct baz *x, int n) {
-    for(int i=0; i<n; i+=1) swizzle(x + i);
+void swozzle(struct baz **x, int n) {
+    for(int i=0; i<n; i+=1) swizzle(x[i]);
 }
 ````
 
