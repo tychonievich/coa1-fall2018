@@ -147,7 +147,7 @@ def assignments_json(data):
                     }
             elif k.endswith('2'):
                 for p in range(1,6):
-                    ans['E1pg'+str(p+1)] = {
+                    ans['E2pg'+str(p+1)] = {
                         'group':'Exam',
                         'rubric': (
                             {"kind":"breakdown","parts":[]}, # blank
