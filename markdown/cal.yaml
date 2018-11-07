@@ -123,6 +123,7 @@ reading:
     C introduction: ["[wikipedia](https://en.wikipedia.org/wiki/C_syntax)", "[language reference](c.html)"]
     "global, stack, heap": ["[memory writeup](memory.html)"]
     "malloc and free": ["[memory writeup](memory.html)"]
+    C std library conventions: ["[writeup](manpage.html)"]
 
 assignments:
     ".groups":
