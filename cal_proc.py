@@ -145,6 +145,59 @@ def assignments_json(data):
                         'total':(6, 10, 8, 8)[p],
                         'due':v,
                     }
+            elif k.endswith('2'):
+                for p in range(1,6):
+                    ans['E1pg'+str(p+1)] = {
+                        'group':'Exam',
+                        'rubric': (
+                            {"kind":"breakdown","parts":[]}, # blank
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 1"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 2"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 3"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 4"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 5"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 6"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 7"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 8"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 9"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 10"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 11"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 12"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 13"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 14"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 15"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q16 found bug"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q16 explained bug"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q16 fixed leak"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q16 leak fix not buggy"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 goto-free C"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 if x&amp;1 x>>=1 else ..."}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 do-loop semantics"}
+                              ]
+                            },
+                        )[p],
+                        'weight':(0,4,10,12,12,6)[p]/32,
+                        'total':(0,4,10,12,12,6)[p],
+                        'due':v,
+                    }
             else:
                 ans[k] = {"group":"Exam", "due":v}
                 if k.endswith('3'): ans[k]['weight'] = 20/15
