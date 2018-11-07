@@ -189,7 +189,7 @@ def assignments_json(data):
                             {"kind":"breakdown"
                             ,"parts":
                               [{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 goto-free C"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 if x&amp;1 x&lt;&lt;=1 else ..."}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 if x&amp;1 ... else x&lt;&lt;=1"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q17 do-loop semantics"}
                               ]
                             },
