@@ -306,6 +306,10 @@ assignments:
     PA05:
         title: 'bomb'
         due: 2018-10-26 14:00:00
+    PA06:
+        title: smallc
+        files: smallfunc.c
+        due: 2018-11-02 14:00:00
         rubric:
             kind: breakdown
             parts:
@@ -324,10 +328,6 @@ assignments:
                 -   name: 5th correct function
                     ratio: 20
                     rubric: {"kind":"check"}
-    PA06:
-        title: smallc
-        files: smallfunc.c
-        due: 2018-11-02 14:00:00
 
     PA07:
         files: linked_list.c
