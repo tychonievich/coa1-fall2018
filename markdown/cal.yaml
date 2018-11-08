@@ -174,7 +174,7 @@ assignments:
 
     Lab08:
         due: 2018-11-13
-        title: 'file-based chat system'
+        title: 'fchat'
     Lab09:
         due: 2018-11-20
         title: 'unix sockets'
