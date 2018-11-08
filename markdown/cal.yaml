@@ -331,7 +331,8 @@ assignments:
                     rubric: {"kind":"check"}
 
     PA07:
-        files: linked_list.c
+        title: linkedlist
+        files: linkedlist.c
         due: 2018-11-16 14:00:00
     PA08:
         files: postfix_calculator.c
