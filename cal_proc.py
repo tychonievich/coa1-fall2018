@@ -194,7 +194,7 @@ def assignments_json(data):
                               ]
                             },
                         )[p],
-                        'weight':(0,4,10,12,12,6)[p]/32,
+                        'weight':(0,4,10,12,12,6)[p]/44,
                         'total':(0,4,10,12,12,6)[p],
                         'due':v,
                     }
