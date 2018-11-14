@@ -21,7 +21,8 @@ Your program should halt when it
 Before exiting for any of the above reasons, your program must print the remaining values on the stack.
 Optionally, your program may print the contents of the stack every time it changes.
 
-{.example ...} The following is one possible run of the program, with the optional print-stack feature included
+{.example ...}
+The following is one possible run of the program, with the optional print-stack feature included
 <pre><code>
 <ins>2 3</ins>
 [ 2 ]
