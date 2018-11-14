@@ -22,6 +22,7 @@ Before exiting for any of the above reasons, your program must print the remaini
 Optionally, your program may print the contents of the stack every time it changes.
 
 {.example ...}
+
 The following is one possible run of the program, with the optional print-stack feature included
 <pre><code>
 <ins>2 3</ins>
