@@ -2,6 +2,8 @@
 title: Postfix calculator
 ...
 
+# Task
+
 In this assignment you will implement a [reverse polish notation calculator](http://en.wikipedia.org/wiki/Reverse_Polish_notation),
 also known as a postfix notation calculator.
 That article also gives pseudocode for two algorithms; the left-to-right is probably a better match for line-by-line input, though you are welcome to read the full input and then run right-to-left algorithm (or any other correct algorithm you might design) if you'd prefer.
@@ -20,6 +22,8 @@ Your program should halt when it
 
 Before exiting for any of the above reasons, your program must print the remaining values on the stack.
 Optionally, your program may print the contents of the stack every time it changes.
+
+# Examples
 
 {.example ...}
 
