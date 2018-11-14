@@ -335,10 +335,11 @@ assignments:
         files: linkedlist.c
         due: 2018-11-16 14:00:00
     PA08:
-        files: postfix_calculator.c
+        title: postfix
+        files: rpn.c
         due: 2018-11-30 14:00:00
     PA09:
-        files: 'socket chat'
+        title: chat
         due: 2018-12-07 14:00:00
 
 Quizzes:
