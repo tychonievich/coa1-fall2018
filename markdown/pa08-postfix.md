@@ -91,7 +91,7 @@ for(int i=0; i<size; i+=1) { printf("%c %d", b4, stack[i]); b4=','; }
 puts(" ]");
 ````
 
-The following will print a singly-linked-list stack (doubly-linked printing code was supplied with [the previous PA](pa07-linkedlist.html):
+The following will print a singly-linked-list stack (doubly-linked printing code was supplied with [the previous PA](pa07-linkedlist.html)):
 
 ````c
 void pstack(node *top, int first) {
