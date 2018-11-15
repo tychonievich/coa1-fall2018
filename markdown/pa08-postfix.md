@@ -79,18 +79,6 @@ Make sure your code works with all numbers as input, including the `0` that most
 [ 0 ]
 </code></pre>
 
-+-----------------------------------------------+-----------------------------------------------+
-| Without intermediate stacks                   | With intermediate stacks                      |
-+===============================================+===============================================+
-|<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |
-|[ 2, 7, 5 ]                                    |[ 2 ]                                          |
-|</code></pre>                                  |[ 2, 3 ]                                       |
-|                                               |[ 2, 3, 4 ]                                    |
-|                                               |[ 2, 7 ]                                       |
-|                                               |[ 2, 7, 5 ]                                    |
-|                                               |</code></pre>                                  |
-+-----------------------------------------------+-----------------------------------------------+
-
 # Tips
 
 You are welcome to make either a linked-list or array-based stack.
