@@ -82,7 +82,7 @@ figcaption { text-align: center; font-weight: bold; margin-top: 1ex; }
 pre,code { background: rgba(0,0,0,0.04); border: 0.125ex solid rgba(0,0,0,0.12); border-radius: 0.5ex; word-wrap: wrap-word; white-space: pre-wrap; word-break: break-all; hyphens:none; }
 pre > code { border: none; background:none; }
 pre { display:table; }
-pre ins, code ins { background: rgba(0,0,0,0); border: 0.125ex solid rgba(0,0,0,0.12); }
+pre ins, code ins { background: rgba(255,255,255,0.5); border: 0.125ex solid rgba(0,0,0,0.12); }
 
 
 
