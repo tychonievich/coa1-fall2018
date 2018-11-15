@@ -26,8 +26,7 @@ Optionally, your program may print the contents of the stack every time it chang
 # Examples
 
 The following is one possible run of the program, with the optional print-stack feature included
-<pre><code>
-<ins>2 3</ins>
+<pre><code><ins>2 3</ins>
 [ 2 ]
 [ 2, 3 ]
 <ins>4     - 5</ins>
@@ -43,8 +42,7 @@ Note that the program stopped when it encountered `/` on a stack with just one a
 ----
 
 The following is one possible run of the program, with the optional print-stack feature not included
-<pre><code>
-<ins>2</ins>
+<pre><code><ins>2</ins>
 <ins>  3 -4 + end 5 4</ins>
 [ 2, -1 ]
 </code></pre>
@@ -54,18 +52,17 @@ Note that the program stopped when it encountered `end` and did not continue run
 
 You should also verify that if you end input early (by redirecting input, or by pressing Ctrl+D when running interactively) the program prints the final stack and exits:
 
-+-----------------------------------+-----------------------------------+
-| Without intermediate stacks       | With intermediate stacks          |
-+===================================+===================================+
-|<pre><code>                        |<pre><code>                        |
-|<ins>echo 2 3 4 + 5 | ./a.out</ins>|<ins>echo 2 3 4 + 5 | ./a.out</ins>|
-|[ 2, 7, 5 ]                        |[ 2 ]                              |
-|</code></pre>                      |[ 2, 3 ]                           |
-|                                   |[ 2, 3, 4 ]                        |
-|                                   |[ 2, 7 ]                           |
-|                                   |[ 2, 7, 5 ]                        |
-|                                   |</code></pre>                      |
-+-----------------------------------+-----------------------------------+
++-----------------------------------------------+-----------------------------------------------+
+| Without intermediate stacks                   | With intermediate stacks                      |
++===============================================+===============================================+
+|<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |
+|[ 2, 7, 5 ]                                    |[ 2 ]                                          |
+|</code></pre>                                  |[ 2, 3 ]                                       |
+|                                               |[ 2, 3, 4 ]                                    |
+|                                               |[ 2, 7 ]                                       |
+|                                               |[ 2, 7, 5 ]                                    |
+|                                               |</code></pre>                                  |
++-----------------------------------------------+-----------------------------------------------+
 
 # Tips
 
