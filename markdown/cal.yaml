@@ -177,7 +177,7 @@ assignments:
         title: 'fchat'
     Lab09:
         due: 2018-11-20
-        title: 'unix sockets'
+        title: sockets
     Lab10:
         due: 2018-11-27
         title: 'C++ part 1'
