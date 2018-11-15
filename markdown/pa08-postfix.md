@@ -123,3 +123,9 @@ Never compare strings with `==`, as that compares addresses not contents. Use `s
 Both `atoi` and `strtol` will work to convert strings into numbers, but `strtol` can also detect non-numbers
 because if it finds a non-number then it will leave `*endptr == nptr`.
 Note that although `strtol` says it "may" set `errno` to `EINVAL` if given a non-number, in practice most implementations do not do this so do not rely on it in your code.
+
+You do *not* need to correctly handle any of the following
+
+- half-number tokens like `5more`.
+- bigger-than-`int` values like `123456789012345678901235901234567890`
+- no-input inputs like `echo '' | ./a.out`
