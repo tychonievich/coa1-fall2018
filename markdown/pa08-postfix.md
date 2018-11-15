@@ -61,9 +61,32 @@ You should also verify that if you end input early (by redirecting input, or by 
 |<ins>echo 2 3 4 + 5 | ./a.out</ins>|<ins>echo 2 3 4 + 5 | ./a.out</ins>|
 |[ 2, 7, 5 ]                        |[ 2 ]                              |
 |</code></pre>                      |[ 2, 3 ]                           |
+|                                   |[ 2, 3, 4 ]                        |
 |                                   |[ 2, 7 ]                           |
 |                                   |[ 2, 7, 5 ]                        |
 |                                   |</code></pre>                      |
 +-----------------------------------+-----------------------------------+
 
 # Tips
+
+You are welcome to make either a linked-list or array-based stack.
+
+The following will print an array-based stack:
+
+````c
+char b4='[';
+for(int i=0; i<size; i+=1) { printf("%c %d", b4, stack[i]); b4=','; }
+puts(" ]");
+````
+
+The following will print a singly-linked-list stack:
+
+````c
+void pstack(node *top, int first) {
+    if (!top) { return; }
+    pstack(top->next, 0);
+    printf("%c %d", (top->next ? ',' : '['), top->value);
+    if (first) puts(" ]");
+}
+````
+
