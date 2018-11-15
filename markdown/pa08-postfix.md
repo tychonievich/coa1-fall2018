@@ -64,6 +64,33 @@ You should also verify that if you end input early (by redirecting input, or by 
 |                                               |</code></pre>                                  |
 +-----------------------------------------------+-----------------------------------------------+
 
+----
+
+Make sure your code works with all numbers as input, including the `0` that most string-to-number converters give if they detect an error.
+<pre><code><ins>2 1 0 -1 -2 + + + +</ins>
+[ 2 ]
+[ 2, 1 ]
+[ 2, 1, 0 ]
+[ 2, 1, 0, -1 ]
+[ 2, 1, 0, -1, -2 ]
+[ 2, 1, 0, -3 ]
+[ 2, 1, -3 ]
+[ 2, -2 ]
+[ 0 ]
+</code></pre>
+
++-----------------------------------------------+-----------------------------------------------+
+| Without intermediate stacks                   | With intermediate stacks                      |
++===============================================+===============================================+
+|<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |
+|[ 2, 7, 5 ]                                    |[ 2 ]                                          |
+|</code></pre>                                  |[ 2, 3 ]                                       |
+|                                               |[ 2, 3, 4 ]                                    |
+|                                               |[ 2, 7 ]                                       |
+|                                               |[ 2, 7, 5 ]                                    |
+|                                               |</code></pre>                                  |
++-----------------------------------------------+-----------------------------------------------+
+
 # Tips
 
 You are welcome to make either a linked-list or array-based stack.
@@ -87,3 +114,12 @@ void pstack(node *top, int first) {
 }
 ````
 
+If you use `strsep` to split input into tokens, you'll need to handle it retuning empty strings if two whitespaces appear in a row.
+Alternatively, making your own tokenizer is not difficult.
+Either way, you almost certainly want to test your tokenizer on its own before you try to merge it with your postfix evaluator.
+
+Never compare strings with `==`, as that compares addresses not contents. Use `strcmp` instead.
+
+Both `atoi` and `strtol` will work to convert strings into numbers, but `strtol` can also detect non-numbers
+because if it finds a non-number then it will leave `*endptr == nptr`.
+Note that although `strtol` says it "may" set `errno` to `EINVAL` if given a non-number, in practice most implementations do not do this so do not rely on it in your code.
