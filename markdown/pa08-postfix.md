@@ -95,7 +95,7 @@ The following will print a singly-linked-list stack:
 
 ````c
 void pstack(node *top, int first) {
-    if (!top) { return; }
+    if (!top) { if (first) puts ("[ ]"); return; }
     pstack(top->next, 0);
     printf("%c %d", (top->next ? ',' : '['), top->value);
     if (first) puts(" ]");
@@ -115,5 +115,7 @@ Note that although `strtol` says it "may" set `errno` to `EINVAL` if given a non
 You do *not* need to correctly handle any of the following
 
 - half-number tokens like `5more`.
+- fractions like `2.3`.
+- tokens without whitespace between them `2+3`.
 - bigger-than-`int` values like `123456789012345678901235901234567890`
 - no-input inputs like `echo '' | ./a.out`
