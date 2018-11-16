@@ -43,10 +43,10 @@ Note that the program stopped when it encountered `/` on a stack with just one a
 
 The following is one possible run of the program, with the optional print-stack feature not included
 <pre><code><ins>2</ins>
-<ins>  3 -4 + end 5 4</ins>
+<ins>  3 -4 + not_a_number 5 4</ins>
 [ 2, -1 ]
 </code></pre>
-Note that the program stopped when it encountered `end` and did not continue running the `5` and `4`.
+Note that the program stopped when it encountered `not_a_number` and did not continue running the `5` and `4`.
 
 ----
 
