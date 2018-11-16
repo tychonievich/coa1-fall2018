@@ -85,7 +85,7 @@ classes:
     -   string.h
     -   stdio.h and varargs
     -   stdio.h and varargs
-    -   fcntl.h and so on
+    -   unistd.h and so on
 
     -   optimization
     -   buffer overrun; reporting exploits
