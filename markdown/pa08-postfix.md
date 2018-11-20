@@ -68,15 +68,15 @@ You should also verify that if you end input early (by redirecting input, or by 
 ----
 
 Make sure your code works with all numbers as input, including the `0` that most string-to-number converters give if they detect an error.
-<pre><code><ins>2 1 0 -1 -2 + + + +</ins>
+<pre><code><ins>2 1 0 -1 -2 - - - -</ins>
 [ 2 ]
 [ 2, 1 ]
 [ 2, 1, 0 ]
 [ 2, 1, 0, -1 ]
 [ 2, 1, 0, -1, -2 ]
-[ 2, 1, 0, -3 ]
-[ 2, 1, -3 ]
-[ 2, -2 ]
+[ 2, 1, 0, 1 ]
+[ 2, 1, -1 ]
+[ 2, 2 ]
 [ 0 ]
 </code></pre>
 
