@@ -21,7 +21,8 @@ Your program should halt when it
 - is given an operator with insufficient operands to evaluate it
 
 Before exiting for any of the above reasons, your program must print the remaining values on the stack.
-Optionally, your program may print the contents of the stack every time it changes.
+These must be presented on a single line, with square brackets at the end, with the top of the stack on the right.
+Optionally, your program may also print the contents of the stack every time it changes.
 
 # Examples
 
