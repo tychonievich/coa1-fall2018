@@ -87,12 +87,13 @@ classes:
     -   stdio.h and varargs
     -   unistd.h and so on
 
-    -   function pointers
+    -   Q&A
+
     -   buffer overrun; reporting exploits
-    -   open source?; defensive programming
+    -   [function pointers, C++ inheritance]
+    -   [open source?, defensive programming]
 
     -   defensive programming
-    -   closures
     -   languages safer than C
     
     -   review
