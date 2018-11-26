@@ -77,10 +77,10 @@ blockquote div { text-align: right; }
 
 figure { max-width: 100%; display: table; margin: auto; padding: 1em; }
 figcaption { text-align: center; font-weight: bold; margin-top: 1ex; }
-.floater img, figure img { max-width: 100%; }
+.floater img, figure img { max-width: 100%; margin:1em; }
 
 caption { font-size:80%; padding-top:1ex; }
-table:has(caption) { width: 100%; } /* draft pseudo-spec */
+table:has(> caption) { width: 100%; } /* draft pseudo-spec */
 
 pre,code { background: rgba(0,0,0,0.04); border: 0.125ex solid rgba(0,0,0,0.12); border-radius: 0.5ex; word-wrap: wrap-word; white-space: pre-wrap; word-break: break-all; hyphens:none; }
 pre > code { border: none; background:none; }
