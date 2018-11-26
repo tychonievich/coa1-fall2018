@@ -243,7 +243,8 @@ gleam a = new gleam();
 int b = a.inOrder();
 ```
 
-To add a constructor, make a member function named `this`; a destructor is a member function named `~this`.
+To add a constructor, make a member function with the same name as the class; a destructor's name is preceded by a tilda `~`.
+Neither should have a return type sepcified.
 Destructors are usually used to `delete` anything the constructor `new`ed,
 and are typically omitted if there is no need to do that.
 
@@ -253,13 +254,13 @@ class gleam2 {
     int b;        
 public:           
     int inOrder();
-    this(int x, int y) { this.a = x; this.b = y; }
-    this(int x) { this.a = x; this.b = x; }
+    gleam2(int x, int y) { this.a = x; this.b = y; }
+    ~gleam2(int x) { this.a = x; this.b = x; }
 }
 ```
 
 {.exercise ...}
-Given the above code, what assembly operation(s) is/are invoked if we invoke `gleam2 bazzle = new gleam2`{.cpp}?
+Given the above code, what assembly operation(s) is/are invoked if we invoke `gleam2 *bazzle = new gleam2(1, 2)`{.cpp}?
 {/}
 
 ## Inheritance and overloading
