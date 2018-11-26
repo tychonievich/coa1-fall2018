@@ -38,9 +38,9 @@ This allows code like
 
 ```cpp
 int abs_val(int x) { return x < 0 ? -x : x; }
-float abs_val(float x) { return x < 0 ? -x : x; }
+double abs_val(double x) { return x < 0 ? -x : x; }
 int main() {
-    printf("%f %d", abs_val(-23), abs_val(-20.3f));
+    printf("%d %f", abs_val(-23), abs_val(-20.3f));
 }
 ```
 
@@ -100,7 +100,7 @@ Name mangling for namespaces uses a length-before-name technique, so that namesp
         }
         int xyxxy(int, int);
     }
-    int bar::xyxxy(int a) { return bar::baz(a) * bar::flub::baz(a); }
+    int bar::xyxxy(int a, int b) { return bar::baz(a) * bar::flub::baz(b); }
     ````
 
 1. Compile and inspect the assembly created by the following. What does the `using namespace` keyword appear to do?
@@ -210,11 +210,11 @@ C++ also extends `struct` and `class` to allow them to declare member functions 
 +=======================+===============================+
 |````cpp                |````cpp                        |
 |class gleam {          |int gleam::inOrder() {         |
-|    int a;             |    return this.a <= this.b;   |
+|    int a;             |    return this->a <= this->b; |
 |    int b;             |}                              |
 |public:                |````                           |
 |    int inOrder();     |                               |
-|}                      |                               |
+|};                     |                               |
 |````                   |                               |
 +-----------------------+-------------------------------+
 
@@ -239,8 +239,8 @@ and an operator `delete` that acts like "`free` and then invoke a destructor",
 Thus, we could test the code above with
 
 ```cpp
-gleam a = new gleam();
-int b = a.inOrder();
+gleam *a = new gleam();
+int b = a->inOrder();
 ```
 
 To add a constructor, make a member function with the same name as the class; a destructor's name is preceded by a tilda `~`.
@@ -254,9 +254,9 @@ class gleam2 {
     int b;        
 public:           
     int inOrder();
-    gleam2(int x, int y) { this.a = x; this.b = y; }
-    ~gleam2(int x) { this.a = x; this.b = x; }
-}
+    gleam2(int x, int y) { this->a = x; this->b = y; }
+    ~gleam2() { puts("Gone"); }
+};
 ```
 
 {.exercise ...}
