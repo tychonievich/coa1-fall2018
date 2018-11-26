@@ -243,8 +243,8 @@ gleam *a = new gleam();
 int b = a->inOrder();
 ```
 
-To add a constructor, make a member function with the same name as the class; a destructor's name is preceded by a tilda `~`.
-Neither should have a return type sepcified.
+To add a constructor, make a member function with the same name as the class; a destructor's name is preceded by a tilde `~`.
+Neither should have a return type specified.
 Destructors are usually used to `delete` anything the constructor `new`ed,
 and are typically omitted if there is no need to do that.
 
