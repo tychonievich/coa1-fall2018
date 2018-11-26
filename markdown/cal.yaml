@@ -125,7 +125,7 @@ reading:
     "global, stack, heap": ["[memory writeup](memory.html)"]
     "malloc and free": ["[memory writeup](memory.html)"]
     C std library conventions: ["[writeup](manpage.html)"]
-    function pointers: ["[example from wikipedia](https://en.wikipedia.org/wiki/Function_pointer#Example_in_C)"]
+    function pointers: ["[example from wikipedia](https://en.wikipedia.org/wiki/Function_pointer#Example_in_C)", "[C++ virtual functions](vtable.html)"]
 
 assignments:
     ".groups":
