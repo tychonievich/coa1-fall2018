@@ -90,8 +90,8 @@ classes:
     -   Q&A
 
     -   buffer overrun; reporting exploits
-    -   ['function pointers', 'C++ inheritance']
-    -   ['open source?', 'defensive programming']
+    -   function pointers
+    -   open source?; defensive programming
 
     -   defensive programming
     -   languages safer than C
