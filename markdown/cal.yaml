@@ -342,7 +342,8 @@ assignments:
         files: rpn.c
         due: 2018-11-30 14:00:00
     PA09:
-        title: chat
+        title: schat
+        files: schat.c
         due: 2018-12-07 14:00:00
 
 Quizzes:
