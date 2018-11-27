@@ -79,8 +79,8 @@ var i = 0;
 var ai = 2;
 function act() {
 if (i == events.length) {
-document.getElementById('client').innerHTML = '$ ';
-document.getElementById('server').innerHTML = '$ ';
+document.getElementById('client').innerHTML = '$ █';
+document.getElementById('server').innerHTML = '$ █';
 i = 0;
 ai = 2;
 setTimeout(act, 1000);
@@ -88,12 +88,12 @@ setTimeout(act, 1000);
 let row = events[i];
 let dest = document.getElementById(row[0] == 'c'? 'client':'server');
 if (row[1] == 'p') {
-dest.innerHTML = dest.innerHTML + row.substr(2);
+dest.innerHTML = dest.innerHTML.substr(0,dest.innerHTML.length-1) + row.substr(2)+'█';
 i += 1
 ai = 2;
 setTimeout(act, 500);
 } else {
-dest.innerHTML = dest.innerHTML + row[ai];
+dest.innerHTML = dest.innerHTML.substr(0,dest.innerHTML.length-1) + row[ai]+'█';
 ai += 1;
 if (ai < row.length) setTimeout(act, 100);
 else { i += 1; ai = 2; setTimeout(act, 250); }
