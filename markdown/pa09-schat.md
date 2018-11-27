@@ -103,6 +103,7 @@ else { i += 1; ai = 2; setTimeout(act, 250); }
 act();
 </script>
 
+As a reminder, you [don't need to be exactly like](#undefined-behaviors) the above; the initial display, format of output, and behavior of the server after the client ends are all undefined by this assignment.
 
 # Tips
 
