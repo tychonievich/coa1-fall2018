@@ -69,9 +69,11 @@ let events=[
 'ctOK. Bye.\n',
 'spOK. Bye.\n',
 'ct^C\n',
+'cp$ ',
 'stWait, don\'t go!\n',
 'stHello?\n',
 'st^C\n',
+'sp$ ',
 ];
 var i = 0;
 var ai = 2;
