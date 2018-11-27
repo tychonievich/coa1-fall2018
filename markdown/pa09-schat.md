@@ -50,7 +50,7 @@ You are also *invited* to add sane behaviors for all of the above cases, but are
 
 In a simple implementation, once the client and server connect everything that is typed in one will appear in the other after you press enter.
 
-<table width="100%" style="height:24em;"><thead><tr><th width="50%">Server</th><th width="50%">Client</th></thead><tbody><tr><td style="vertical-align:top"><pre id="server" style="color:white;background:black;border:1ex solid black;">$ </pre></td><td style="vertical-align:top"><pre id="client" style="color:white;background:black;border:1ex solid black;">$ </pre></td></tr></tbody><table>
+<table width="100%" style="height:25em;"><thead><tr><th width="50%">Server</th><th width="50%">Client</th></thead><tbody><tr><td style="vertical-align:top"><pre id="server" style="color:white;background:black;border:1ex solid black;">$ </pre></td><td style="vertical-align:top"><pre id="client" style="color:white;background:black;border:1ex solid black;">$ </pre></td></tr></tbody><table>
 <script>
 let events=[
 'st./a.out\n',
