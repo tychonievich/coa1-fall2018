@@ -50,6 +50,56 @@ You are also *invited* to add sane behaviors for all of the above cases, but are
 
 In a simple implementation, once the client and server connect everything that is typed in one will appear in the other after you press enter.
 
+<table width="100%"><thead><tr><th width="50%">Server</th><th width="50%">Client</th></thead><tbody><tr><td style="vertical-align:top"><pre id="server" style="color:white;background:black;margin:1ex;padding:1ex;">$ </pre></td><td style="vertical-align:top"><pre id="client" style="color:white;background:black;margin:1ex;padding:1ex;">$ </pre></td></tr></tbody><table>
+<script>
+let events=[
+'st./a.out\n',
+'splabsrv01.cs.virginia.edu has address 128.143.67.241\nListening on port 55718\n',
+'ct./a.out 128.143.67.241 55718\n',
+'ctHi!\n',
+'spHi!\n',
+'stHello\n',
+'cpHello\n',
+'stHow are you today?\n',
+'cpHow are you today?\n',
+'ctFine, thanks; and you?\n',
+'spFine, thanks; and you?\n',
+'stI\'m good.\n',
+'cpI\.m good.\n',
+'ctOK. Bye.\n',
+'spOK. Bye.\n',
+'ct^C\n',
+'stWait, don\'t go!\n',
+'stHello?\n',
+'st^C\n',
+];
+var i = 0;
+var ai = 2;
+function act() {
+if (i == events.length) {
+document.getElementById('client').innerHTML = '$ ';
+document.getElementById('server').innerHTML = '$ ';
+i = 0;
+ai = 2;
+setTimeout(act, 1000);
+} else {
+let row = events[i];
+let dest = document.getElementById(row[0] == 'c'? 'client':'server');
+if (row[1] == 'p') {
+dest.innerHTML = dest.innerHTML + row.substr(2);
+i += 1
+ai = 2;
+setTimeout(act, 500);
+} else {
+dest.innerHTML = dest.innerHTML + row[ai];
+ai += 1;
+if (ai < row.length) setTimeout(act, 100);
+else { i += 1; ai = 2; setTimeout(act, 250); }
+}
+}
+}
+act();
+</script>
 
 
 # Tips
