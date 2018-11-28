@@ -21,7 +21,7 @@ The server should begin by
 
 The client should begin by
 
-1. `connect`ing to the given IP address and port, like you lab client did
+1. `connect`ing to the given IP address and port, like your lab client did
 
 Both should then proceed as follows:
 
