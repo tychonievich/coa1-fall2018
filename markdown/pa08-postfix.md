@@ -82,7 +82,9 @@ Make sure your code works with all numbers as input, including the `0` that most
 
 # Tips
 
-You are welcome to make either a linked-list or array-based stack.
+When reading text, check the manual page for your read function (`read`, `fgets`, etc) to see how it reports an end-of-file **`EOF`**
+
+You are welcome to make either a linked-list or array-based stack. We will not supply any files to support this, though, so include your implementation in your `rpn.c`.
 
 The following will print an array-based stack:
 
