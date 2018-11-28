@@ -114,8 +114,9 @@ This is by design. We hope you now know enough to learn a bit on your own and us
 
 It is also possible to look things up online.
 This is a bad idea.
-It is hard to find code online that correctly conveys the answer to the problem you actually have.
-Also, before you have developed some experience, it is hard to know if the code you found is good code or not.
+In general, online example code is explaining something nuanced within a specific context,
+and it takes some experience before you are able to tease out the part you can use from the context it is discussed within.
+I expect if you go to a search engine to find example code, you'll end up with a lot of code that does not work or meet the required specification in some nuanced way.
 
 ## Testing on a non-server
 
