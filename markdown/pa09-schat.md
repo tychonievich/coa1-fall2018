@@ -25,10 +25,10 @@ The client should begin by
 
 Both should then proceed as follows:
 
-1. Repeatedly (i.e., in an infinite loop) use `poll`^[see `man poll`{.bash} which has some example code in it.] to pick either the connected socket (from the server's `accept` or the client's `connect`) or the standard input stream^[which is always already open as file descriptor `0`] to `read`^[Note: this means you'll need to use `POLLIN` as the `fds[i].events` instead of the `POLLOUT | POLLWRBAND` used in the manual page example.] from. Use a 1-minute^[60 thousand milliseconds] timeout for `poll`.
+1. Repeatedly (i.e., in an infinite loop) use `poll`^[see `man poll`{.bash} which has some example code in it.] to pick either the connected socket (from the server's `accept` or the client's `connect`) or the standard input stream^[which is always already `open`ed as file descriptor `0`] to `read`^[Note: this means you'll need to use `POLLIN` as the `fds[i].events` instead of the `POLLOUT | POLLWRBAND` used in the manual page example.] from. Use a 1-minute^[60 thousand milliseconds] timeout for `poll`.
 1. If `poll` returns a positive number (i.e., it succeeded),
     1. If the standard input has `revents` including `POLLIN`, `read` from standard input and `write` what you read to the socket.
-    1. If the socket has `revents` including `POLLIN`, `read` from the socket and `write` what you read to standard output^[which is always already open with file descriptor `1`]. You may assume no single message is more than 4096 bytes, to avoid needing to loop your `read`/`write` calls.
+    1. If the socket has `revents` including `POLLIN`, `read` from the socket and `write` what you read to standard output^[which is always already `open`ed as file descriptor `1`]. You may assume no single message is more than 4096 bytes, to avoid needing to loop your `read`/`write` calls.
 
 # Undefined behaviors
 
@@ -112,8 +112,7 @@ As a reminder, you don't need to be exactly like the above; the initial display,
 You will notice all we said about `poll` was "check the manual page".
 This is by design. We hope you now know enough to learn a bit on your own and use it.
 
-It is also possible to look things up online.
-This is a bad idea.
+It is also possible to look things up online. Except for [online `man`-pages](http://man7.org/linux/man-pages/man3/poll.3p.html)^[And even those vary a lot in how up-to-date they are...], this is a bad idea.
 In general, online example code is explaining something nuanced within a specific context,
 and it takes some experience before you are able to tease out the part you can use from the context it is discussed within.
 I expect if you go to a search engine to find example code, you'll end up with a lot of code that does not work or meet the required specification in some nuanced way.
