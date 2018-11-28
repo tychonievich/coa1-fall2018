@@ -107,6 +107,16 @@ As a reminder, you don't need to be exactly like the above; the initial display,
 
 # Tips
 
+## This assignment requires looking things up
+
+You will notice all we said about `poll` was "check the manual page".
+This is by design. We hope you now know enough to learn a bit on your own and use it.
+
+It is also possible to look things up online.
+This is a bad idea.
+It is hard to find code online that correctly conveys the answer to the problem you actually have.
+Also, before you have developed some experience, it is hard to know if the code you found is good code or not.
+
 ## Testing on a non-server
 
 The CS department servers (the `labsrv##` your connect to through `nxfront`, the `portal##` you connect to through `ssh mst3k@portal.cs.virginia.edu`, etc) all have *static IP Addresses* meaning tools like `host` can learn who they are. Your laptop probably does not.
