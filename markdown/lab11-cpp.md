@@ -121,34 +121,26 @@ However, a simple singly-linked stack will give a good testbed to trying out con
 
 I don't have a good read on how long this will take, so the TAs are authorized to change it's scope,
 but I believe the following is a decent overview:
-complete the following so that 
-
-a. the `stack` destructor removes all of the remaining nodes
-b. the `main` function displays
-        
-        81
-        64
-        49
-        36
-        25
-        Remaining nodes: 5
-        Remaining nodes: 0
-
+complete the following:
 
 ````cpp
 #include <stdio.h>
 
-int allocated_nodes = 0;
-
-// do not modify this class
+// do not change this class at all
 class stack_node {
+private:
+    static int allocated_nodes;
 public:
     stack_node *next;
     int value;
     
-    stack_node(int v, stack_node *n) : value(v), next(n) { allocated_nodes += 1; }
-    ~stack_node() { allocated_nodes -= 1; }
+    stack_node(int v, stack_node *n) : value(v), next(n) { stack_node::allocated_nodes += 1; }
+    ~stack_node() { stack_node::allocated_nodes -= 1; }
+    
+    static int existing() { return allocated_nodes; }
 };
+int stack_node::allocated_nodes = 0;
+
 
 // implement this class's unimplemented methods
 class stack {
@@ -166,11 +158,22 @@ int main() {
     stack *a = new stack();
     for(int i=0; i<10; i+=1) a->push(i*i);
     for(int i=0; i<5; i+=1) printf("%d\n", a->pop());
-    printf("Remaining nodes: %d\n", allocated_nodes);
+    printf("Remaining nodes: %d\n", stack_node::existing());
     delete a;
-    printf("Remaining nodes: %d\n", allocated_nodes);
+    printf("Remaining nodes: %d\n", stack_node::existing());
 }
 ````
+
+A correct implementation will (a) not change `stack_node` and (b) display the following when run
+        
+    81
+    64
+    49
+    36
+    25
+    Remaining nodes: 5
+    Remaining nodes: 0
+
 
 # Pass-off
 
