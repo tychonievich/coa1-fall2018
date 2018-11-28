@@ -134,7 +134,11 @@ public:
     stack_node *next;
     int value;
     
-    stack_node(int v, stack_node *n) : value(v), next(n) { stack_node::allocated_nodes += 1; }
+    stack_node(int v, stack_node *n) { 
+        value = v;
+        next = n;
+        stack_node::allocated_nodes += 1; 
+    }
     ~stack_node() { stack_node::allocated_nodes -= 1; }
     
     static int existing() { return allocated_nodes; }
