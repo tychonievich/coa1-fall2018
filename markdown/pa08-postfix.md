@@ -115,6 +115,8 @@ Both `atoi` and `strtol` will work to convert strings into numbers, but `strtol`
 because if it finds a non-number then it will leave `*endptr == nptr`.
 Note that although `strtol` says it "may" set `errno` to `EINVAL` if given a non-number, in practice most implementations do not do this so do not rely on it in your code.
 
+## Things we do not test
+
 You do *not* need to correctly handle any of the following
 
 - half-number tokens like `5more`.
@@ -122,3 +124,10 @@ You do *not* need to correctly handle any of the following
 - tokens without whitespace between them `2+3`.
 - bigger-than-`int` values like `123456789012345678901235901234567890`
 - no-input inputs like `echo '' | ./a.out`
+
+## Things we do test
+
+- very very long lines
+- many short lines
+- lines where a multi-digit number will be split across a buffer-capacity boundary
+
