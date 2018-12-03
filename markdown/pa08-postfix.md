@@ -53,17 +53,17 @@ Note that the program stopped when it encountered `not_a_number` and did not con
 
 You should also verify that if you end input early (by redirecting input, or by pressing Ctrl+D when running interactively) the program prints the final stack and exits:
 
-+-----------------------------------------------+-----------------------------------------------+
-| Without intermediate stacks                   | With intermediate stacks                      |
-+===============================================+===============================================+
-|<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |<pre><code><ins>echo 2 3 4 + 5 | ./a.out</ins> |
-|[ 2, 7, 5 ]                                    |[ 2 ]                                          |
-|</code></pre>                                  |[ 2, 3 ]                                       |
-|                                               |[ 2, 3, 4 ]                                    |
-|                                               |[ 2, 7 ]                                       |
-|                                               |[ 2, 7, 5 ]                                    |
-|                                               |</code></pre>                                  |
-+-----------------------------------------------+-----------------------------------------------+
++--------------------------------------------------+--------------------------------------------------+
+| Without intermediate stacks                      | With intermediate stacks                         |
++==================================================+==================================================+
+|<pre><code><ins>echo -n 2 3 4 + 5 | ./a.out</ins> |<pre><code><ins>echo -n 2 3 4 + 5 | ./a.out</ins> |
+|[ 2, 7, 5 ]                                       |[ 2 ]                                             |
+|</code></pre>                                     |[ 2, 3 ]                                          |
+|                                                  |[ 2, 3, 4 ]                                       |
+|                                                  |[ 2, 7 ]                                          |
+|                                                  |[ 2, 7, 5 ]                                       |
+|                                                  |</code></pre>                                     |
++--------------------------------------------------+--------------------------------------------------+
 
 ----
 
