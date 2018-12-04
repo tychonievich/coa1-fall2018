@@ -25,7 +25,7 @@ The client should begin by
 
 Both should then proceed as follows:
 
-1. Repeatedly (i.e., in an infinite loop) use `poll`^[see `man poll`{.bash} which has some example code in it.] to pick either the connected socket (from the server's `accept` or the client's `connect`) or the standard input stream^[which is always already `open`ed as file descriptor `0`] to `read`^[Note: this means you'll need to use `POLLIN` as the `fds[i].events` instead of the `POLLOUT | POLLWRBAND` used in the manual page example.] from. Use a 1-minute^[60 thousand milliseconds] timeout for `poll`.
+1. Repeatedly (i.e., in an infinite loop) use `poll`^[see `man 3 poll`{.bash} which has some example code in it.] to pick either the connected socket (from the server's `accept` or the client's `connect`) or the standard input stream^[which is always already `open`ed as file descriptor `0`] to `read`^[Note: this means you'll need to use `POLLIN` as the `fds[i].events` instead of the `POLLOUT | POLLWRBAND` used in the manual page example.] from. Use a 1-minute^[60 thousand milliseconds] timeout for `poll`.
 1. If `poll` returns a positive number (i.e., it succeeded),
     1. If the standard input has `revents` including `POLLIN`, `read` from standard input and `write` what you read to the socket.
     1. If the socket has `revents` including `POLLIN`, `read` from the socket and `write` what you read to standard output^[which is always already `open`ed as file descriptor `1`]. You may assume no single message is more than 4096 bytes, to avoid needing to loop your `read`/`write` calls.
