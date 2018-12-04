@@ -331,7 +331,7 @@ def calendar(data, linkfile):
         if isinstance(d, datetime): d = d.date()
         things.setdefault(d, []).append(k)
     d = min(things.keys())
-    end = max(things.keys())
+    end = max(_ for _ in things.keys() if _ < data['Special Dates']['Courses end']+14*oneday)
     weeks = [[]]
     classidx = 0
     while d <= end:
