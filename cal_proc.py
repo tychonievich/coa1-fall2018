@@ -199,7 +199,7 @@ def assignments_json(data):
                         'due':v,
                     }
             elif k.endswith('3'):
-                for p in range(1,8):
+                for p in range(0,8):
                     ans['E2pg'+str(p+1)] = {
                         'group':'Exam',
                         'rubric': (
