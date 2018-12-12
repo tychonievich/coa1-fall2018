@@ -198,6 +198,77 @@ def assignments_json(data):
                         'total':(0,4,10,12,12,6)[p],
                         'due':v,
                     }
+            elif k.endswith('3'):
+                for p in range(1,8):
+                    ans['E2pg'+str(p+1)] = {
+                        'group':'Exam',
+                        'rubric': (
+                            {"kind":"breakdown","parts":[]}, # blank
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 1"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 2"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 3"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 4"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 5"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 6"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 7"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 8"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q9 loop-style goto"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q9 correct behavior"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 10"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 valid assembly"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 proper branching"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 proper recursion"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 12"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q13 description"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q13 example"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 valid C"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 string-to-int"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 handles endptr"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 other features"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 15"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 16"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 17"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 18"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 19"}
+                              ]
+                            },
+                            {"kind":"breakdown"
+                            ,"parts":
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 20"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 21"}
+                              ]
+                            },
+                        )[p],
+                        'weight':(8,8,6,6,6,8,9,4)[p]*1.5/55,
+                        'total':(8,8,6,6,6,8,9,4)[p],
+                        'due':v,
+                    }
             else:
                 ans[k] = {"group":"Exam", "due":v}
                 if k.endswith('3'): ans[k]['weight'] = 20/15
