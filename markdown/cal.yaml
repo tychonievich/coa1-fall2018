@@ -347,6 +347,33 @@ assignments:
         title: schat
         files: schat.c
         due: 2018-12-07 14:00:00
+        rubric:
+            kind: breakdown
+            parts:
+                -   name: Has server and client code from lab
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: Server uses result of accept()
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: Client uses result of socket()
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: Makes two struct pollfds
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: fd are 0 and used socket
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: events include POLLIN
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: repeatedly invokes poll()
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
+                -   name: read()s one descriptor, write()s another
+                    ratio: 12.5
+                    rubric: {"kind":"check"}
     PA08_extended:
         title: postfix extended open period
         files: rpn.c
