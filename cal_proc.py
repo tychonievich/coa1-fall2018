@@ -228,7 +228,7 @@ def assignments_json(data):
                             },
                             {"kind":"breakdown"
                             ,"parts":
-                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 function"}
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 assembly function"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 branching"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 recursion"}
                               ]
