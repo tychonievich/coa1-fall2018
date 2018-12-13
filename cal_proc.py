@@ -203,7 +203,6 @@ def assignments_json(data):
                     ans['E3pg'+str(p+1)] = {
                         'group':'Exam',
                         'rubric': (
-                            {"kind":"breakdown","parts":[]}, # blank
                             {"kind":"breakdown"
                             ,"parts":
                               [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 1"}
