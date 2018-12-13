@@ -229,9 +229,9 @@ def assignments_json(data):
                             },
                             {"kind":"breakdown"
                             ,"parts":
-                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 valid assembly"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 proper branching"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 proper recursion"}
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 function"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 branching"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q11 recursion"}
                               ]
                             },
                             {"kind":"breakdown"
@@ -243,17 +243,17 @@ def assignments_json(data):
                             },
                             {"kind":"breakdown"
                             ,"parts":
-                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 valid C"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 string-to-int"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 handles endptr"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 other features"}
+                              [{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 pre-number handling"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 number conversion"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 endptr"}
+                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Q14 overflow"}
                               ]
                             },
                             {"kind":"breakdown"
                             ,"parts":
                               [{"ratio":2,"rubric":{"kind":"check"},"name":"Question 15"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 16"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 17"}
+                              ,{"ratio":1,"rubric":{"kind":"check"},"name":"Question 17"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 18"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 19"}
                               ]
