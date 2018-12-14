@@ -254,7 +254,7 @@ def assignments_json(data):
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 16"}
                               ,{"ratio":1,"rubric":{"kind":"check"},"name":"Question 17"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 18"}
-                              ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 19"}
+                              ,{"ratio":0,"rubric":{"kind":"check"},"name":"Question 19"} # dropped
                               ]
                             },
                             {"kind":"breakdown"
@@ -264,8 +264,8 @@ def assignments_json(data):
                               ]
                             },
                         )[p],
-                        'weight':(8,8,6,6,6,8,9,4)[p]*1.5/55,
-                        'total':(8,8,6,6,6,8,9,4)[p],
+                        'weight':(8,8,6,6,6,8,7,4)[p]*1.5/53,
+                        'total':(8,8,6,6,6,8,7,4)[p],
                         'due':v,
                     }
             else:
