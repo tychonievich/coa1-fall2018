@@ -254,7 +254,7 @@ def assignments_json(data):
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 16"}
                               ,{"ratio":1,"rubric":{"kind":"check"},"name":"Question 17"}
                               ,{"ratio":2,"rubric":{"kind":"check"},"name":"Question 18"}
-                              ,{"ratio":0,"rubric":{"kind":"check"},"name":"Question 19"} # dropped
+                              ,{"ratio":0,"rubric":{"kind":"check"},"name":"Question 19 (dropped)"}
                               ]
                             },
                             {"kind":"breakdown"
